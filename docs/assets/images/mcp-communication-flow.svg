@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 708" role="img" aria-labelledby="title desc">
+  <title id="title">Alur komunikasi MCP untuk pembacaan pH</title>
+  <desc id="desc">Pengguna meminta pH kepada host. MCP client membuka sesi, menemukan tool baca_ph beserta skemanya, lalu memanggil tool melalui MCP server. Server membaca pH dari layanan sensor. Nilai 6,2 kembali melalui server dan client ke host, yang menyusun jawaban pengguna.</desc>
+  <defs>
+    <marker id="request" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0L7 3.5L0 7Z" fill="#2855ac"/>
+    </marker>
+    <marker id="response" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0L7 3.5L0 7Z" fill="#0d766d"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="708" rx="22" fill="#f7f9ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#172746">
+    <text x="26" y="44" font-size="28" font-weight="750">Alur komunikasi MCP</text>
+    <text x="26" y="71" font-size="16">Contoh pembacaan pH untuk sensor ph-01</text>
+
+    <rect x="16" y="151" width="888" height="61" rx="10" fill="#e9f1ff"/>
+    <rect x="16" y="220" width="888" height="155" rx="10" fill="#eeebff"/>
+    <rect x="16" y="383" width="888" height="118" rx="10" fill="#fff0df"/>
+    <rect x="16" y="509" width="888" height="153" rx="10" fill="#e1f5ee"/>
+
+    <g stroke="#91a1bf" stroke-dasharray="4 5" stroke-width="1.2">
+      <path d="M188 142V664M344 142V664M500 142V664M656 142V664M812 142V664"/>
+    </g>
+
+    <g>
+      <rect x="117" y="94" width="142" height="48" rx="12" fill="#d6e5ff"/>
+      <rect x="273" y="94" width="142" height="48" rx="12" fill="#eadfff"/>
+      <rect x="429" y="94" width="142" height="48" rx="12" fill="#d5f0f8"/>
+      <rect x="585" y="94" width="142" height="48" rx="12" fill="#d8f0e6"/>
+      <rect x="741" y="94" width="142" height="48" rx="12" fill="#ffe5c5"/>
+      <g font-size="16" font-weight="700" text-anchor="middle">
+        <text x="188" y="124">Pengguna</text>
+        <text x="344" y="116">Host</text>
+        <text x="344" y="133" font-size="12" font-weight="500">aplikasi AI</text>
+        <text x="500" y="124">MCP client</text>
+        <text x="656" y="124">MCP server</text>
+        <text x="812" y="124">Layanan sensor</text>
+      </g>
+    </g>
+
+    <g font-size="15" font-weight="700">
+      <text x="30" y="178" fill="#244b98">Permintaan</text>
+      <text x="30" y="248" fill="#503d95">Temukan tool</text>
+      <text x="30" y="411" fill="#874526">Jalankan tool</text>
+      <text x="30" y="537" fill="#165f57">Kirim hasil</text>
+    </g>
+
+    <g fill="none" stroke="#2855ac" stroke-width="2" marker-end="url(#request)">
+      <path d="M190 192H341"/>
+      <path d="M346 252H497"/>
+      <path d="M502 287H653"/>
+      <path d="M346 419H497"/>
+      <path d="M502 454H653"/>
+      <path d="M658 489H809"/>
+    </g>
+    <g fill="none" stroke="#0d766d" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#response)">
+      <path d="M654 322H503"/>
+      <path d="M498 357H347"/>
+      <path d="M810 539H659"/>
+      <path d="M654 573H503"/>
+      <path d="M498 607H347"/>
+      <path d="M342 641H191"/>
+    </g>
+
+    <g font-size="14" font-weight="550" text-anchor="middle">
+      <text x="266" y="184">Berapa pH ph-01?</text>
+      <text x="422" y="244">Minta daftar tool</text>
+      <text x="578" y="266" font-size="12" font-family="Consolas, monospace">initialize<tspan x="578" dy="13">lalu tools/list</tspan></text>
+      <text x="578" y="314">baca_ph dan skema</text>
+      <text x="422" y="349">Daftar tool</text>
+      <text x="422" y="411" font-family="Consolas, monospace">baca_ph("ph-01")</text>
+      <text x="578" y="446" font-family="Consolas, monospace">tools/call</text>
+      <text x="734" y="481">Baca nilai pH</text>
+      <text x="734" y="531">pH 6,2</text>
+      <text x="578" y="565">Hasil tool</text>
+      <text x="422" y="599">Hasil terstruktur</text>
+      <text x="266" y="633">“pH sensor 6,2”</text>
+    </g>
+
+    <path d="M30 684H64" stroke="#2855ac" stroke-width="2" marker-end="url(#request)"/>
+    <path d="M210 684H244" stroke="#0d766d" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#response)"/>
+    <g font-size="13" fill="#344768">
+      <text x="76" y="689">Permintaan</text>
+      <text x="256" y="689">Balasan</text>
+    </g>
+  </g>
+</svg>

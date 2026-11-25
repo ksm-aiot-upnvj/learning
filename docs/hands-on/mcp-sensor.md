@@ -6,6 +6,8 @@
 
 Dua perangkat mengirim pH dan suhu. Perangkat pertama masih aktif pada akhir periode, sedangkan perangkat kedua berhenti lebih awal. Tool MCP membaca data yang sama dengan query SQL sehingga hasilnya dapat diperiksa tanpa meminta model menebak kondisi perangkat.
 
+Server latihan memakai `FastMCP` dari SDK MCP Python. Dua tool bacanya mengikuti pola pembacaan terakhir dan ringkasan pada Smart Hydroponic MCP, dengan data sintetis dan transport `stdio`. [Hubungan dengan Smart Hydroponic MCP](../ai/ai-systems/mcp.md#hubungan-dengan-smart-hydroponic-mcp)
+
 ## Siapkan proyek dan database
 
 Script memakai tabel perangkat dan pembacaan dari materi [Desain Data IoT](../database/data-modeling.md). Data latihan masuk ke skema `mcp_lab` dengan ID yang tetap, sehingga seeding ulang mempertahankan jumlah baris.
