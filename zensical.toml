@@ -5,7 +5,7 @@ site_author = "KSM AIoT"
 site_url = "https://ksm-aiot-upnvj.github.io/learning/"
 repo_url = "https://github.com/ksm-aiot-upnvj/learning/"
 repo_name = "learning"
-copyright = "Copyright &copy; 2026 Kelompok Studi Mahasiswa AIoT"
+copyright = "Copyright &copy;<span data-copyright-year></span> Kelompok Studi Mahasiswa AIoT<br>Departemen Akademik dan Riset"
 
 # AI Generated, need human review. Tambahan navigasi silabus AI dan lab.
 nav = [
@@ -153,6 +153,7 @@ extra_css = [
 ]
 
 extra_javascript = [
+  "assets/javascripts/footer-year.mjs",
   "assets/javascripts/markdown-view.mjs",
   "assets/javascripts/ai-tour.mjs",
   "assets/javascripts/ai-concept-labs.mjs",
