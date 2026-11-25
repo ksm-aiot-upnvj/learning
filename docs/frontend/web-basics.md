@@ -147,7 +147,7 @@ Di dashboard AIoT, JavaScript sering dipakai untuk:
 - menampilkan error,
 - memperbarui tabel atau grafik.
 
-Untuk pembahasan lebih lanjut, lanjutkan ke [JavaScript dan TypeScript](javascript-typescript.md).
+Lanjutkan ke [JavaScript untuk Frontend](javascript.md) untuk membuat tombol yang menampilkan pembacaan sensor.
 
 ## State UI
 

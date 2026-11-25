@@ -17,11 +17,12 @@ flowchart LR
 ## Urutan Belajar yang Disarankan
 
 1. [Web Basics](web-basics.md)
-2. [JavaScript dan TypeScript](javascript-typescript.md)
-3. [Vue Basics](vue-basics.md)
-4. [Integrasi Frontend dengan API](api-integration.md)
-5. [Frontend Fundamental](fundamental.md)
-6. [Frontend Mini](../hands-on/frontend-mini.md)
+2. [JavaScript untuk Frontend](javascript.md)
+3. [TypeScript untuk Frontend](typescript.md)
+4. [Vue Basics](vue-basics.md)
+5. [Integrasi Frontend dengan API](api-integration.md)
+6. [Jalur Praktik Frontend](fundamental.md)
+7. [Frontend Mini](../hands-on/frontend-mini.md)
 
 ## Capaian Belajar
 
