@@ -216,6 +216,10 @@ learning-roadmap-plan.md
 /neurolab_id_simulasi_interaktif_neuron_bobot.html
 /playground_interaktif_rag_qlora.html
 
+# Local backend demo archives may contain private .env credentials
+/demo backend mongodb + dummy post data.zip
+/demo backend postgresql.zip
+
 # Local browser verification artifacts
 /.playwright-cli/
 /output/playwright/

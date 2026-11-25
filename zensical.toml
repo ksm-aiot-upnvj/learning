@@ -43,6 +43,7 @@ nav = [
     { "Validasi dan Middleware" = "backend/validation-middleware.md" },
     { "Asynchronous JavaScript" = "backend/async-javascript.md" },
     { "Struktur Proyek Backend" = "backend/project-structure.md" },
+    { "Akses Database dari Express" = "backend/database-integration.md" },
     { "Express.js dan FastAPI di KSM" = "backend/express-fastapi-bridge.md" },
   ] },
   { "Frontend" = [
@@ -115,6 +116,7 @@ nav = [
   { "Hands-on" = [
     { "Overview" = "hands-on/overview.md" },
     { "Backend Mini" = "hands-on/backend-mini.md" },
+    { "Backend dengan PostgreSQL dan MongoDB" = "hands-on/backend-database-demo.md" },
     { "Frontend Mini" = "hands-on/frontend-mini.md" },
     { "IoT Simulator Mini" = "hands-on/iot-simulator-mini.md" },
     { "IoT Hands-on" = "hands-on/iot-hands-on.md" },
