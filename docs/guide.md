@@ -4,7 +4,7 @@ Untuk berkontribusi pada dokumentasi ini, diharapkan kamu memiliki pemahaman das
 
 1. Fork repository ini ke akun GitHub kamu.
 
-    ![alt text](./images/fork-button.png)
+    ![Tombol Fork pada halaman repositori GitHub](./images/fork-button.png)
 
 2. Clone repository hasil fork ke komputer lokal kamu.
 
