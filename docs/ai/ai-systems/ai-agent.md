@@ -63,3 +63,35 @@ Multi-agent menambah komunikasi, state, latency, dan titik kegagalan. Gunakan pe
 Buat agent dengan satu tool pembaca sensor. Tampilkan state setiap langkah, batasi jumlah iterasi, dan hentikan loop ketika data yang diminta sudah tersedia.
 
 Tambahkan tool kedua untuk memberi rekomendasi. Uji multi-step task, error handling, timeout, dan kasus ketika agent tidak boleh menjalankan actuator tanpa persetujuan pengguna.
+
+### Telusuri satu panggilan MCP
+
+> **AI Generated, need human review**
+
+Ikuti permintaan untuk membaca pH terbaru. Model mengusulkan fungsi, sedangkan aplikasi memeriksa izin dan menjalankan panggilan lewat MCP client. Setelah menerima hasil atau timeout, aplikasi memberi konteks itu kepada model untuk menyusun respons.
+
+```mermaid
+sequenceDiagram
+    participant A as Aplikasi atau orchestrator
+    participant M as Model
+    participant C as MCP client
+    participant S as MCP server
+    A->>M: Berapa pH perangkat A?
+    M-->>A: Ajukan get_latest_reading
+    A->>A: Periksa argumen dan izin
+    A->>C: Panggil tool dalam batas waktu
+    C->>S: tools/call
+    alt Hasil diterima
+        S-->>C: Nilai, waktu, dan status
+        C-->>A: Hasil terstruktur
+        A->>M: Sertakan hasil tool
+        M-->>A: Jawaban berdasarkan pembacaan
+    else Timeout
+        C-->>A: Batas tunggu terlampaui
+        A->>M: Sertakan status timeout
+        M-->>A: Jelaskan data belum tersedia
+    end
+    A->>A: Hentikan loop dan tampilkan jawaban
+```
+
+Pada skenario ini, batasnya satu panggilan pembacaan. Tandai langkah terakhir yang berhasil pada kedua cabang, lalu periksa hasil nyata dengan [praktik MCP](../../hands-on/mcp-sensor.md).

@@ -7,6 +7,7 @@ repo_url = "https://github.com/ksm-aiot-upnvj/learning/"
 repo_name = "learning"
 copyright = "Copyright &copy; 2026 Kelompok Studi Mahasiswa AIoT"
 
+# AI Generated, need human review. Tambahan navigasi silabus AI dan lab.
 nav = [
   { "Home" = "index.md" },
   { "Getting Started" = [
@@ -75,6 +76,7 @@ nav = [
       { "Unsupervised Learning" = "ai/machine-learning/unsupervised-learning.md" },
       { "Ensemble Learning" = "ai/machine-learning/ensemble-learning.md" },
       { "Evaluasi Model" = "ai/machine-learning/evaluasi-model.md" },
+      { "Dari Model ke Sistem" = "ai/machine-learning/dari-model-ke-sistem.md" },
     ]},
     { "Deep Learning" = [
       { "Overview" = "ai/deep-learning/overview.md" },
@@ -93,12 +95,13 @@ nav = [
       { "Inference" = "ai/ai-systems/ai-inference.md" },
       { "LLM" = "ai/ai-systems/llm.md" },
       { "Embeddings" = "ai/ai-systems/embedding.md" },
+      { "OCR dan Pemrosesan Dokumen" = "ai/ai-systems/ocr.md" },
       { "RAG" = "ai/ai-systems/rag.md" },
-      { "Fine-Tuning" = "ai/ai-systems/fine-tuning.md" },
       { "Tools dan Function Calling" = "ai/ai-systems/tools.md" },
       { "Model Context Protocol (MCP)" = "ai/ai-systems/mcp.md" },
       { "AI Agents" = "ai/ai-systems/ai-agent.md" },
       { "AI Application Architecture" = "ai/ai-systems/architecture.md" },
+      { "Pendalaman Fine-Tuning" = "ai/ai-systems/fine-tuning.md" },
     ]},
     { "AI Dashboard" = [
       { "Overview" = "ai/ai-dashboard/overview.md" },
@@ -124,6 +127,8 @@ nav = [
     { "MQTT Hands-on" = "hands-on/mqtt-hands-on.md" },
     { "RAG sederhana" = "hands-on/rag-simple.md" },
     { "RAG lanjutan dengan HyDE + Browse Tool" = "hands-on/rag-advanced.md" },
+    { "MCP dengan Data Sensor PostgreSQL" = "hands-on/mcp-sensor.md" },
+    { "Deteksi Anomali Sensor pH" = "hands-on/sensor-anomaly.md" },
   ] },
   { "Lab Interaktif" = [
     { "Semua Lab" = "labs/overview.md" },
@@ -142,6 +147,7 @@ extra_css = [
   "assets/stylesheets/navigation.css",
   "assets/stylesheets/async-guide.css",
   "assets/stylesheets/ai-tour.css",
+  "assets/stylesheets/ai-concept-labs.css",
   "assets/stylesheets/neuron-lab.css",
   "assets/stylesheets/document-layout.css",
 ]
@@ -149,6 +155,7 @@ extra_css = [
 extra_javascript = [
   "assets/javascripts/markdown-view.mjs",
   "assets/javascripts/ai-tour.mjs",
+  "assets/javascripts/ai-concept-labs.mjs",
   "assets/javascripts/neuron-lab.mjs",
   "assets/javascripts/async-guide.mjs",
   "assets/javascripts/pin-lab.mjs",

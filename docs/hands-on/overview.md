@@ -12,3 +12,9 @@ Mulai dengan satu latihan dan periksa hasilnya sebelum menyambungkan bagian yang
 | [Dashboard Hands-on](dashboard-hands-on.md) | Pembacaan dari simulator masuk ke PostgreSQL dan tampil di browser dengan ID yang sama. |
 
 Jika memakai perangkat fisik, mulai dari [IoT Hands-on](iot-hands-on.md) dan [MQTT Hands-on](mqtt-hands-on.md).
+
+## Praktik AI dengan data sensor
+
+> **AI Generated, need human review**
+
+Pada [Deteksi Anomali Sensor pH](sensor-anomaly.md), bandingkan waktu alarm dari dua metode pada satu deret waktu. Gunakan dataset yang sama di [MCP dengan Data Sensor PostgreSQL](mcp-sensor.md) untuk memeriksa pembacaan terbaru dan ringkasan terhadap hasil query SQL.

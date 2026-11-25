@@ -26,12 +26,17 @@ Contoh kode memakai scikit-learn. Di project Python-mu, pasang dengan `uv add sc
 
 ## Urutan Materi
 
+> **AI Generated, need human review**
+
 1. [Masalah dan Data](masalah-dan-data.md)
 2. [Preprocessing](preprocessing.md)
 3. [Supervised Learning](supervised-learning.md)
 4. [Unsupervised Learning](unsupervised-learning.md)
 5. [Ensemble Learning](ensemble-learning.md)
 6. [Evaluasi Model](evaluasi-model.md)
+7. [Dari Model ke Sistem](dari-model-ke-sistem.md)
+
+Sesudah membandingkan prediksi dan baseline, ikuti cara menempatkan model dalam alur inference dan memantau hasilnya. Untuk melihat bagaimana alarm diperiksa pada data berurutan, lanjutkan ke [Praktik Deteksi Anomali Sensor pH](../../hands-on/sensor-anomaly.md).
 
 ## Kasus yang menyatukan materi
 

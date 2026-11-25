@@ -109,6 +109,20 @@ Reliability membutuhkan timeout, retry, fallback, dan validasi. Security dan pri
 
 Model selection dan deployment perlu disesuaikan dengan kualitas, lisensi, data, resource, latency, dan kebutuhan local, edge, atau cloud inference.
 
+### Diagnosis kegagalan pembacaan sensor
+
+> **AI Generated, need human review**
+
+Dashboard meminta pH terbaru saat operator membuka panel. Gunakan tiga catatan ilustratif untuk menentukan apakah nilai layak ditampilkan sebagai kondisi saat ini. Kolom tahap menunjukkan tempat pertama yang perlu diperiksa.
+
+| Kasus | Catatan | Pertanyaan |
+| --- | --- | --- |
+| Normal | `request_id=01 stage=sensor_query status=ok elapsed_ms=38 age_min=5` | Nilai dan metadata apa yang perlu tampil? |
+| Timeout | `request_id=02 stage=sensor_query status=timeout elapsed_ms=2000` | Apakah dashboard punya nilai terverifikasi untuk permintaan ini? |
+| Data kedaluwarsa | `request_id=03 stage=freshness_check status=stale elapsed_ms=42 age_min=30` | Apakah umur data masih memungkinkan status terkini ditampilkan? |
+
+Pilih respons untuk tiap kasus. Hasil normal menampilkan pembacaan dan waktunya. Jika terjadi timeout, tampilkan bahwa permintaan gagal dan beri opsi mencoba lagi. Jika data kedaluwarsa, tampilkan waktu pembacaan terakhir dengan penanda bahwa kondisi saat ini belum diketahui.
+
 ## AI Application Patterns
 
 Simple LLM application cocok untuk percakapan atau generation tanpa sumber eksternal. RAG application menambahkan retrieval. Tool-using application menambahkan fungsi yang dapat dipanggil model. Agentic application mengatur beberapa langkah dan keputusan.

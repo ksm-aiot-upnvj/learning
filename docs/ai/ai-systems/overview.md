@@ -19,19 +19,21 @@ AI System adalah sebuah sistem yang menggunakan teknologi AI untuk memproses dat
 - Memory
 - Monitoring dan Feedback
 
-Secara sederhana dapat digambarkan melalui diagram berikut:
+> **AI Generated, need human review**
+
+Ketika aplikasi menjawab pertanyaan dari dokumen, aplikasi mengambil potongan yang relevan dan memasukkannya ke konteks sebelum model menyusun jawaban. Jika model meminta pembacaan sensor, aplikasi menjalankan tool dan mengirim hasilnya kembali ke model agar jawaban dapat menyertakan nilai yang terbaca.
 
 ```mermaid
 graph LR
-    A[User Input] --> B[Prompt & Context]
+    A[Input pengguna] --> B[Prompt dan konteks]
+    A --> D[Retrieval dari sumber pengetahuan]
+    D -->|Potongan relevan| B
+    F[Riwayat percakapan] --> B
     B --> C[AI Model]
-    C --> D[Knowledge & Retrieval]
-    C --> E[Tools]
-    C --> F[Memory]
-    D --> G[Output]
-    E --> G[Output]
-    F --> G[Output]
-    G --> H[Monitoring & Feedback]
+    C -->|Permintaan tool| E[Aplikasi menjalankan tool]
+    E -->|Hasil tool| C
+    C --> G[Jawaban]
+    G --> H[Monitoring dan feedback]
 ```
 
 Tujuan AI Systems adalah memahami bagaimana komponen-komponen tersebut dapat digabungkan untuk menghasilkan sistem yang lebih berguna daripada model yang berdiri sendiri.
@@ -53,14 +55,21 @@ Setelah menyelesaikan materi ini, kalian diharapkan mampu:
 
 ## Peta Pembelajaran
 
+> **AI Generated, need human review**
+
 ```mermaid
-graph TD
-    A[AI Systems]
-    A --> B[1. AI Inference]
-    A --> C[2. Large Language Models]
-    A --> D[3. Embeddings]
-    A --> E[4. Retrieval-Augmented Generation]
-    A --> F[5. Tools & Function Calling]
-    A --> G[6. AI Agents]
-    A --> H[7. AI Application Architecture]
+flowchart TD
+    A[Inference] --> B[LLM]
+    B --> C[Embeddings]
+    C --> D[OCR dan Pemrosesan Dokumen]
+    D --> E[RAG]
+    E --> F[Tools dan Function Calling]
+    F --> G[MCP]
+    G --> H[AI Agents]
+    H --> I[AI Application Architecture]
+    B --> J[Pendalaman Fine-Tuning]
 ```
+
+[Embeddings](embedding.md) menjadi dasar pencarian potongan dengan makna yang serupa. Sebelum potongan dibuat, [OCR dan Pemrosesan Dokumen](ocr.md) memperlihatkan cara menyiapkan teks dari halaman scan atau foto untuk [RAG](rag.md).
+
+Ketika rujukan sering berubah, RAG memungkinkan dokumen diperbarui sebelum pertanyaan berikutnya. Jika tugas membutuhkan pola keluaran yang konsisten dan tersedia contoh pelatihan yang memadai, pelajari [Fine-Tuning](fine-tuning.md) sebagai pendalaman LLM.

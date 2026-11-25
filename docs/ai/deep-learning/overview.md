@@ -8,10 +8,12 @@ Ikuti [Masalah dan Data](../machine-learning/masalah-dan-data.md), [Preprocessin
 
 ## Urutan Materi
 
+> **AI Generated, need human review**
+
 1. [Dasar Neural Network](dasar-neural-network.md) memperkenalkan bobot, bias, dan bentuk input.
 2. [Fungsi Aktivasi](activation-function.md) menjelaskan perubahan nilai masukan di tiap neuron.
-3. [Forward dan Backward Pass](forward-backward.md) mengikuti satu prediksi sampai bobot diperbarui.
-4. [Loss Function](loss-function.md) mengukur selisih prediksi dan target.
+3. [Forward dan Backward Pass](forward-backward.md) mengikuti prediksi, loss, gradien, dan pembaruan bobot pada neuron yang sama.
+4. [Loss Function](loss-function.md) memperluas contoh dengan cara mengukur kesalahan pada regresi dan klasifikasi.
 5. [Optimasi dan Training](optimasi-dan-training.md) membandingkan hasil pelatihan dan validasi.
 6. [Arsitektur MLP](arsitektur-mlp.md) menyusun jaringan untuk data berbentuk tabel.
 

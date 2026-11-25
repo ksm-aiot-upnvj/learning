@@ -1,0 +1,77 @@
+/* AI Generated, need human review. */
+
+.ai-concept {
+  border: 1px solid var(--md-default-fg-color--lighter, #777);
+  border-radius: .5rem;
+  margin: 1rem 0;
+  padding: .8rem;
+}
+
+.ai-concept label {
+  display: block;
+  font-weight: 600;
+}
+
+.ai-concept select {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--light);
+  color: inherit;
+  font: inherit;
+  max-width: 100%;
+  padding: .3rem;
+}
+
+.ai-concept input[type="range"] {
+  accent-color: #0b9a9a;
+  max-width: 100%;
+  width: 18rem;
+}
+
+.ai-concept canvas {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.ai-concept-panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.ai-concept-panels > div {
+  flex: 1 1 9rem;
+  min-width: 0;
+}
+
+.ai-ocr-paper {
+  background: #fffaf0;
+  border: 1px solid #b8a587;
+  color: #25201b;
+  padding: .5rem;
+}
+
+.ai-ocr-paper mark {
+  background: transparent;
+  border: 2px solid #bc582e;
+  color: inherit;
+}
+
+.ai-grid {
+  display: grid;
+  gap: .18rem;
+  grid-template-columns: repeat(var(--columns, 5), minmax(0, 2rem));
+  max-width: 100%;
+}
+
+.ai-grid span {
+  border: 1px solid var(--md-default-fg-color--lighter, #777);
+  display: grid;
+  min-height: 1.8rem;
+  place-items: center;
+}
+
+.ai-grid .is-active {
+  background-color: #0b7777;
+  color: white;
+}

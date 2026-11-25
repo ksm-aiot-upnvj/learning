@@ -20,6 +20,25 @@ $$
 
 Misalkan tiga pembacaan getaran berurutan adalah `[2, 3, 7]`. Dengan `w₀ = 1`, `w₁ = −1`, dan bias nol, rumus di atas menghitung nilai terbaru dikurangi nilai sebelumnya. Dua keluaran lengkapnya adalah `3 − 2 = 1` dan `7 − 3 = 4`. Filter ini menonjolkan kenaikan pada pembacaan terakhir.
 
+## Geser kernel di atas citra
+
+> **AI Generated, need human review**
+
+Citra kecil ini memakai angka untuk kecerahan piksel. Kernel 3×3 memberi bobot `[-1, 0, 1]` pada setiap baris, sehingga tepian vertikal menghasilkan respons besar ketika sisi kanan dan kiri berbeda.
+
+<div class="ai-concept" data-ai-concept="kernel">
+  <label for="kernel-position">Posisi kernel</label>
+  <input id="kernel-position" type="range" min="0" max="8" value="0">
+  <div class="ai-concept-panels">
+    <div><strong>Citra 5×5</strong><div class="ai-grid" data-pixels></div></div>
+    <div><strong>Feature map 3×3</strong><div class="ai-grid" style="--columns:3" data-map></div></div>
+  </div>
+  <p><output for="kernel-position" aria-live="polite"></output></p>
+  <noscript>Jendela kiri atas menghasilkan (4 − 1) + (4 − 1) + (5 − 2) = 9.</noscript>
+</div>
+
+Geser slider satu langkah. Jendela berpindah satu piksel dan hasil berikutnya mengisi satu sel *feature map*. Contoh memakai stride 1 dan tanpa padding, sehingga jendela 3×3 hanya punya tiga posisi mendatar dan tiga posisi menurun.
+
 ## Kapan CNN Berguna?
 
 - Klasifikasi gambar daun, buah, atau kondisi komponen.

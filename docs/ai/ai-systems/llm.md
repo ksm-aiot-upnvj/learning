@@ -65,6 +65,24 @@ Next-token prediction membuat output dibangun sedikit demi sedikit. Sampling men
 
 Top-k membatasi pilihan pada sejumlah token dengan probabilitas tertinggi. Top-p memilih kumpulan token dengan probabilitas kumulatif sampai nilai tertentu. Parameter ini dapat digunakan bersama temperature sesuai kebutuhan tugas, tetapi nilai yang lebih tinggi juga dapat meningkatkan risiko output yang tidak sesuai.
 
+### Ikuti satu langkah Transformer
+
+> **AI Generated, need human review**
+
+Saat model membaca “Suhu air naik”, setiap token dipetakan ke deretan angka yang disebut *embedding*. Model juga memakai informasi posisi agar dapat membedakan urutan “air naik” dari “naik air”. Ilustrasi ini memperlakukan tiap kata sebagai satu token, sehingga perhitungan dapat diikuti tanpa melihat tokenizer tertentu.
+
+Pada *self-attention*, token “naik” membuat *query* dari representasinya. Query dibandingkan dengan *key* milik token yang terlihat, lalu hasil perbandingan menentukan bobot untuk menggabungkan *value*. *Causal mask* menutup akses ke posisi masa depan, sehingga prediksi hanya memakai token yang sudah tersedia.
+
+| Posisi yang dapat dilihat dari “naik” | Bobot ilustratif | Satu komponen value | Kontribusi |
+| --- | ---: | ---: | ---: |
+| Suhu | 0,2 | 1 | 0,2 |
+| air | 0,5 | 4 | 2,0 |
+| naik | 0,3 | 2 | 0,6 |
+
+Jumlah kontribusinya 2,8 untuk satu komponen. Representasi dari beberapa lapisan akhirnya diubah menjadi skor token lanjutan, lalu softmax mengubah skor menjadi probabilitas. Bobot di tabel sengaja dipilih sebagai ilustrasi.
+
+Proyeksi `q_proj` membentuk query, sedangkan `v_proj` membentuk value. Keduanya dapat menjadi sasaran adapter pada latihan [LoRA](fine-tuning.md#lora). [Makalah Transformer](https://proceedings.neurips.cc/paper/7181-attention-is-all-you-need)
+
 ## Prompt dan Context
 
 Prompt berisi instruksi atau pertanyaan yang ingin diproses model. System instruction menetapkan aturan dan peran model, user input membawa permintaan pengguna, sedangkan context menambahkan informasi yang diperlukan untuk menyelesaikan permintaan.
@@ -80,6 +98,22 @@ flowchart LR
 	C[Context dan history] --> D
 	D --> E[Text atau structured output]
 ```
+
+### Periksa keluaran sebelum menjalankan fungsi
+
+> **AI Generated, need human review**
+
+Anggap model menghasilkan JSON `{"device_id":"esp32-99","sensor_type":"ph"}`. Nilai itu dapat lolos skema karena bentuknya benar, tetapi aplikasi hanya mengenal `esp32-01` dan `esp32-02`. Periksa data perangkat setelah pemeriksaan format.
+
+Jika `esp32-02` terdaftar tetapi akun peserta hanya boleh membaca `esp32-01`, langkah berikutnya menolak panggilan pada pemeriksaan izin. Bedakan kegagalan format, perangkat yang tidak ditemukan, dan akses yang ditolak agar aplikasi dapat mengirim respons yang sesuai.
+
+| Keluaran contoh | Pemeriksaan pertama yang gagal |
+| --- | --- |
+| `{"device_id":42,"sensor_type":"ph"}` | Format. ID perangkat harus berupa teks. |
+| `{"device_id":"esp32-99","sensor_type":"ph"}` | Aturan aplikasi. Perangkat tidak terdaftar. |
+| `{"device_id":"esp32-02","sensor_type":"ph"}` | Izin. Akun contoh tidak memiliki akses. |
+
+Ganti ID pada tiga keluaran dengan string `"esp32-01"`. Prediksi apakah tiap contoh kini dapat diteruskan ke tool. [Tools dan Function Calling](tools.md#tool-schema-dan-arguments)
 
 ## Model dan Deployment
 

@@ -31,6 +31,10 @@ Output `a` menjadi input bagi layer berikutnya. Pada akhir forward pass, model m
 
 ## Backward Pass
 
+> **AI Generated, need human review**
+
+Sebelum menghitung gradien, tentukan seberapa jauh prediksi dari target. Jika neuron memprediksi 2 ketika targetnya 3, selisih kuadratnya adalah `(2 − 3)² = 1`. Angka yang disebut *loss* ini menjadi titik awal untuk menghitung pengaruh bobot pada kesalahan.
+
 **Rujukan riset:** [Rumelhart, Hinton & Williams, “Learning Representations by Back-propagating Errors” (1986), *Nature*](https://doi.org/10.1038/323533a0). Artikel ini menjabarkan propagasi error untuk memperbarui bobot jaringan berlapis.
 
 Backward pass menggunakan aturan rantai untuk menghitung turunan loss terhadap setiap parameter. Jika `L` adalah loss dan `w` adalah weight, gradient ditulis sebagai:

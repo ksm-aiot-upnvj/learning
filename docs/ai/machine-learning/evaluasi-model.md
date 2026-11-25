@@ -63,6 +63,29 @@ $$
 
 Model ini melewatkan 4 dari 12 kebocoran. Jika kebocoran yang terlewat berisiko tinggi, recall lebih penting; bila pemeriksaan alarm sangat mahal, precision juga perlu dijaga. Accuracy dapat terlihat tinggi hanya karena kelas normal jauh lebih banyak.
 
+## Uji ambang alarm kebocoran
+
+> **AI Generated, need human review**
+
+Model memberi setiap kasus skor antara nol dan satu. Dashboard menyalakan alarm jika skor mencapai ambang. Turunkan ambang untuk menangkap lebih banyak kasus dan amati berapa alarm palsu yang ikut muncul.
+
+<div class="ai-concept" data-ai-concept="threshold">
+  <label for="leak-threshold">Ambang skor <output for="leak-threshold">0.50</output></label>
+  <input id="leak-threshold" type="range" min="0" max="1" step="0.01" value="0.50">
+  <table>
+    <caption>Confusion matrix pada 10 kasus ilustratif</caption>
+    <thead><tr><th scope="col">Kondisi sebenarnya</th><th scope="col">Alarm</th><th scope="col">Tanpa alarm</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Bocor</th><td data-count="tp">3</td><td data-count="fn">2</td></tr>
+      <tr><th scope="row">Normal</th><td data-count="fp">2</td><td data-count="tn">3</td></tr>
+    </tbody>
+  </table>
+  <p data-threshold-result aria-live="polite">Alarm palsu: 2. Kebocoran terlewat: 2.</p>
+  <noscript>Pada ambang 0,50, dua kebocoran terlewat dan dua kasus normal memicu alarm.</noscript>
+</div>
+
+Coba ambang 0,30 dan 0,80. Pilih nilai yang masuk akal jika kebocoran yang terlewat lebih mahal daripada pemeriksaan tambahan. Sepuluh kasus ini hanya untuk membaca matriks, sehingga keputusan di lapangan perlu diuji pada data yang mewakili penggunaan.
+
 ## Overfitting dan baseline
 
 Overfitting terjadi saat model menghafal pola training tetapi gagal pada data baru. Bandingkan skor training dan validation. Gap yang besar dapat menunjukkan model terlalu kompleks, kebocoran data, atau perubahan pola antarperiode.

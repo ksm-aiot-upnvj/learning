@@ -128,3 +128,33 @@ Penasaran dengan penggunaan RAG? Coba hands-on berikut:
 
 - [RAG sederhana](../../hands-on/rag-simple.md)
 - [RAG lanjutan dengan HyDE + Browse Tool](../../hands-on/rag-advanced.md)
+
+## Evaluasi dari halaman sampai jawaban
+
+> **AI Generated, need human review**
+
+Jawaban seperti `5 bar (hlm. 1)` bisa salah meski retrieval menemukan halaman yang tepat. Periksa apakah kesalahan muncul saat OCR membaca halaman, saat pencarian memilih potongan, atau saat penjawab menyusun klaim. Hasil di satu tahap membantu menentukan apa yang perlu diperbaiki. [Makalah Ragas](https://arxiv.org/abs/2309.15217)
+
+| Yang diperiksa | Bukti yang dibandingkan | Contoh gagal |
+| --- | --- | --- |
+| Ekstraksi | Teks keluaran dan halaman asli | `0,5 bar` terbaca `5 bar` |
+| Retrieval | Hasil teratas dan potongan rujukan | Pencarian mengambil manual sensor lain |
+| Jawaban | Klaim, potongan yang disitasi, dan halaman asli | Jawaban menambah batas garansi yang tidak tertulis |
+
+Jalankan baseline ekstraktif di bawah untuk melatih pemeriksaan ini. Penjawab mengambil nilai tekanan dari potongan teratas jika ada bukti yang cocok. Setelah memahami hasilnya, pakai dua pertanyaan yang sama pada [RAG berbasis LLM](../../hands-on/rag-simple.md) dan cek kembali dukungan untuk setiap klaim.
+
+1. Selesaikan [praktik OCR](ocr.md#praktik-membandingkan-tiga-input).
+2. Simpan [evaluate_rag.py](../../assets/ai-labs/evaluate_rag.py) di proyek OCR.
+3. Jalankan baseline dengan teks dari PDF digital.
+
+    ```powershell
+    uv run python evaluate_rag.py hasil-ocr/manual-digital.txt
+    ```
+
+4. Ulangi pemeriksaan dengan teks hasil OCR gambar miring.
+
+    ```powershell
+    uv run python evaluate_rag.py hasil-ocr/manual-miring.txt
+    ```
+
+Pada PDF digital, hasil yang diharapkan adalah `0,5 bar` dengan rujukan `manual-ps01, hlm. 1`. Pertanyaan tentang tenggat garansi semestinya menghasilkan keterangan bahwa informasi tidak tersedia. Jika OCR membaca angka dengan benar, gunakan [simulasi kesalahan OCR](../../labs/rag-workflow.md#dari-halaman-ke-jawaban) untuk menelusuri dampak angka yang keliru.

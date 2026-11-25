@@ -82,3 +82,9 @@ npx @modelcontextprotocol/inspector uv run --with "mcp>=1,<2" python sensor_mcp.
 Buka alamat yang ditampilkan Inspector. Hubungkan server, buka **Tools**, lalu pilih `baca_ph`. Kirim `sensor_id` bernilai `ph-01` dan periksa bahwa hasil berisi `ph: 6.2`. Ulangi dengan `ph-99` dan periksa bahwa statusnya `sensor_tidak_dikenal` dan nilai pH-nya `null`.
 
 Rujukan [pengantar MCP](https://modelcontextprotocol.io/docs/getting-started/intro), [panduan membuat server](https://modelcontextprotocol.io/docs/develop/build-server), dan [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector).
+
+## Praktik dengan riwayat sensor
+
+> **AI Generated, need human review**
+
+Contoh `baca_ph` memberi satu nilai tetap sehingga panggilan tool mudah diperiksa. Di [Praktik MCP dengan Data Sensor PostgreSQL](../../hands-on/mcp-sensor.md), hasil tool mengikuti data yang benar-benar ada di tabel. Praktik tersebut mencakup seeding dengan `uv`, pemanggilan tool di Inspector, dan pembandingan hasil dengan SQL.

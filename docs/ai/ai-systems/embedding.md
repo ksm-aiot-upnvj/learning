@@ -36,6 +36,28 @@ Similarity dapat digunakan untuk mencari dokumen yang relevan, mencocokkan perta
 
 **Rujukan riset:** [Reimers & Gurevych, “Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks” (2019), *Proceedings of EMNLP-IJCNLP*](https://aclanthology.org/D19-1410/). Makalah ini membentuk embedding kalimat yang dapat dibandingkan dengan cosine similarity.
 
+## Ikuti perubahan top-2
+
+> **AI Generated, need human review**
+
+Pilih parafrasa atau kode perangkat. Pencarian semantik mengurutkan dokumen menurut cosine similarity, sedangkan pencarian kata kunci di bawah hanya mencocokkan kata atau kode yang ditampilkan. Koordinat sengaja dibuat sederhana untuk memperlihatkan cara menghitung peringkat.
+
+<div class="ai-concept" data-ai-concept="embedding">
+  <label for="embedding-query">Kueri</label>
+  <select id="embedding-query">
+    <option value="paraphrase">Air terasa lebih hangat</option>
+    <option value="code">Sensor TEMP-02</option>
+  </select>
+  <canvas width="310" height="185" role="img" aria-label="Vektor kueri dan tiga dokumen dari satu titik asal"></canvas>
+  <div aria-live="polite">
+    <strong>Dua hasil semantik teratas</strong><ol></ol>
+    <p><strong>Kecocokan kata atau kode</strong> <span data-keyword></span></p>
+  </div>
+  <noscript>Kueri kode TEMP-02 cocok langsung dengan dokumen yang menyimpan kode TEMP-02.</noscript>
+</div>
+
+Jika nama model sensor ditulis persis, pencarian kata kunci dapat mengambil dokumen dengan kode yang sama. Pada pertanyaan yang diparafrasakan, embedding dapat menemukan dokumen relevan meski kata kuncinya berbeda. Bandingkan keduanya pada dokumen yang sama sebelum memilih strategi retrieval.
+
 ## Embedding dalam Sistem AI
 
 Pada semantic search, sistem mengubah query menjadi vector lalu mencari vector dokumen yang paling dekat. Similarity matching membandingkan item yang memiliki karakteristik serupa. Recommendation menggunakan kedekatan vector untuk menemukan item yang mungkin sesuai dengan minat pengguna.
