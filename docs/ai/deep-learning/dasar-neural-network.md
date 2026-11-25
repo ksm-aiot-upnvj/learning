@@ -52,4 +52,12 @@ Empat sensor dapat menjadi satu input:
 
 Sebelum masuk model, data perlu memiliki satuan yang konsisten, nilai yang hilang perlu ditangani, dan skala fitur perlu diperiksa.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-activity:</span> **Fungsi Aktivasi** <span class="ai-practice-description">Amati bagaimana ReLU, sigmoid, dan fungsi lain mengubah nilai yang diteruskan neuron.</span>](activation-function.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

@@ -145,4 +145,12 @@ PCA bukan algoritma clustering: PCA mengubah representasi data, sementara K-Mean
 
 Gunakan K-Means jika jumlah kelompok dapat diperkirakan dan kelompoknya cukup kompak. Pilih DBSCAN saat ingin menandai noise dan bentuk kelompok tidak diketahui. Gunakan hierarchical clustering untuk membaca hubungan bertingkat, GMM untuk keanggotaan probabilistik, dan PCA untuk mengurangi dimensi. Nama kelompok tetap perlu ditafsirkan berdasarkan konteks sensor dan operasi.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-clipboard-check:</span> **Evaluasi Model** <span class="ai-practice-description">Pelajari cara menguji hasil ketika kelompok dipakai sebagai fitur untuk prediksi yang mempunyai target.</span>](evaluasi-model.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

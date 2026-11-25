@@ -119,4 +119,14 @@ Jangan mencampur pengamatan masa depan ke data training. Urutkan data berdasarka
 - Deteksi perubahan pola kelembapan tanah.
 - Prediksi kebutuhan air berdasarkan riwayat sensor dan cuaca.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-clipboard-check:</span> **Evaluasi Model** <span class="ai-practice-description">Gunakan pemisahan berdasarkan waktu agar sampel masa depan tidak ikut menentukan prediksi yang sedang diuji.</span>](../machine-learning/evaluasi-model.md#pisahkan-data-dengan-benar){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **AI Inference** <span class="ai-practice-description">Ikuti bagaimana aplikasi menerima data baru dan menjalankan model setelah pelatihan.</span>](../ai-systems/ai-inference.md)
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

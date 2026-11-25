@@ -84,3 +84,13 @@ flowchart TD
 Pemilihan model perlu mempertimbangkan bahasa, domain, dimensionality, latency, lisensi, dan resource. Model yang cocok untuk teks umum belum tentu paling baik untuk istilah teknis atau data sensor.
 
 Perubahan model embedding dapat membuat vector lama tidak kompatibel secara makna. Ketika mengganti model, sistem biasanya perlu membuat ulang embedding dan menguji kembali threshold similarity.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-search:</span> **Retrieval-Augmented Generation** <span class="ai-practice-description">Gunakan embedding untuk mencari potongan dokumen. Ikuti cara potongan terpilih masuk ke konteks jawaban.</span>](rag.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-scan-text:</span> **OCR untuk scan atau foto** <span class="ai-practice-description">Jika sumbernya berupa gambar, ekstrak teks beserta nomor halaman sebelum membuat embedding.</span>](ocr.md)
+
+</div>

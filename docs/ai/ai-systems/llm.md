@@ -130,3 +130,15 @@ LLM dapat menghasilkan informasi yang terdengar meyakinkan tetapi tidak didukung
 LLM juga memiliki keterbatasan dalam reasoning, terutama ketika tugas membutuhkan perhitungan, aturan ketat, atau data eksternal. Output dapat bersifat non-deterministic karena sampling. Biaya dan latency meningkat ketika model, context, atau output menjadi lebih besar.
 
 Aplikasi yang membutuhkan keandalan perlu menambahkan validasi, retrieval, aturan bisnis, batas output, logging, dan mekanisme persetujuan manusia sesuai risiko tugasnya.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-search:</span> **Embeddings untuk mencari dokumen** <span class="ai-practice-description">Jika jawaban perlu merujuk dokumen, pelajari cara mencari potongan teks dengan makna yang serupa.</span>](embedding.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-wrench:</span> **Tools dan Function Calling** <span class="ai-practice-description">Jika model perlu membaca data sensor, ikuti cara aplikasi menerima, memvalidasi, dan menjalankan permintaan tool.</span>](tools.md)
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-sliders-horizontal:</span> **Fine-tuning untuk menyesuaikan model** <span class="ai-practice-description">Jika tersedia contoh perilaku yang diinginkan, pelajari cara menyesuaikan model dengan data pelatihan.</span>](fine-tuning.md)
+
+</div>

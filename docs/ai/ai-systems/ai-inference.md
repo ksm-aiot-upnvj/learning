@@ -352,3 +352,11 @@ Pemilihan lokasi inference bergantung pada kebutuhan sistem, seperti:
 - Kebutuhan real-time
 
 Karena itu, tidak ada satu pendekatan inference yang selalu paling baik. Pengembang perlu memilih arsitektur berdasarkan kebutuhan sistem.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-message-square:</span> **Large Language Model** <span class="ai-practice-description">Ikuti apa yang terjadi saat model bahasa menerima prompt. Lihat bagaimana token berikutnya dipilih.</span>](llm.md){ .ai-practice-start }
+
+</div>

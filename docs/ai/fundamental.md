@@ -31,4 +31,12 @@ AI mencakup berbagai cara membuat sistem menyelesaikan tugas seperti prediksi da
 
 Peserta diperkenalkan bahwa sistem AI modern dapat terdiri dari lebih dari sekadar sebuah model.
 
-Lanjut ke [Machine Learning](machine-learning/overview.md) untuk menyiapkan data dan menguji model.
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-table-2:</span> **Masalah dan Data** <span class="ai-practice-description">Tentukan apa yang ingin diprediksi. Pilih data masukan, target, dan aturan sederhana untuk dijadikan pembanding.</span>](machine-learning/masalah-dan-data.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **AI Systems** <span class="ai-practice-description">Jika ingin memakai model yang sudah tersedia, lihat bagaimana aplikasi memberinya data dan memakai hasilnya.</span>](ai-systems/overview.md)
+
+</div>

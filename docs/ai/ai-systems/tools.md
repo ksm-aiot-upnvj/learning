@@ -72,3 +72,11 @@ Backend perlu membatasi tool yang tersedia untuk setiap pengguna dan memeriksa i
 Buat satu tool untuk membaca data sensor dari API lokal. Berikan schema kepada LLM, validasi `device_id` di backend, dan kembalikan result dalam JSON.
 
 Tambahkan tool kedua untuk mengambil rekomendasi penyiraman. Uji arguments yang hilang, device yang tidak ditemukan, timeout, dan respons API yang tidak valid. Catat setiap tool call agar alur dapat diperiksa.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-plug:</span> **Model Context Protocol** <span class="ai-practice-description">Lihat bagaimana aplikasi menemukan dan memanggil tool pembaca sensor lewat server MCP.</span>](mcp.md){ .ai-practice-start }
+
+</div>

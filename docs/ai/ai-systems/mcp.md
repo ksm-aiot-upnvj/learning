@@ -88,3 +88,13 @@ Rujukan [pengantar MCP](https://modelcontextprotocol.io/docs/getting-started/int
 > **AI Generated, need human review**
 
 Contoh `baca_ph` memberi satu nilai tetap sehingga panggilan tool mudah diperiksa. Di [Praktik MCP dengan Data Sensor PostgreSQL](../../hands-on/mcp-sensor.md), hasil tool mengikuti data yang benar-benar ada di tabel. Praktik tersebut mencakup seeding dengan `uv`, pemanggilan tool di Inspector, dan pembandingan hasil dengan SQL.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Praktik MCP dengan PostgreSQL** <span class="ai-practice-description">Isi database latihan dengan data sensor. Cocokkan hasil tool MCP dengan query SQL.</span>](../../hands-on/mcp-sensor.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **AI Agents** <span class="ai-practice-description">Jika sudah memahami satu panggilan tool, ikuti cara agent memakai hasilnya dan berhenti saat tugas selesai atau waktu habis.</span>](ai-agent.md)
+
+</div>

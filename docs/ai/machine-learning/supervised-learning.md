@@ -211,4 +211,14 @@ SVM dapat bekerja baik pada dataset kecil atau menengah dengan batas kelas yang 
 
 Mulai dengan baseline sederhana. Regresi linear cocok untuk target angka dan hubungan yang mendekati linear; logistic regression memberi probabilitas kelas; KNN berguna untuk melihat pengaruh tetangga; decision tree mudah dijelaskan; SVM mencari margin pemisah. Bandingkan model pada pembagian data dan metrik yang sama. Untuk data berurutan, pisahkan berdasarkan waktu agar data masa depan tidak masuk ke training.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-layers:</span> **Ensemble Learning** <span class="ai-practice-description">Gabungkan beberapa model untuk melihat bagaimana bagging dan boosting memengaruhi prediksi.</span>](ensemble-learning.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-clipboard-check:</span> **Evaluasi Model** <span class="ai-practice-description">Jika sudah punya satu model, bandingkan prediksinya dengan baseline pada data uji yang sama.</span>](evaluasi-model.md)
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

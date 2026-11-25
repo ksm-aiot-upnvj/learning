@@ -81,4 +81,12 @@ Detail model dan preprocessing tersedia pada [Keras Applications](https://keras.
 
 Resolusi gambar, jumlah filter, dan jumlah layer memengaruhi memori serta waktu inference. Ukur model pada perangkat target, bukan hanya pada komputer training.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **AI Inference** <span class="ai-practice-description">Gunakan pertimbangan memori dan latensi untuk memilih tempat menjalankan model pengolah gambar.</span>](../ai-systems/ai-inference.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

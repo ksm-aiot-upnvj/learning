@@ -50,3 +50,11 @@ Kode ini membangun arsitektur. Dataset, label, pembagian train/validation, dan p
 TensorFlow dan PyTorch dapat memerlukan paket serta konfigurasi hardware yang berbeda. Mulailah di virtual environment terpisah dan ikuti petunjuk instalasi resmi yang cocok dengan sistem operasi, versi Python, dan GPU. Keras 3 juga membutuhkan satu backend yang dipilih sebelum Keras diimpor.
 
 Rujukan: [Getting started Keras](https://keras.io/getting_started/), [panduan Keras TensorFlow](https://www.tensorflow.org/guide/keras), [Learn the Basics PyTorch](https://docs.pytorch.org/tutorials/beginner/basics/intro.html).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-brain:</span> **Dasar Neural Network** <span class="ai-practice-description">Sebelum melatih model, ikuti perhitungan satu neuron untuk mengenali peran bobot dan bias.</span>](dasar-neural-network.md){ .ai-practice-start }
+
+</div>

@@ -98,4 +98,14 @@ Contoh pada data suhu: jika nilai terakhir pada 10:03 adalah 29,5 °C, baseline 
 
 Catat ukuran model, RAM, waktu inference, konsumsi daya, dan kebutuhan jaringan bersama metrik prediksi. Model yang sedikit lebih akurat belum tentu cocok jika terlalu lambat untuk gateway atau menghabiskan memori perangkat.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-server:</span> **Dari Model ke Sistem** <span class="ai-practice-description">Ikuti bagaimana aplikasi memakai prediksi. Tentukan aturan untuk tindakan dan data yang perlu dicatat.</span>](dari-model-ke-sistem.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-activity:</span> **Praktik deteksi anomali sensor** <span class="ai-practice-description">Bandingkan waktu alarm, alarm palsu, dan kejadian yang terlewat pada dua aturan deteksi.</span>](../../hands-on/sensor-anomaly.md)
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

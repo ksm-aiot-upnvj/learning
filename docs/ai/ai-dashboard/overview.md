@@ -41,3 +41,13 @@ flowchart LR
 Jalur belajar: mulai dari [Streamlit](streamlit.md) untuk dashboard data, lalu [Gradio](gradio.md) untuk demo fungsi model. Bagian [Backend](../../backend/overview.md) menjelaskan Express.js dan jembatannya ke FastAPI.
 
 Rujukan: [konsep dasar Streamlit](https://docs.streamlit.io/get-started/fundamentals/main-concepts), [Quickstart Gradio](https://www.gradio.app/guides/quickstart).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-chart-line:</span> **Streamlit untuk data sensor** <span class="ai-practice-description">Buat panel dari pembacaan sensor. Tambahkan widget untuk memilih data yang ingin dilihat.</span>](streamlit.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Gradio untuk demo model** <span class="ai-practice-description">Buat antarmuka dengan satu masukan dan keluaran untuk mencoba fungsi model.</span>](gradio.md)
+
+</div>

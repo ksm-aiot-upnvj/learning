@@ -143,3 +143,11 @@ flowchart LR
 ```
 
 Real-time inference membutuhkan perhatian pada sampling, queue, latency, koneksi, dan fallback ketika model atau jaringan tidak tersedia. Cloud AI memudahkan penggunaan model besar, sedangkan edge AI dapat mengurangi network latency dan menjaga data tetap dekat dengan sumbernya.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-panels-top-left:</span> **AI Dashboard** <span class="ai-practice-description">Pilih cara menampilkan hasil inference dan status kegagalan untuk pengguna aplikasi.</span>](../ai-dashboard/overview.md){ .ai-practice-start }
+
+</div>

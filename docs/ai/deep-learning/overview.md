@@ -25,4 +25,14 @@ Setelah menyelesaikan materi, coba [Lab Pelatihan Neural Network](../../labs/neu
 
 Deteksi anomali tanpa banyak label, penggabungan gambar dan sensor, serta pengukuran kinerja model di perangkat edge bisa dipelajari setelah punya hasil pembanding. Untuk deployment, ukur waktu prediksi dan penggunaan memori pada perangkat tujuan.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-brain:</span> **Dasar Neural Network** <span class="ai-practice-description">Ikuti bagaimana satu neuron memakai bobot, bias, dan fungsi aktivasi.</span>](dasar-neural-network.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-code-xml:</span> **TensorFlow, Keras, dan PyTorch** <span class="ai-practice-description">Kenali library yang bisa dipakai untuk menulis arsitektur dan melatih jaringan.</span>](frameworks.md)
+
+</div>
+
 [Kembali ke Overview AI](../overview.md)

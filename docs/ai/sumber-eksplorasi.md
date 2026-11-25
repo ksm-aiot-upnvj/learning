@@ -29,3 +29,11 @@ Pilih sumber sesuai tugas yang ingin kamu coba.
   <a href="https://modelcontextprotocol.io/docs/getting-started/intro"><strong>MCP Documentation</strong><span>Pelajari cara aplikasi AI terhubung ke tools dan sumber data.</span></a>
   <a href="https://modelcontextprotocol.io/docs/tools/inspector"><strong>MCP Inspector</strong><span>Periksa dan panggil tool yang tersedia pada server MCP.</span></a>
 </div>
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-compass:</span> **Pilih jalur belajar AI** <span class="ai-practice-description">Tentukan apakah ingin melatih model, memakai model dalam aplikasi, atau menampilkan hasilnya di dashboard.</span>](overview.md#rute-belajar){ .ai-practice-start }
+
+</div>

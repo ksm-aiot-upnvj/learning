@@ -29,6 +29,8 @@ Saat model dipasang dalam aplikasi, pembacaan terbaru perlu diambil dan hasil pr
 
 ## Rute belajar
 
+Mulai dari kartu pertama di bagian **What's next** jika masih mencari titik awal. Jika sudah punya model dan ingin memakainya dalam aplikasi, pilih AI Systems untuk mempelajari cara menghubungkannya dengan data dan tool.
+
 - Mulai dari [AI Fundamental](fundamental.md) untuk merumuskan masalah sensor, mencoba aturan pembanding, dan memahami kapan model mungkin membantu.
 - Buka [Machine Learning](machine-learning/overview.md) untuk menyiapkan data, mempelajari algoritma, dan mengevaluasi prediksi.
 - Lanjutkan ke [Deep Learning](deep-learning/overview.md) setelah mengenal data dan evaluasi model. Materi ini membahas jaringan saraf serta penerapannya pada data sensor, gambar, dan urutan.
@@ -40,5 +42,15 @@ Data sensor yang dipakai untuk latihan disimpan dan diolah lewat database. Lihat
 Untuk contoh tangki air, [AI Fundamental](fundamental.md) memulai dari aturan alarm sederhana. Jika targetnya memprediksi kapan air akan melewati batas, lanjut ke [Masalah dan Data](machine-learning/masalah-dan-data.md) untuk menentukan input, target, dan waktu prediksi.
 
 [Buka Sumber Eksplorasi AI](sumber-eksplorasi.md){ .md-button }
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-compass:</span> **Mulai dari AI Fundamental** <span class="ai-practice-description">Coba aturan alarm tangki air. Tentukan kapan contoh data bisa membantu membuat prediksi.</span>](fundamental.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **Mulai dari AI Systems** <span class="ai-practice-description">Jika sudah punya model, pelajari cara menghubungkannya ke dokumen, data sensor, atau aplikasi.</span>](ai-systems/overview.md)
+
+</div>
 
 [Kembali ke Home](../index.md)

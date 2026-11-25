@@ -95,3 +95,11 @@ sequenceDiagram
 ```
 
 Pada skenario ini, batasnya satu panggilan pembacaan. Tandai langkah terakhir yang berhasil pada kedua cabang, lalu periksa hasil nyata dengan [praktik MCP](../../hands-on/mcp-sensor.md).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-network:</span> **AI Application Architecture** <span class="ai-practice-description">Tempatkan model, tool, database, dan pencatatan kegagalan dalam satu rancangan aplikasi.</span>](architecture.md){ .ai-practice-start }
+
+</div>

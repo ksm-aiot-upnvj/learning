@@ -134,4 +134,12 @@ Keduanya bukan jaminan hasil lebih baik. Mulai dari baseline atau Random Forest,
 
 Bagging cocok ketika satu model seperti decision tree berubah banyak akibat perubahan data latih. Boosting cocok saat ingin memperbaiki kesalahan secara bertahap dan tersedia waktu untuk menyetel parameter. Periksa skor train dan validation; skor train yang terus naik sementara validation memburuk adalah tanda overfitting.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-clipboard-check:</span> **Evaluasi Model** <span class="ai-practice-description">Bandingkan model gabungan dan baseline pada data uji yang sama. Catat juga biaya inference jika model dipasang di gateway.</span>](evaluasi-model.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

@@ -52,4 +52,12 @@ flowchart TD
 
 Pilih loss berdasarkan bentuk target dan dampak kesalahan. Jika melewatkan kerusakan lebih berbahaya daripada false alarm, evaluasi recall dan biaya kesalahan, bukan loss saja.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-sliders-horizontal:</span> **Optimasi dan Training** <span class="ai-practice-description">Lihat bagaimana optimizer memakai gradien dari loss untuk memperbarui bobot. Periksa juga hasil pada data validasi.</span>](optimasi-dan-training.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

@@ -43,4 +43,12 @@ Untuk data time-series, jangan mencampur data masa depan ke data training. Pemba
 
 Buat solusi sederhana sebelum melatih model. Contohnya adalah menggunakan nilai sensor terakhir, rata-rata bergerak, atau aturan threshold. Baseline membantu menentukan apakah model baru benar-benar memberi perbaikan.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-filter:</span> **Preprocessing** <span class="ai-practice-description">Siapkan pembacaan sensor untuk model. Tangani nilai kosong dan pisahkan data latih serta data uji berdasarkan waktu.</span>](preprocessing.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

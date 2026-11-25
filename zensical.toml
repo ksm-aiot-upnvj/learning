@@ -221,5 +221,8 @@ custom_fences = [
 ]
 
 [project.markdown_extensions]
+md_in_html = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
 pymdownx.tasklist = { custom_checkbox = true }
 pymdownx.arithmatex.generic = true

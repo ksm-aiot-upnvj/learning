@@ -41,4 +41,14 @@ Untuk memprediksi kebutuhan penyiraman, input dapat berupa:
 
 Output dapat berupa durasi pompa dalam detik. Untuk klasifikasi, output dapat berupa kelas kondisi tanaman.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-image:</span> **CNN untuk data gambar** <span class="ai-practice-description">Jika posisi pola dalam gambar penting, ikuti cara filter kecil bergerak di atas piksel.</span>](cnn.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-chart-line:</span> **Model Sequence untuk deret waktu** <span class="ai-practice-description">Jika urutan pembacaan sensor penting, bentuk jendela waktu untuk memasukkan beberapa sampel ke model.</span>](model-sequence.md)
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

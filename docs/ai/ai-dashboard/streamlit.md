@@ -76,3 +76,13 @@ st.write("Prediksi model:", prediction[0])
 Urutan fitur `[27, 30.2]` harus sama dengan urutan fitur saat model dilatih. Simpan kredensial atau data rahasia di konfigurasi server, bukan di script yang dibagikan.
 
 Rujukan: [konsep dasar dan alur Streamlit](https://docs.streamlit.io/get-started/fundamentals/main-concepts), [Session State](https://docs.streamlit.io/develop/concepts/architecture/session-state), [chat elements](https://docs.streamlit.io/develop/api-reference/chat).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Hubungkan dashboard ke data sensor** <span class="ai-practice-description">Telusuri satu kiriman sensor dari PostgreSQL sampai tampil pada dashboard berbasis Vue.</span>](../../hands-on/dashboard-hands-on.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Gradio untuk demo fungsi model** <span class="ai-practice-description">Jika ingin mendemokan satu fungsi inference, coba antarmuka yang langsung menerima masukan dan menampilkan hasil.</span>](gradio.md)
+
+</div>

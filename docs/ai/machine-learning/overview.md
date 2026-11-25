@@ -42,4 +42,12 @@ Sesudah membandingkan prediksi dan baseline, ikuti cara menempatkan model dalam 
 
 Gunakan prediksi suhu satu menit ke depan sebagai contoh: data sampai waktu `t` menjadi input, suhu pada `t+1` menjadi target, dan nilai terakhir menjadi baseline. Evaluasi model regresi pada periode uji yang sama dengan baseline. Tabel waktu, target, prediksi, dan error memperlihatkan apakah model benar-benar membantu.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-table-2:</span> **Masalah dan Data** <span class="ai-practice-description">Mulai dari satu masalah sensor. Tentukan targetnya sebelum memilih algoritma.</span>](masalah-dan-data.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Overview AI](../overview.md)

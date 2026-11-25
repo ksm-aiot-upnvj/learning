@@ -70,4 +70,14 @@ Gunakan satu neuron linear dengan input `x = 2`, target `y = 3`, bobot `w = 1`, 
 
 Jika learning rate dinaikkan menjadi `0,5`, update dari bobot awal memberi bobot baru `3`. Prediksinya menjadi `6` dan loss `9`; langkah yang terlalu besar melewati bobot yang menghasilkan prediksi tepat `3`.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-target:</span> **Loss Function** <span class="ai-practice-description">Setelah menghitung satu pembaruan bobot, pilih cara mengukur kesalahan untuk target angka atau kelas.</span>](loss-function.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Lab pelatihan neural network** <span class="ai-practice-description">Ubah bobot atau fungsi aktivasi. Jalankan satu langkah training dan amati perubahan prediksi.</span>](../../labs/neuron-training.md)
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

@@ -47,4 +47,12 @@ Untuk data yang memiliki urutan waktu, pembagian acak dapat menyebabkan data mas
 - Anomali: false alarm rate, missed anomaly, dan detection delay.
 - Deployment: waktu inference, RAM, ukuran model, dan konsumsi daya.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-layers:</span> **Arsitektur MLP** <span class="ai-practice-description">Gunakan data sensor berbentuk tabel untuk melihat cara menyusun beberapa lapisan neuron.</span>](arsitektur-mlp.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

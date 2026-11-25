@@ -90,4 +90,12 @@ flowchart LR
 
 Pilihan aktivasi harus sesuai dengan target dan loss function. Nilai probabilitas tidak otomatis berarti model memiliki tingkat kepastian yang benar.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-arrow-right-left:</span> **Forward dan Backward Pass** <span class="ai-practice-description">Ikuti satu prediksi sampai bobotnya diperbarui. Perhatikan bagaimana turunan fungsi aktivasi ikut memengaruhi gradien.</span>](forward-backward.md){ .ai-practice-start }
+
+</div>
+
 [Kembali ke Deep Learning](overview.md)

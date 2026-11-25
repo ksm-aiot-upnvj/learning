@@ -61,9 +61,10 @@ Setelah menyelesaikan materi ini, kalian diharapkan mampu:
 flowchart TD
     A[Inference] --> B[LLM]
     B --> C[Embeddings]
-    C --> D[OCR dan Pemrosesan Dokumen]
+    C --> E[RAG]
+    C -. Scan atau foto .-> D[OCR dan Pemrosesan Dokumen]
     D --> E[RAG]
-    E --> F[Tools dan Function Calling]
+    B --> F[Tools dan Function Calling]
     F --> G[MCP]
     G --> H[AI Agents]
     H --> I[AI Application Architecture]
@@ -73,3 +74,11 @@ flowchart TD
 [Embeddings](embedding.md) menjadi dasar pencarian potongan dengan makna yang serupa. Sebelum potongan dibuat, [OCR dan Pemrosesan Dokumen](ocr.md) memperlihatkan cara menyiapkan teks dari halaman scan atau foto untuk [RAG](rag.md).
 
 Ketika rujukan sering berubah, RAG memungkinkan dokumen diperbarui sebelum pertanyaan berikutnya. Jika tugas membutuhkan pola keluaran yang konsisten dan tersedia contoh pelatihan yang memadai, pelajari [Fine-Tuning](fine-tuning.md) sebagai pendalaman LLM.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **AI Inference** <span class="ai-practice-description">Mulai dari cara aplikasi mengirim masukan ke model dan memakai keluarannya. Bandingkan pilihan lokal dan cloud.</span>](ai-inference.md){ .ai-practice-start }
+
+</div>

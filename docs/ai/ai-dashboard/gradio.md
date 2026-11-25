@@ -58,3 +58,11 @@ Fungsi `predict_condition` berisi aturan sederhana, belum model AI. Saat model s
 Gradio juga menyediakan `gr.ChatInterface` untuk fungsi percakapan. Untuk demo yang dibuka lewat internet, tautan `share=True` bersifat publik. Jangan masukkan data sensor pribadi, API key, atau fungsi yang dapat mengendalikan perangkat penting ke demo publik.
 
 Rujukan: [Quickstart Gradio](https://www.gradio.app/guides/quickstart), [Blocks](https://www.gradio.app/docs/gradio/blocks), [berbagi demo](https://gradio.app/guides/sharing-your-app).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-search:</span> **Siapkan fungsi tanya jawab dari dokumen** <span class="ai-practice-description">Bangun pipeline RAG sederhana. Gunakan fungsi jawabnya sebagai dasar untuk demo tanya jawab.</span>](../../hands-on/rag-simple.md){ .ai-practice-start }
+
+</div>

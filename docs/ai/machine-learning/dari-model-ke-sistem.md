@@ -66,4 +66,14 @@ Simpan metrik dan log berikut:
 
 Pantau perubahan distribusi data. Sensor yang bergeser kalibrasinya atau lingkungan yang berubah dapat menurunkan performa model.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **AI Inference** <span class="ai-practice-description">Bandingkan menjalankan model di perangkat dan di cloud. Perhatikan batas memori, jaringan, dan waktu respons.</span>](../ai-systems/ai-inference.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-brain:</span> **Dasar Neural Network** <span class="ai-practice-description">Jika ingin melatih jaringan saraf, mulai dari cara satu neuron mengubah angka masukan menjadi keluaran.</span>](../deep-learning/dasar-neural-network.md)
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

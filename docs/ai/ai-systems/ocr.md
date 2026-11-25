@@ -54,4 +54,14 @@ Folder `hasil-ocr` berisi berkas sumber, teks yang terbaca, dan gambar dengan ko
 
 *Character error rate* (CER) membagi jumlah perubahan karakter yang diperlukan dengan panjang teks rujukan. Jika `0,5 bar` terbaca `5 bar`, hanya dua karakter yang hilang, tetapi angka berubah sepuluh kali lipat. Karena itu, periksa nilai dan satuan yang dipakai pada jawaban secara terpisah. [Metrik OCR-D](https://ocr-d.de/en/spec/ocrd_eval.html)
 
-Bandingkan `manual-digital.txt` dan `manual-miring.txt`, lalu pilih salah satu untuk latihan RAG. Catat `document_id` dan `page=1` pada setiap chunk. Jika angka rujukan berbeda, cocokkan dengan halaman asli sebelum mengindeks hasil ekstraksi. [Evaluasi RAG](rag.md#evaluasi-dari-halaman-sampai-jawaban) · [Visual OCR](../../labs/rag-workflow.md#dari-halaman-ke-jawaban)
+Bandingkan `manual-digital.txt` dan `manual-miring.txt`, lalu pilih salah satu untuk latihan RAG. Catat `document_id` dan `page=1` pada setiap chunk. Jika angka rujukan berbeda, cocokkan dengan halaman asli sebelum mengindeks hasil ekstraksi.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-clipboard-check:</span> **Evaluasi OCR di pipeline RAG** <span class="ai-practice-description">Gunakan teks hasil OCR untuk memeriksa apakah angka yang terbaca salah ikut muncul di jawaban.</span>](rag.md#evaluasi-dari-halaman-sampai-jawaban){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **Simulasi OCR ke jawaban** <span class="ai-practice-description">Amati perubahan pada teks, potongan dokumen, dan jawaban saat tanda desimal terlewat.</span>](../../labs/rag-workflow.md#dari-halaman-ke-jawaban)
+
+</div>

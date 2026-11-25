@@ -25,8 +25,6 @@ flowchart TD
     G --> H[Jawaban + sumber]
 ```
 
-Buka [Lab Workflow RAG Interaktif](../../labs/rag-workflow.md) untuk memeriksa node, input, dan output, lalu jalankan alur langkah demi langkah atau otomatis.
-
 **Rujukan riset:** [Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” (2020), *Advances in Neural Information Processing Systems*](https://papers.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html). Makalah ini merumuskan RAG sebagai gabungan parameter model generatif dan memori eksternal yang diakses melalui retrieval.
 
 ## Data ingestion
@@ -124,11 +122,6 @@ Pada generation, LLM menyusun jawaban dari prompt augmented. Kualitas jawaban di
 
 Tidak ada nilai terbaik untuk semua kasus, jadi perlu eksplorasi dan pengujian untuk menemukan kombinasi yang tepat.
 
-Penasaran dengan penggunaan RAG? Coba hands-on berikut:
-
-- [RAG sederhana](../../hands-on/rag-simple.md)
-- [RAG lanjutan dengan HyDE + Browse Tool](../../hands-on/rag-advanced.md)
-
 ## Evaluasi dari halaman sampai jawaban
 
 > **AI Generated, need human review**
@@ -158,3 +151,15 @@ Jalankan baseline ekstraktif di bawah untuk melatih pemeriksaan ini. Penjawab me
     ```
 
 Pada PDF digital, hasil yang diharapkan adalah `0,5 bar` dengan rujukan `manual-ps01, hlm. 1`. Pertanyaan tentang tenggat garansi semestinya menghasilkan keterangan bahwa informasi tidak tersedia. Jika OCR membaca angka dengan benar, gunakan [simulasi kesalahan OCR](../../labs/rag-workflow.md#dari-halaman-ke-jawaban) untuk menelusuri dampak angka yang keliru.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **Alur RAG interaktif** <span class="ai-practice-description">Jalankan alur untuk satu pertanyaan. Periksa potongan dokumen yang mendukung jawabannya.</span>](../../labs/rag-workflow.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-file-search:</span> **RAG Sederhana** <span class="ai-practice-description">Bangun pipeline dengan satu dokumen. Periksa bagaimana potongan yang ditemukan masuk ke prompt model.</span>](../../hands-on/rag-simple.md)
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-list-filter:</span> **RAG Lanjutan** <span class="ai-practice-description">Jika pipeline dasar sudah berjalan, bandingkan teknik pencarian dengan melihat potongan yang berhasil ditemukan.</span>](../../hands-on/rag-advanced.md)
+
+</div>

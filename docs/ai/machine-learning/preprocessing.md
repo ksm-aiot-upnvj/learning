@@ -79,4 +79,14 @@ Gunakan lima pembacaan suhu berikut. Targetnya adalah suhu satu menit setelah wa
 
 Pada 10:01, nilai kosong diisi 28,0 dari pembacaan terakhir. Untuk prediksi pada 10:03, suhu saat ini 29,5 °C dan `lag_1` 29,0 °C berasal dari waktu 10:03 dan sebelumnya. Targetnya 30,0 °C pada 10:04. Nilai 10:04 hanya dipakai untuk menilai prediksi setelah pengukuran tiba, bukan sebagai input.
 
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-target:</span> **Supervised Learning** <span class="ai-practice-description">Jika data punya target, gunakan contoh berlabel untuk memprediksi angka atau kelas.</span>](supervised-learning.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-network:</span> **Unsupervised Learning** <span class="ai-practice-description">Jika data belum punya label, cari kelompok atau pola pada pembacaan sensor.</span>](unsupervised-learning.md)
+
+</div>
+
 [Kembali ke Machine Learning](overview.md)

@@ -41,6 +41,8 @@ PEFT membekukan sebagian besar parameter dan melatih bagian yang lebih kecil. Ke
 - **Selective methods** memilih sebagian parameter yang sudah ada, misalnya beberapa layer terakhir atau parameter bias.
 - **Reparameterization methods** menyatakan perubahan bobot dalam bentuk yang lebih ringkas, seperti LoRA.
 
+Jika masih menentukan pendekatan untuk Gemma 4, bandingkan kapan memakai RAG, LoRA, atau full fine-tuning. Lihat juga perkiraan kebutuhan memori agar pilihan metode sesuai dengan kapasitas GPU yang tersedia. [Panduan resmi fine-tuning Gemma 4](https://gemma.ai/tuning/)
+
 ## LoRA
 
 LoRA (*Low-Rank Adaptation*) membekukan bobot model dasar dan menambahkan dua matriks adapter yang dilatih. Untuk bobot \(W_0\), perubahan bobot ditulis sebagai \(\Delta W = \frac{\alpha}{r} B A\), sehingga bobot efektifnya \(W = W_0 + \Delta W\). Matriks A memproyeksikan ke dimensi rendah dan B memproyeksikan kembali. Rank \(r\) mengatur ukuran bottleneck; \(\alpha\) mengatur skala kontribusi adapter.
@@ -57,11 +59,7 @@ QLoRA menggabungkan bobot dasar yang dikuantisasi dengan pelatihan adapter LoRA.
 
 **Rujukan riset:** [Dettmers et al., “QLoRA: Efficient Finetuning of Quantized LLMs” (2023), *Advances in Neural Information Processing Systems*](https://proceedings.neurips.cc/paper_files/paper/2023/file/1feb87871436031bdc0f2beaa62a049b-Paper-Conference.pdf). Ini prosiding konferensi yang memperkenalkan metode QLoRA.
 
-## Simulator QLoRA
-
-Gunakan [Kalkulator VRAM dan Simulasi LoRA/QLoRA](../../labs/qlora-simulator.md){ .md-button } untuk membandingkan kebutuhan memori GPU dan menelusuri pembaruan matriks adapter langkah demi langkah.
-
-### Knowledge distillation
+## Knowledge distillation
 
 Knowledge distillation melatih *student model* agar meniru sebagian perilaku *teacher model* yang lebih besar. Sinyal yang dipindahkan dapat berupa keluaran atau probabilitas (*response-based*), representasi layer internal (*feature-based*), atau relasi antarfitur (*relation-based*). Bila logits teacher tersedia, student dapat belajar dari distribusi logits. Bila tidak, keluaran teacher dapat digunakan untuk membentuk data sintetis.
 
@@ -69,7 +67,7 @@ Knowledge distillation melatih *student model* agar meniru sebagian perilaku *te
 
 **Rujukan riset:** [Hinton, Vinyals & Dean, “Distilling the Knowledge in a Neural Network” (2015)](https://arxiv.org/abs/1503.02531). Naskah ini beredar sebagai paper arXiv dan NIPS Deep Learning and Representation Learning Workshop.
 
-### Alignment dan reinforcement learning
+## Alignment dan reinforcement learning
 
 **Rujukan riset:** [Ouyang et al., “Training language models to follow instructions with human feedback” (2022), *Advances in Neural Information Processing Systems*](https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html), menjelaskan resep InstructGPT dengan supervised fine-tuning dan umpan balik manusia.
 
@@ -88,3 +86,13 @@ GRPO (*Group Relative Policy Optimization*) membandingkan beberapa keluaran untu
 - [Hugging Face TRL: SFT Trainer](https://huggingface.co/docs/trl/sft_trainer)
 - [Hugging Face PEFT: LoRA](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora)
 - [RAG](rag.md) cocok untuk memasukkan dokumen yang sering berubah ke konteks saat inferensi.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" id="simulator-qlora" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-sliders-horizontal:</span> **Simulator LoRA/QLoRA** <span class="ai-practice-description">Ubah panjang konteks. Bandingkan perkiraan memori GPU dengan pengaturan lain tetap sama.</span>](../../labs/qlora-simulator.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Latih adapter Gemma 4** <span class="ai-practice-description">Siapkan dataset percakapan dan jalankan QLoRA. Bandingkan jawaban model sebelum dan sesudah pelatihan.</span>](https://gemma.ai/tuning/qlora/)
+
+</div>
