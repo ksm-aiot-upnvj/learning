@@ -147,7 +147,7 @@ def check_relevance(test_queries, retrieve_fn):
     print("=" * 50)
     print(f"Total expected hit: {total_expected}")
     print(f"Total hit: {total_hit}")
-    print(f"Accuracy: {total_hit / total_expected * 100:.2f}%")
+    print(f"Hit@5: {total_hit / total_expected * 100:.2f}%")
     print("=" * 50)
 ```
 
@@ -193,7 +193,7 @@ check_relevance(test_queries, retrieve)
 # ==================================================
 # Total expected hit: 20
 # Total hit: 16
-# Accuracy: 80.00%
+# Hit@5: 80.00%
 # ==================================================
 ```
 
@@ -275,7 +275,7 @@ for result in results:
 ```
 
 ```python
-await check_relevance(
+check_relevance(
     test_queries,
     retrieve_bm25
 )
@@ -283,7 +283,7 @@ await check_relevance(
 # ==================================================
 # Total expected hit: 20
 # Total hit: 15
-# Accuracy: 75.00%
+# Hit@5: 75.00%
 # ==================================================
 ```
 
@@ -344,12 +344,12 @@ for result in results:
         result["hybrid_score"]
     )
 
-await check_relevance(test_queries, retrieve_hybrid)
+check_relevance(test_queries, retrieve_hybrid)
 # Output:
 #==================================================
 # Total expected hit: 20
 # Total hit: 18
-# Accuracy: 90.00%
+# Hit@5: 90.00%
 # ==================================================
 ```
 
@@ -411,12 +411,12 @@ for result in rerank_result:
         result["cross_encoder_score"]
     )
 
-await check_relevance(test_queries, retrieve_hybrid_reranked)
+check_relevance(test_queries, retrieve_hybrid_reranked)
 # Output:
 # ==================================================
 # Total expected hit: 20
 # Total hit: 19
-# Accuracy: 95.00%
+# Hit@5: 95.00%
 # ==================================================
 ```
 
@@ -548,7 +548,7 @@ check_relevance(test_queries, retrieve_hyde)
 # ==================================================
 # Total expected hit: 20
 # Total hit: 16
-# Accuracy: 80.00%
+# Hit@5: 80.00%
 # ==================================================
 ```
 
@@ -609,7 +609,7 @@ check_relevance(test_queries, retrieve_hybrid_hyde)
 # ==================================================
 # Total expected hit: 20
 # Total hit: 18
-# Accuracy: 90.00%
+# Hit@5: 90.00%
 # ==================================================
 ```
 
@@ -640,11 +640,13 @@ check_relevance(test_queries, retrieve_hybrid_hyde_reranked)
 # ==================================================
 # Total expected hit: 20
 # Total hit: 18
-# Accuracy: 90.00%
+# Hit@5: 90.00%
 # =================================================
 ```
 
 ## Hasil Eksperimen
+
+> **AI Generated, need human review** — koreksi pemanggilan benchmark dan penyelarasan hasil.
 
 Dari hasil eksperimen dengan beberapa teknik retrieval, diperoleh hasil sebagai berikut:
 
@@ -654,7 +656,7 @@ Dari hasil eksperimen dengan beberapa teknik retrieval, diperoleh hasil sebagai 
 | BM25 (Lexical Retrieval)       |  75%  |
 | Base Retrieval + BM25 (Hybrid) |  90%  |
 | Hybrid + Reranker              |  95%  |
-| HyDE + Base Retrieval          |  90%  |
+| HyDE + Base Retrieval          |  80%  |
 | HyDE + Hybrid                  |  90%  |
 | HyDE + Hybrid + Reranker       |  90%  |
 
@@ -666,7 +668,7 @@ Hasil eksperimen menunjukkan bahwa penambahan atau kombinasi teknik retrieval ti
 * Kualitas kandidat yang dihasilkan pada tahap retrieval
 * Hasil generasi LLM pada HyDE
 
-Pada eksperimen ini, kombinasi **HyDE + Hybrid + Reranker** menghasilkan Hit@5 tertinggi, yaitu **90%**.
+Pada contoh hasil eksperimen ini, **Hybrid + Reranker** memperoleh Hit@5 tertinggi sebesar **95%**. Konfigurasi itu dipakai pada pipeline di bawah.
 
 ## Web Search (DuckDuckGo Search)
 
