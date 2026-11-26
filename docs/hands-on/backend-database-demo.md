@@ -1,6 +1,12 @@
 # Backend dengan PostgreSQL dan MongoDB
 
-Hands-on ini memakai dua demo Express untuk melihat perbedaan akses database. Demo PostgreSQL memakai `pg` dan query SQL. Demo MongoDB memakai Mongoose, schema, model, dan controller. Keduanya memakai Node.js dan Express.
+!!! note "AI Generated"
+
+    Petunjuk paket, cara mengecek hasil, dan penjelasan seeder diperbarui dengan bantuan AI.
+
+Backend memakai driver atau pustaka database untuk menyimpan dan membaca data. Di aplikasi inventaris, satu API dapat menyimpan item sebagai baris SQL, sementara aplikasi lain dapat memakai dokumen untuk mengelompokkan data yang berkaitan.
+
+Kedua demo berikut memakai Express untuk membandingkan pola akses tersebut. PostgreSQL menyimpan item melalui `/api/items`, sedangkan MongoDB menyimpan perangkat melalui `/api/devices`. Untuk latihan yang mengikuti pembacaan sensor sampai dashboard, gunakan jalur `/sensors` di [Dashboard Hands-on](dashboard-hands-on.md).
 
 Pastikan Node.js LTS dan database yang dipilih sudah tersedia. Jalankan satu demo pada satu waktu karena keduanya memakai port `3000`.
 
@@ -9,7 +15,7 @@ Pastikan Node.js LTS dan database yang dipilih sudah tersedia. Jalankan satu dem
 - [Unduh demo PostgreSQL](../assets/demos/backend-postgresql.zip){ .md-button } menyimpan dan membaca data `items` melalui query SQL.
 - [Unduh demo MongoDB](../assets/demos/backend-mongodb.zip){ .md-button } menyediakan API CRUD perangkat dan script untuk mengirim data dummy.
 
-Paket ini tidak menyertakan `.env` dari arsip sumber. Buat file lokal dari `.env.example` dan isi sesuai database milikmu. Jangan membagikan file `.env` atau mengunggahnya ke Git.
+Paket unduhan menyertakan `.env.example` sebagai templat. Simpan salinannya sebagai `.env` di folder demo agar proses lokal dapat membaca setelan database.
 
 ## Demo PostgreSQL
 
@@ -21,7 +27,7 @@ Buat database PostgreSQL, misalnya `aiot_backend_demo`, memakai langkah di [SQL 
 Expand-Archive .\backend-postgresql.zip -DestinationPath .\backend-postgresql
 Set-Location .\backend-postgresql\backend-postgresql
 Copy-Item .env.example .env
-npm ci
+npm.cmd ci
 ```
 
 Ubah `DATABASE_URL` di `.env` agar sesuai username, password, host, port, dan nama database. Contoh formatnya:
@@ -51,14 +57,22 @@ Simpan satu item:
 
 ```powershell
 $body = @{ name = "sensor lab"; value = 28.5 } | ConvertTo-Json
-Invoke-RestMethod `
+$created = Invoke-RestMethod `
   -Method Post `
   -Uri http://localhost:3000/api/items `
   -ContentType "application/json" `
   -Body $body
+$created.data.id
 ```
 
-Panggil `GET /api/items` lagi. Periksa bahwa response `POST` mengembalikan baris yang baru dibuat dan daftar memuat nilai yang sama. Cari di `index.js` query `INSERT` untuk melihat placeholder `$1` dan `$2`.
+Gunakan ID dari respons POST untuk memilih baris yang sama dari respons GET. GET mengembalikan daftar item di properti `data`.
+
+```powershell
+$items = Invoke-RestMethod http://localhost:3000/api/items
+$items.data | Where-Object { $_.id -eq $created.data.id }
+```
+
+Cocokkan nama dan nilai pada baris itu dengan kiriman. Buka `index.js` untuk melihat bagaimana parameter `$1` dan `$2` diteruskan ke query. Jika request tidak mengirim `value`, server menjawab 400.
 
 ## Demo MongoDB
 
@@ -70,7 +84,7 @@ Pastikan MongoDB lokal aktif atau siapkan URI MongoDB yang dapat kamu gunakan. E
 Expand-Archive .\backend-mongodb.zip -DestinationPath .\backend-mongodb
 Set-Location .\backend-mongodb\backend-mongodb
 Copy-Item .env.example .env
-corepack pnpm install --frozen-lockfile
+npx.cmd --yes pnpm@10.18.0 install --frozen-lockfile
 ```
 
 Isi `.env` dengan konfigurasi lokal. Untuk MongoDB lokal, bentuknya seperti berikut:
@@ -81,23 +95,10 @@ MONGO_HOST=mongodb://127.0.0.1:27017
 DB_NAME=aiot_backend_demo
 ```
 
-Sebelum menyalakan server, buka `index.js`. Hapus pemanggilan `connectDB()` dan blok `app.listen()` yang lama. Ganti dengan bootstrap yang menunggu koneksi database:
-
-```js
-const startServer = async () => {
-  await connectDB();
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server berjalan di port ${PORT}`);
-  });
-};
-
-startServer();
-```
-
-Jalankan server setelah perubahan disimpan:
+Jalankan server dari folder demo. Paket unduhan sudah menunggu hasil `connectDB()` sebelum menjalankan `app.listen()`, sehingga API mulai menerima permintaan setelah koneksi MongoDB siap.
 
 ```powershell
-pnpm dev
+npm.cmd run dev
 ```
 
 ### Baca dan buat device
@@ -135,7 +136,13 @@ $created.data._id
 
 Gunakan ID dari hasil tersebut untuk mencoba `GET /api/devices/{id}`, `PUT /api/devices/{id}`, dan `DELETE /api/devices/{id}`. Router menghubungkan method dan path ke controller. Controller memakai model `Device` untuk membaca atau mengubah dokumen.
 
-`seed-api.js` mengirim device dummy setiap 10 detik tanpa berhenti. Jalankan di terminal lain hanya saat ingin mencoba aliran data, lalu hentikan dengan `Ctrl+C`.
+Jalankan seeder dari terminal kedua di folder demo saat API aktif di port 3000. Script bergantian memakai dua nama perangkat dan mengirim satu POST dengan jeda sekitar sepuluh detik. Setiap POST yang berhasil membuat dokumen baru, sehingga daftar dapat memuat beberapa dokumen bernama sama.
+
+```powershell
+node seed-api.js
+```
+
+Gunakan `Ctrl+C` untuk menghentikan script setelah dua kiriman terlihat. Ambil daftar perangkat lagi dan cocokkan ID dokumennya dengan hasil POST.
 
 ## Bandingkan alurnya
 
@@ -148,9 +155,17 @@ Gunakan ID dari hasil tersebut untuk mencoba `GET /api/devices/{id}`, `PUT /api/
 
 ## Perbaikan yang bisa dicoba
 
-1. Tambahkan validasi tipe dan rentang `value` pada endpoint PostgreSQL.
+1. Tambahkan validasi tipe dan rentang `value` pada endpoint PostgreSQL. Uji angka dan nilai teks untuk membandingkan hasilnya.
 2. Batasi field yang dapat dibuat atau diperbarui pada controller MongoDB. Jangan teruskan seluruh `req.body` begitu saja.
 3. Batasi origin `cors()` pada server MongoDB dan tambahkan pemeriksaan autentikasi jika API tidak boleh terbuka.
 4. Ubah server agar tidak mengirim detail error database kepada client.
 
 Untuk praktik Express tanpa database, mulai dari [Backend Mini](backend-mini.md). Untuk menyimpan pembacaan sensor PostgreSQL dan menghubungkannya ke frontend, lanjutkan ke [Dashboard Hands-on](dashboard-hands-on.md).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Dashboard Hands-on** <span class="ai-practice-description">Terapkan pola query PostgreSQL pada endpoint sensor yang dipakai frontend.</span>](dashboard-hands-on.md){ .ai-practice-start }
+
+</div>
