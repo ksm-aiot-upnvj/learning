@@ -1,5 +1,9 @@
 # Asynchronous JavaScript
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Server sering menunggu operasi yang lebih lambat daripada perhitungan biasa, seperti query database atau request ke layanan AI. JavaScript memakai Promise dan `async`/`await` untuk menulis alur tunggu itu dengan jelas.
 
 ## Menunggu operasi
@@ -43,3 +47,13 @@ app.use((error, req, res, next) => {
 Daftarkan middleware error setelah semua route. Jangan mengirim detail internal error ke client.
 
 Untuk query PostgreSQL, driver menyediakan operasi asinkron. Lihat penggunaan database pada [Dashboard Hands-on](../hands-on/dashboard-hands-on.md). Materi ini membahas pola async; ia tidak menggantikan pemahaman tentang query atau transaksi.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-folder-tree:</span> **Struktur Proyek Backend** <span class="ai-practice-description">Ikuti request dari route ke fungsi yang mengolah data.</span>](project-structure.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Lab Async vs Sync** <span class="ai-practice-description">Bandingkan waktu respons saat beberapa request datang bersamaan.</span>](../labs/async-vs-sync.md)
+
+</div>

@@ -1,6 +1,14 @@
 # Backend
 
-Bagian ini memakai **JavaScript, Node.js, dan Express.js**, sesuai materi backend di kelas. Kamu akan membuat API untuk menerima kiriman sensor, memeriksa isinya, lalu menyimpan atau mengirim data.
+!!! note "AI Generated"
+
+    Pembuka dan jalur praktik API pada halaman ini disusun dengan bantuan AI.
+
+Backend adalah bagian aplikasi yang menjalankan aturan dan mengelola data di server. Saat client mengirim permintaan HTTP, backend membaca metode dan alamatnya, menjalankan tindakan yang sesuai, lalu mengirim hasil sebagai respons.
+
+Alur ini bisa terlihat pada aplikasi pemesanan. Saat pengguna mengirim pesanan, backend memeriksa isinya dan menyimpan catatan, sehingga pengguna bisa membuka kembali pesanan itu.
+
+Pada proyek AIoT, yang dikirim adalah pembacaan sensor. Kita memakai JavaScript, Node.js, dan Express.js untuk memvalidasi kiriman sebelum menyimpannya. ID dari respons API membantu menemukan pembacaan yang sama di database dan dashboard.
 
 Python tetap dipelajari pada bagian AI karena banyak alat machine learning dan deep learning menggunakannya. Di proyek KSM, backend yang sudah ada dapat memakai FastAPI. Halaman [Express.js dan FastAPI di KSM](express-fastapi-bridge.md) menunjukkan hubungan keduanya.
 
@@ -32,7 +40,9 @@ sequenceDiagram
 7. [Akses Database dari Express](database-integration.md): membandingkan query SQL dengan `pg` dan model dokumen dengan Mongoose.
 8. [Express.js dan FastAPI di KSM](express-fastapi-bridge.md): membandingkan pola yang sama di proyek Python.
 
-Setelah API dasar dikenali, jalankan [Backend Mini](../hands-on/backend-mini.md). Lanjutkan ke [Backend dengan PostgreSQL dan MongoDB](../hands-on/backend-database-demo.md) untuk mencoba dua demo, lalu [Dashboard Hands-on](../hands-on/dashboard-hands-on.md) untuk menghubungkan device, PostgreSQL, dan frontend.
+Setelah mengenal route, jalankan [Backend Mini](../hands-on/backend-mini.md) dan periksa respons valid serta respons 400 lewat Postman. Buat [tabel pembacaan](../hands-on/database-mini.md#buat-tabel), lalu ikuti [Dashboard Hands-on](../hands-on/dashboard-hands-on.md) untuk menelusuri satu ID pembacaan sampai tabel Vue.
+
+Gunakan [demo PostgreSQL dan MongoDB](../hands-on/backend-database-demo.md) sebagai materi pembanding akses database. Masing-masing memakai proyek dengan endpoint dan bentuk data sendiri.
 
 ## Hasil yang dituju
 
@@ -44,3 +54,13 @@ Setelah API dasar dikenali, jalankan [Backend Mini](../hands-on/backend-mini.md)
 - Mengenali padanan alur Express.js pada backend FastAPI di proyek KSM.
 
 [Kembali ke Home](../index.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-code-xml:</span> **JavaScript Fundamental** <span class="ai-practice-description">Kenali nilai, fungsi, dan objek yang akan dipakai di handler.</span>](javascript-fundamental.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Backend Mini** <span class="ai-practice-description">Jalankan API Express dan uji responsnya di Postman.</span>](../hands-on/backend-mini.md)
+
+</div>

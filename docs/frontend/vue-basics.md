@@ -1,8 +1,14 @@
 # Vue Basics
 
-Vue membantu kita membangun frontend dari potongan kecil bernama **component**.
+!!! note "AI Generated"
 
-Component bisa dianggap seperti bagian dashboard yang punya tugas sendiri: kartu sensor, tabel data, tombol refresh, atau panel status device.
+    Jalur dari contoh komponen ke dashboard dengan API disusun dengan bantuan AI.
+
+Vue membantu kita membangun antarmuka dari potongan bernama **component**. Sebuah komponen memuat tampilan dan perilaku untuk satu bagian halaman. Ketika data komponen berubah, Vue memperbarui bagian yang memakainya.
+
+Pada halaman katalog, tim dapat memakai komponen kartu yang sama untuk setiap produk. Tiap kartu menerima nama dan harga yang berbeda melalui data dari halaman induk.
+
+Dashboard AIoT memakai pola itu untuk pembacaan sensor. Halaman dapat meneruskan satu pembacaan ke kartu, sementara daftar dari API ditampilkan sebagai tabel.
 
 ## Kenapa Pakai Component?
 
@@ -60,7 +66,7 @@ Untuk pemula, cukup ingat satu pola:
 
 ## Ikuti data halaman ke prop komponen
 
-Repo materi ini belum menyertakan aplikasi Vue untuk ditelusuri. Gunakan contoh mini berikut untuk melihat satu nilai diteruskan dari halaman ke komponen.
+Gunakan dua komponen berikut untuk melihat satu nilai diteruskan dari halaman ke komponen anak. Setelah mengenal props, coba [Dashboard Hands-on](../hands-on/dashboard-hands-on.md#jalankan-dashboard-vue) untuk menjalankan Vue dengan data yang dibaca dari API.
 
 `Dashboard.vue`:
 
@@ -91,3 +97,11 @@ defineProps<{ deviceId: string; value: number }>();
 Ikuti `reading.value` dari halaman ke prop `value`; komponen menampilkannya sebagai `28.5 °C`. Atribut `:device-id` diterima sebagai prop `deviceId`.
 
 [Kembali ke Overview Frontend](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-layout-dashboard:</span> **Integrasi Frontend dengan API** <span class="ai-practice-description">Muat data dari Express dan tampilkan keadaan yang sesuai dengan respons.</span>](api-integration.md){ .ai-practice-start }
+
+</div>

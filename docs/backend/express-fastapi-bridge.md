@@ -1,5 +1,9 @@
 # Express.js dan FastAPI
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Pada dokumentasi ini lebih dikenalkan dengan Express.js yang menggunakan JavaScript. Lalu adakah framework lain yang bisa dipakai untuk membangun backend? Tentu ada, salah satu contohnya adalah FastAPI yang menggunakan Python. Secara umum, penggunaan FastAPI mirip dengan Express.js yang dapat dilihat pada tabel berikut.
 
 ## Pola yang sama
@@ -56,3 +60,11 @@ FastAPI secara bawaan mengintegrasikan pengembangan API dengan Pydantic dan Open
 Sebenarnya tidak ada aturan baku dalam memilih framework backend. Express.js dan FastAPI sama-sama dapat digunakan untuk membangun backend yang baik. Pilihan framework tergantung pada bahasa pemrograman yang dikuasai, kebutuhan proyek, dan preferensi tim pengembang.
 
 Pada pengembangan proyek di KSM AIoT, hampir semua backend menggunakan FastAPI. Hal ini dikarenakan poin-poin kelebihan FastAPI yang telah disebutkan sebelumnya. Apakah Express.js bisa menawarkan hal yang sama? Bisa saja, tetapi perlu menambahkan library tambahan untuk validasi dan dokumentasi API. FastAPI sudah menyediakan fitur tersebut secara bawaan, sehingga lebih efisien dalam pengembangan backend.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Database** <span class="ai-practice-description">Lanjutkan dari route dan validasi ke penyimpanan data.</span>](../database/overview.md){ .ai-practice-start }
+
+</div>

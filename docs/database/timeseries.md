@@ -1,5 +1,9 @@
 # Time-Series dan TimescaleDB
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Time-series adalah catatan yang memiliki urutan waktu, seperti suhu setiap menit. Kolom waktu harus menyatakan peristiwa yang ingin dianalisis. Pada data sensor, biasanya itu waktu pengukuran (`measured_at`), bukan waktu ID dibuat.
 
 ## Apa itu TimescaleDB?
@@ -110,3 +114,13 @@ Untuk contoh nilai `28.5`, `29.0`, dan `29.5 °C` dalam satu interval, rata-rata
 Gunakan PostgreSQL biasa untuk mulai belajar, menguji skema, dan menyimpan data sensor dalam skala awal. Pertimbangkan TimescaleDB saat volume data, query rentang waktu, ringkasan berkala, atau pengelolaan masa simpan membuat partisi manual sulit. Ukur query pada pola data sendiri; TimescaleDB bukan kewajiban untuk setiap tabel yang memiliki kolom waktu.
 
 [Kembali ke Overview Database](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-layout-dashboard:</span> **Frontend** <span class="ai-practice-description">Lanjutkan ke tampilan yang menyajikan pembacaan dari API.</span>](../frontend/overview.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Dashboard Hands-on** <span class="ai-practice-description">Coba alur dengan PostgreSQL biasa sebelum memperluas skema time-series.</span>](../hands-on/dashboard-hands-on.md)
+
+</div>

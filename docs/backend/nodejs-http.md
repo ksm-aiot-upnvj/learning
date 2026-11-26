@@ -1,5 +1,9 @@
 # Node.js dan HTTP
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Browser menjalankan JavaScript untuk membuat halaman interaktif. **Node.js** menjalankan JavaScript di luar browser, termasuk untuk membuat server.
 
 ## Siapkan proyek
@@ -41,3 +45,11 @@ HTTP adalah cara komunikasi antara device, frontend, dan API. Ringkasan method d
 Node.js menyediakan runtime dan API server tingkat rendah. Express menambahkan cara ringkas untuk mendaftarkan route dan middleware. Pada materi ini, Express menjadi alat untuk menerapkan konsep HTTP yang sudah dipelajari.
 
 Lanjutkan ke [API dengan Express.js](express-api.md).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-server:</span> **API dengan Express.js** <span class="ai-practice-description">Daftarkan route berdasarkan metode dan alamat HTTP.</span>](express-api.md){ .ai-practice-start }
+
+</div>

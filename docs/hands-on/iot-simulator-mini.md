@@ -1,5 +1,9 @@
 # IoT Simulator Mini
 
+!!! note "AI Generated"
+
+    Tautan pemeriksaan pembacaan yang tersimpan diperbarui dengan bantuan AI.
+
 Di modul ini kamu akan menggunakan script Python untuk mengirim data sensor ke backend. Tujuan dari script ini menggantikan perangkat ESP32 selama latihan ketika kalian tidak memiliki perangkat fisik.
 
 ## Data yang Dikirim
@@ -54,7 +58,7 @@ Pastikan Backend Mini hidup, lalu jalankan:
 uv run python mini_iot/send_sensor.py
 ```
 
-Sebelum API dihubungkan ke database, respons berisi pesan “Data sensor diterima”. Setelah [Dashboard Hands-on](dashboard-hands-on.md), pesannya menjadi “Data sensor disimpan” dan respons juga memuat ID serta `recorded_at`.
+Sebelum API dihubungkan ke database, respons berisi pesan “Data sensor diterima”. Setelah [Dashboard Hands-on](dashboard-hands-on.md), pesannya menjadi “Data sensor disimpan”. Gunakan `data.id` dari respons untuk [mencari baris yang sama di PostgreSQL](database-mini.md#cari-baris-dari-respons-api) dan mencocokkannya dengan tabel Vue.
 
 ## Kirim Data pH
 
@@ -77,3 +81,11 @@ random.uniform(5.5, 7.5)
 ```
 
 Ubah juga `unit` dari `"celsius"` menjadi `"pH"`. Periksa bahwa respons menampilkan jenis `ph`, satuan `pH`, dan nilai di rentang contoh.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Dashboard Hands-on** <span class="ai-practice-description">Simpan kiriman simulator dan lacak ID-nya sampai tabel Vue.</span>](dashboard-hands-on.md){ .ai-practice-start }
+
+</div>

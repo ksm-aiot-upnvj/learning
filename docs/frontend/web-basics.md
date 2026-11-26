@@ -1,5 +1,9 @@
 # Web Basics untuk Dashboard
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Frontend adalah bagian yang dilihat dan dipakai pengguna.
 
 Dalam proyek AIoT, frontend sering berbentuk dashboard: halaman yang menampilkan status device, data sensor, grafik, tombol kontrol, atau pesan error.
@@ -175,3 +179,11 @@ Buka file `index.html` pada [Frontend Mini](../hands-on/frontend-mini.md). Latih
 Klik **Refresh** saat Backend Mini berjalan. Elemen `<pre>` menampilkan `{"status":"ok"}`. Jika backend tidak dapat dijangkau, fungsi menampilkan `Gagal mengambil data dari backend.`.
 
 [Kembali ke Overview Frontend](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-code-xml:</span> **JavaScript untuk Frontend** <span class="ai-practice-description">Hubungkan klik tombol dengan perubahan data di halaman.</span>](javascript.md){ .ai-practice-start }
+
+</div>

@@ -1,5 +1,9 @@
 # Desain Data IoT
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 Satu perangkat dapat mengirim banyak pembacaan. Simpan informasi perangkat sekali, lalu hubungkan setiap pembacaan ke perangkat itu lewat `device_id`. Pisahkan pula waktu pengukuran dari waktu backend menerima data; keduanya berbeda saat device mengirim ulang data setelah koneksi terputus.
 
 ## Contoh tabel perangkat dan pembacaan
@@ -69,3 +73,11 @@ Pembacaan sensor biasanya bersifat append-only, jadi kolom `updated_at` tidak di
 KSM AIoT memakai UUIDv7 sebagai ID unik untuk data time-series. Sebelum mengubah tabel PostgreSQL biasa menjadi hypertable yang dipartisi menurut waktu pengukuran, baca batasan primary key pada [Time-Series dan TimescaleDB](timeseries.md#aturan-unik-dan-primary-key). Aturan TimescaleDB mengharuskan indeks unik menyertakan kolom partisi.
 
 [Kembali ke Overview Database](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **UUIDv4 dan UUIDv7** <span class="ai-practice-description">Lihat konsekuensi pilihan ID saat mencatat data yang bertambah terus.</span>](uuid-identifiers.md){ .ai-practice-start }
+
+</div>

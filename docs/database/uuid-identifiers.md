@@ -1,5 +1,9 @@
 # UUIDv4 dan UUIDv7
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 UUID adalah ID 128-bit yang dapat dibuat tanpa meminta nomor dari satu server pusat. UUIDv4 mengisi ID dengan nilai acak. UUIDv7 menaruh timestamp Unix di bagian awal dan sisa bit untuk presisi tambahan serta nilai acak. Format dan versinya ditetapkan dalam [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562.html).
 
 ## Perbandingan
@@ -62,3 +66,11 @@ RFC 9562 dan dokumentasi PostgreSQL menjelaskan format dan perilaku UUID; benchm
 - [Aturan unique index TimescaleDB](https://github.com/timescale/docs/blob/latest/use-timescale/hypertables/hypertables-and-unique-indexes.md) — batasan indeks unik pada hypertable.
 
 [Kembali ke Overview Database](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Time-Series dan TimescaleDB** <span class="ai-practice-description">Pelajari bagaimana waktu pengukuran dipakai untuk membagi dan membaca data.</span>](timeseries.md){ .ai-practice-start }
+
+</div>

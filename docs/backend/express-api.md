@@ -1,63 +1,39 @@
 # API dengan Express.js
 
-Express menerima request HTTP, mencocokkan method dan path ke route, lalu mengirim response. Contoh ini memakai endpoint `GET /health` dan `POST /sensors`.
+!!! note "AI Generated"
 
-## Pasang Express
+    Pembuka, penjelasan route, dan jalur uji Postman disusun dengan bantuan AI.
 
-Di folder `mini_backend`, jalankan:
+Express adalah pustaka Node.js untuk membuat aplikasi web dan API HTTP. Saat permintaan masuk, Express mencocokkan metode dan alamatnya dengan sebuah *route*. Fungsi yang menangani route itu membaca permintaan dan menentukan isi serta status respons.
 
-```powershell
-npm install express cors
-```
+Aplikasi web memakai pola ini untuk membaca atau mengirim data. Misalnya, layanan katalog dapat menjawab `GET /products` dengan daftar produk, sedangkan formulir dapat mengirim data ke server melalui POST.
 
-Buat `main.js`:
+Pada praktik AIoT, kita memakai `GET /health` untuk memeriksa server dan `POST /sensors` untuk menerima pembacaan. Keduanya ada di satu proyek [Backend Mini](../hands-on/backend-mini.md), sehingga proyek yang sama bisa dilanjutkan sampai PostgreSQL.
+
+## Baca satu route
 
 ```js
-const express = require("express");
-const cors = require("cors");
-
-const app = express();
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
-app.use(express.json());
-
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
-
-app.post("/sensors", (req, res) => {
-  res.status(201).json({
-    message: "Data sensor diterima",
-    data: req.body,
-  });
-});
-
-app.listen(8000, "127.0.0.1", () => {
-  console.log("API berjalan di http://127.0.0.1:8000");
-});
 ```
 
-`express.json()` membaca body JSON dan mengisinya ke `req.body`. `res.json()` mengirim response JSON. Route POST menggunakan status `201` karena contoh menandai data sebagai resource baru.
+`app.get` memasangkan metode GET dan path `/health` dengan fungsi yang dipanggil saat permintaan cocok. Fungsi ini menerima `req` untuk membaca permintaan dan `res` untuk mengirim respons. `res.json()` mengirim objek sebagai JSON.
 
-## Jalankan dan periksa
+Route POST membaca data yang dikirim lewat body. `express.json()` memproses body sebelum handler dijalankan, sehingga data tersedia di `req.body`. Middleware validasi memeriksa bentuk data itu sebelum handler memakainya. [Validasi dan Middleware](validation-middleware.md)
 
-```powershell
-node main.js
-```
+## Uji API dengan Postman
 
-Buka `http://127.0.0.1:8000/health`. Untuk mengirim data, buka `http://127.0.0.1:8000/docs` tidak tersedia secara bawaan di Express; gunakan `curl`, Postman, atau halaman Frontend Mini. Contoh dengan curl:
+Postman adalah client API yang bisa mengirim request dan menampilkan status, header, serta isi respons. Pengembang dapat memeriksa API secara langsung saat antarmuka web masih dibuat. Alat ini juga membantu membandingkan respons dari dua kiriman yang berbeda. [Pengantar Postman](https://learning.postman.com/docs/getting-started/quick-start/)
 
-```powershell
-curl.exe -X POST http://127.0.0.1:8000/sensors `
-  -H "Content-Type: application/json" `
-  -d '{"device_id":"esp32-01","sensor_type":"temperature","value":28.5,"unit":"celsius"}'
-```
+Di [Backend Mini](../hands-on/backend-mini.md#uji-api-dengan-postman), kirim GET untuk melihat apakah server merespons. Lalu kirim POST dengan JSON lengkap dan ulangi dengan satu field dihapus agar perbedaan hasil validasi terlihat.
 
-Contoh ini mengembalikan data yang dikirim, belum menyimpannya. Penyimpanan PostgreSQL dibahas di [Dashboard Hands-on](../hands-on/dashboard-hands-on.md).
+## What's next
 
-## Arti parameter handler
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
 
-- `req` berisi informasi request, seperti `req.params`, `req.query`, dan `req.body`.
-- `res` dipakai untuk mengirim status dan response.
-- `(req, res) => { ... }` adalah fungsi yang dipanggil Express untuk route tersebut.
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-list-checks:</span> **Validasi dan Middleware** <span class="ai-practice-description">Periksa body JSON sebelum handler memakai datanya.</span>](validation-middleware.md){ .ai-practice-start }
 
-Sebelum mempercayai `req.body`, periksa bentuk dan nilainya. Lanjutkan ke [Validasi dan Middleware](validation-middleware.md).
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Uji API dengan Postman** <span class="ai-practice-description">Bandingkan respons GET, POST valid, dan POST yang ditolak.</span>](../hands-on/backend-mini.md#uji-api-dengan-postman)
+
+</div>

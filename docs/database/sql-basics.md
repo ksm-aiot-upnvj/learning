@@ -1,5 +1,9 @@
 # SQL Basics
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 SQL adalah bahasa untuk berbicara dengan database relasional seperti PostgreSQL.
 
 Kalau backend adalah penerima pesan, database adalah tempat menyimpan catatan.
@@ -216,3 +220,13 @@ LIMIT 3;
 Urutan hasilnya 10:02 (28.6), 10:01 (28.7), lalu 10:00 (28.5). Filter jenis sensor mencegah suhu tercampur dengan kelembapan.
 
 [Kembali ke Overview Database](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Database Mini** <span class="ai-practice-description">Uji tabel latihan dan cari baris berdasarkan ID dari respons API.</span>](../hands-on/database-mini.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Desain Data IoT** <span class="ai-practice-description">Pelajari cara memisahkan metadata perangkat dari pembacaan.</span>](data-modeling.md)
+
+</div>

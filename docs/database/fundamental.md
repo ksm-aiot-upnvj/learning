@@ -1,5 +1,9 @@
 # Database Fundamental
 
+!!! note "AI Generated"
+
+    Kartu What's next pada halaman ini disusun dengan bantuan AI.
+
 PostgreSQL adalah database relasional. Data disimpan dalam tabel yang punya kolom tertentu, dan tabel dapat dihubungkan melalui kunci. Contoh paling sederhana adalah tabel perangkat dan tabel pembacaan sensor.
 
 ## Tabel, baris, dan kolom
@@ -57,3 +61,11 @@ Jika data perangkat dan pembacaan dicampur, nama dan lokasi perangkat akan berul
 Materi berikutnya menunjukkan cara membuat database dan menulis query di [SQL Basics](sql-basics.md). Contoh struktur sensor yang lebih lengkap ada di [Desain Data IoT](data-modeling.md).
 
 [Kembali ke Overview Database](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **SQL Basics** <span class="ai-practice-description">Buat tabel dan baca pembacaan dengan query SQL.</span>](sql-basics.md){ .ai-practice-start }
+
+</div>

@@ -51,6 +51,10 @@ Demo PostgreSQL lebih ringkas: `db.js` membuat `Pool`, sementara `index.js` meny
 
 ## Ikuti satu request
 
+!!! note "AI Generated"
+
+    Penelusuran berkas pada jalur latihan sensor diperbarui dengan bantuan AI.
+
 ```mermaid
 flowchart LR
     A[POST /sensors] --> B[Route]
@@ -62,6 +66,16 @@ flowchart LR
     G --> H[Response JSON]
 ```
 
-Pada [Backend Mini](../hands-on/backend-mini.md), semua langkah masih berada di `main.js`. Pada [demo MongoDB](../hands-on/backend-database-demo.md), ikuti `POST /api/devices` dari route ke controller lalu model. Jangan menganggap suatu lapisan dipakai sebelum melihat pemanggilannya.
+Diagram di atas menunjukkan pembagian lapisan yang bisa dipakai saat aplikasi bertambah besar. Pada [Backend Mini](../hands-on/backend-mini.md), route ada di `main.js` dan pemeriksaan input ada di `validate-sensor.cjs`. Pada [Dashboard Hands-on](../hands-on/dashboard-hands-on.md), `dashboard-backend.cjs` memanggil validator yang sama sebelum menjalankan query.
+
+Untuk melihat contoh dengan beberapa folder, ikuti `POST /api/devices` pada [demo MongoDB](../hands-on/backend-database-demo.md) dari route ke controller, lalu ke model. Setiap perpindahan dapat dilihat dari fungsi yang diimpor dan dipanggil.
 
 Pemisahan ini juga berlaku pada FastAPI, meskipun nama file dan cara validasinya berbeda. Lihat [padanan Express.js dan FastAPI](express-fastapi-bridge.md).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Akses Database dari Express** <span class="ai-practice-description">Ikuti handler hingga query PostgreSQL atau pemanggilan model Mongoose.</span>](database-integration.md){ .ai-practice-start }
+
+</div>

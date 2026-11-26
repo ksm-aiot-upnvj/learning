@@ -1,8 +1,14 @@
 # Frontend Development
 
-Halaman frontend berisi jalur belajar untuk membangun antarmuka dashboard AIoT yang membaca data dari backend dan menampilkan informasi secara real-time.
+!!! note "AI Generated"
 
-Frontend adalah bagian yang membuat data terasa bisa dibaca manusia. Dalam AIoT, frontend biasanya menampilkan status device, tabel data sensor, grafik, tombol refresh, dan pesan error.
+    Pembuka dan jalur dari cek API ke dashboard Vue disusun dengan bantuan AI.
+
+Frontend adalah bagian aplikasi yang dilihat dan dipakai pengguna. Saat pengguna membuka halaman atau menekan tombol, frontend dapat meminta data, lalu memperbarui tampilan berdasarkan respons server.
+
+Pada aplikasi toko, halaman riwayat pesanan mengambil data dari API dan menampilkannya sebagai daftar. Jika daftar kosong atau server gagal merespons, antarmuka menunjukkan pesan yang berbeda karena tindakan pengguna berikutnya juga berbeda.
+
+Di proyek AIoT, alur yang sama dipakai untuk menampilkan pembacaan sensor. Coba sambungan awal lewat `/health`, lalu muat `/sensors` dari Vue untuk melihat ID, nilai, satuan, dan waktu simpan.
 
 ## Alur Besar
 
@@ -22,7 +28,8 @@ flowchart LR
 4. [Vue Basics](vue-basics.md)
 5. [Integrasi Frontend dengan API](api-integration.md)
 6. [Jalur Praktik Frontend](fundamental.md)
-7. [Frontend Mini](../hands-on/frontend-mini.md)
+7. [Frontend Mini](../hands-on/frontend-mini.md) untuk memeriksa koneksi browser ke API.
+8. [Dashboard Hands-on](../hands-on/dashboard-hands-on.md#jalankan-dashboard-vue) untuk mencocokkan data Vue dengan respons Express dan baris PostgreSQL.
 
 ## Capaian Belajar
 
@@ -34,3 +41,13 @@ flowchart LR
 - Membaca struktur folder frontend tanpa tersesat.
 
 [Kembali ke Home](../index.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-code-xml:</span> **Web Basics untuk Dashboard** <span class="ai-practice-description">Kenali peran HTML, CSS, dan JavaScript saat halaman menampilkan respons.</span>](web-basics.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Dashboard Hands-on** <span class="ai-practice-description">Jalankan Express dan Vue untuk melihat ID pembacaan yang sama.</span>](../hands-on/dashboard-hands-on.md)
+
+</div>

@@ -1,6 +1,14 @@
 # Database
 
-Bagian ini memakai PostgreSQL untuk menyimpan data perangkat, pembacaan sensor, dan riwayat sistem. Kamu akan mulai dari konsep tabel dan SQL, lalu merancang data sensor. Setelah itu, materi UUID menjelaskan ID yang dipakai KSM AIoT, dan Time-Series memperkenalkan TimescaleDB untuk mengelola data berdasarkan waktu.
+!!! note "AI Generated"
+
+    Pembuka dan jalur dari respons API ke baris database disusun dengan bantuan AI.
+
+Database menyimpan data secara terstruktur agar aplikasi dapat membaca dan memperbaruinya kembali. Pada database relasional seperti PostgreSQL, data tersusun dalam tabel, dan ID membantu menemukan satu baris tertentu.
+
+Aplikasi toko dapat memakai tabel untuk mencatat pesanan. Saat pelanggan membuka riwayat, aplikasi mencari pesanan yang sudah tersimpan dan mengembalikan rinciannya melalui API.
+
+Di proyek AIoT, satu kiriman sensor menjadi satu baris pembacaan. PostgreSQL memberikan ID ketika baris disimpan, sehingga peserta dapat mencocokkan respons API dengan hasil query dan tampilan dashboard.
 
 ## Alur data
 
@@ -27,6 +35,16 @@ Database menyimpan data agar backend dan dashboard dapat membaca catatan yang sa
 
 ## Setelah bagian ini
 
-Kamu akan bisa membaca struktur tabel, menulis query untuk sensor, dan menjelaskan kapan PostgreSQL biasa cukup serta kapan TimescaleDB membantu. Data historis yang dibaca dengan query juga dapat menjadi sumber fitur untuk [Machine Learning](../ai/machine-learning/overview.md). Untuk alur kirim data dari backend sampai dashboard, lanjutkan ke [Dashboard Hands-on](../hands-on/dashboard-hands-on.md).
+Kamu akan bisa membaca struktur tabel, menulis query untuk sensor, dan menjelaskan kapan PostgreSQL biasa cukup serta kapan TimescaleDB membantu. Data historis yang dibaca dengan query juga dapat menjadi sumber fitur untuk [Machine Learning](../ai/machine-learning/overview.md). Untuk mengikuti data dari backend sampai dashboard, mulai dari [membuat tabel](../hands-on/database-mini.md#buat-tabel), lalu [cari baris dari respons API](../hands-on/database-mini.md#cari-baris-dari-respons-api).
 
 [Kembali ke Home](../index.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-database:</span> **Database Fundamental** <span class="ai-practice-description">Kenali tabel, tipe data, dan kunci yang membantu menemukan satu baris.</span>](fundamental.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Database Mini** <span class="ai-practice-description">Buat tabel untuk menyimpan pembacaan yang dikirim dari Express.</span>](../hands-on/database-mini.md#buat-tabel)
+
+</div>
