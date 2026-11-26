@@ -11,28 +11,28 @@ Sensor pH dapat mengirim angka yang terlihat wajar saat pembacaannya sudah macet
 1. Buat folder latihan kosong.
 2. Simpan [sensor_data.py](../assets/ai-labs/sensor_data.py) ke folder latihan.
 3. Simpan [sensor_anomalies.py](../assets/ai-labs/sensor_anomalies.py) ke folder latihan.
-4. Buka PowerShell tanpa profil di folder latihan.
+4. Buka terminal di folder latihan.
 5. Inisialisasi proyek Python.
 
-    ```powershell
+    ```console
     uv init --bare
     ```
 
 6. Pasang pustaka untuk membuat grafik.
 
-    ```powershell
+    ```console
     uv add matplotlib
     ```
 
 7. Buat CSV yang berisi pembacaan dua perangkat.
 
-    ```powershell
+    ```console
     uv run python sensor_data.py
     ```
 
 8. Jalankan script deteksi.
 
-    ```powershell
+    ```console
     uv run python sensor_anomalies.py
     ```
 
@@ -48,7 +48,7 @@ Kedua cara diharapkan menandai lonjakan pukul `00:25 UTC`. Ambang tetap juga mem
 
 Jalankan perintah berikut setelah menandai dugaan anomali. Script melaporkan waktu dari awal tiap kejadian hingga alarm pertama, atau status `terlewat` jika tidak ada alarm di jendela kejadian.
 
-```powershell
+```console
 uv run python sensor_anomalies.py --evaluate
 ```
 

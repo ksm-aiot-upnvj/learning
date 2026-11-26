@@ -20,19 +20,33 @@ Buat database kosong bernama `aiot_dashboard` dengan langkah dari [SQL Basics](.
 4. Periksa bahwa [validate-sensor.cjs](../assets/demos/sensor-dashboard/validate-sensor.cjs) ada di folder yang sama.
 5. Pasang driver PostgreSQL dari terminal proyek.
 
-    ```powershell
-    npm.cmd install pg
+    ```console
+    npm install pg
     ```
 
 6. Atur URL PostgreSQL sesuai akun lokal.
 
-    ```powershell
-    $env:DATABASE_URL = 'postgresql://USERNAME:PASSWORD@127.0.0.1:5432/aiot_dashboard'
-    ```
+    === "Windows"
+
+        ```powershell
+        $env:DATABASE_URL = 'postgresql://USERNAME:PASSWORD@127.0.0.1:5432/aiot_dashboard'
+        ```
+
+    === "macOS"
+
+        ```sh
+        export DATABASE_URL='postgresql://USERNAME:PASSWORD@127.0.0.1:5432/aiot_dashboard'
+        ```
+
+    === "Linux"
+
+        ```sh
+        export DATABASE_URL='postgresql://USERNAME:PASSWORD@127.0.0.1:5432/aiot_dashboard'
+        ```
 
 7. Jalankan server di terminal yang sama.
 
-    ```powershell
+    ```console
     node dashboard-backend.cjs
     ```
 
@@ -45,25 +59,25 @@ Middleware validasi tetap memakai empat field dari Backend Mini. Jika valid, han
 Vue memperbarui elemen halaman ketika data atau status request berubah. Di sini, `App.vue` meminta `GET /sensors` saat halaman dibuka dan ketika tombol **Muat ulang** diklik. Nilai sensor tetap berasal dari API. [Integrasi API di Frontend](../frontend/api-integration.md)
 
 1. Siapkan Node.js yang memenuhi [prasyarat Vue](https://vuejs.org/guide/quick-start.html#creating-a-vue-application).
-2. Buka terminal PowerShell lain di direktori tempat folder dashboard akan dibuat.
+2. Buka terminal lain di direktori tempat folder dashboard akan dibuat.
 3. Buat proyek Vue dengan Vite.
 
-    ```powershell
-    npm.cmd create vite@latest dashboard-sensor -- --template vue --no-interactive
+    ```console
+    npm create vite@latest dashboard-sensor -- --template vue
     ```
 
 4. Buka folder `dashboard-sensor` di VS Code.
 5. Ganti `src/App.vue` dengan [App.vue untuk dashboard sensor](../assets/demos/sensor-dashboard/App.vue).
 6. Pasang dependensi dari terminal proyek.
 
-    ```powershell
-    npm.cmd install
+    ```console
+    npm install
     ```
 
 7. Jalankan Vite pada origin yang diizinkan API.
 
-    ```powershell
-    npm.cmd run dev -- --host 127.0.0.1 --port 5500 --strictPort
+    ```console
+    npm run dev -- --host 127.0.0.1 --port 5500 --strictPort
     ```
 
 8. Buka `http://127.0.0.1:5500/`.

@@ -12,13 +12,31 @@ Tombol **Refresh** menjalankan fungsi `loadHealth`. Elemen `<pre>` menampilkan s
 
 ## Buat File HTML
 
-Buat folder dan file. Jika folder sudah ada, cukup buat `index.html` di dalamnya.
+Buat folder `mini_frontend`, masuk ke dalamnya, lalu buat `index.html`. Jika folder sudah ada, lewati perintah untuk membuat folder.
 
-```powershell
-mkdir mini_frontend
-Set-Location mini_frontend
-New-Item index.html
-```
+=== "Windows"
+
+    ```powershell
+    mkdir mini_frontend
+    cd mini_frontend
+    New-Item -ItemType File index.html
+    ```
+
+=== "macOS"
+
+    ```sh
+    mkdir mini_frontend
+    cd mini_frontend
+    touch index.html
+    ```
+
+=== "Linux"
+
+    ```sh
+    mkdir mini_frontend
+    cd mini_frontend
+    touch index.html
+    ```
 
 Isi:
 

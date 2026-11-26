@@ -7,7 +7,7 @@ Pada [latihan JavaScript](javascript.md), fungsi penampil berhenti saat mendapat
 `SensorResponse` menggambarkan respons `POST /sensors` dari [Backend Mini](../hands-on/backend-mini.md). Tipe ini mencatat bahwa respons memuat pesan dan satu pembacaan. ID perangkat tetap teks, sedangkan `data.value` harus berupa angka agar fungsi bisa memakai `toFixed()`.
 
 1. Siapkan Node.js dan npm.
-2. Buka PowerShell tanpa profil di folder latihan.
+2. Buka terminal di folder latihan.
 3. Simpan contoh berikut sebagai `sensor-response.ts`.
 
     ```ts
@@ -40,8 +40,8 @@ Pada [latihan JavaScript](javascript.md), fungsi penampil berhenti saat mendapat
 
 4. Periksa tipe tanpa menghasilkan berkas JavaScript.
 
-    ```powershell
-    npx.cmd --yes --package typescript tsc --strict --noEmit sensor-response.ts
+    ```console
+    npx --yes --package typescript tsc --strict --noEmit sensor-response.ts
     ```
 
 Perintah selesai tanpa pesan jika seluruh tipe cocok. Ubah `value` menjadi `"28.5"`, lalu ulangi pemeriksaan. Compiler menolak teks pada properti bertipe `number` sebelum fungsi dijalankan. [Opsi compiler TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html)

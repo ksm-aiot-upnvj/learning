@@ -4,50 +4,106 @@
 
     Penjelasan Docker dan langkah menjalankan paket aplikasi sensor disusun dengan bantuan AI.
 
-Docker menjalankan proses dalam *container*, yaitu lingkungan terisolasi yang dibuat dari *image*. Image menyediakan berkas dan dependensi yang dibutuhkan aplikasi. Dockerfile berisi instruksi untuk membangun image tersebut.
+Docker membantu menjalankan aplikasi dengan berkas dan dependensi yang sudah disiapkan. Bayangkan Dockerfile sebagai resep, image sebagai paket siap olah yang dibuat dari resep itu, dan container sebagai satu aplikasi yang berjalan dari paket tersebut.
 
-Aplikasi yang memiliki beberapa layanan, seperti situs katalog dengan API dan database, dapat dijalankan lewat Docker Compose. Berkas `compose.yaml` mencatat layanan, jaringan, volume, dan port yang dipakai, sehingga pengaturan bisa diulang dari berkas yang sama.
+Docker membaca Dockerfile untuk membangun image. Saat image dijalankan, Docker membuat container; beberapa container dapat dibuat dari image yang sama, seperti beberapa porsi dari satu resep.
 
-Latihan AIoT memakai tiga layanan bernama `db`, `api`, dan `web`. PostgreSQL menyimpan pembacaan, Express memproses request, dan NGINX menyajikan hasil build Vue sekaligus meneruskan request API.
+Saat aplikasi memiliki beberapa bagian, Docker Compose mengatur container yang perlu berjalan bersama. Pada latihan AIoT, berkas `compose.yaml` menyiapkan layanan `db`, `api`, dan `web`: PostgreSQL menyimpan pembacaan, Express memproses request, dan NGINX menyajikan Vue serta meneruskan request API.
+
+![Dockerfile menjadi image, lalu image dijalankan sebagai container](../assets/images/docker-image-container.svg)
+
+## Siapkan Docker
+
+Pilih cara memasang Docker sesuai sistem operasi. Windows dan macOS memakai Docker Desktop, sedangkan Linux memasang Docker Engine dan Compose dari paket distribusi.
+
+Tab di bawah mengikuti sistem operasi mesin tempat perintah dijalankan. Jika paket dipasang pada server jarak jauh, pilih tab Linux saat menjalankan perintah di server.
+
+=== "Windows"
+
+    Pasang [Docker Desktop untuk Windows](https://docs.docker.com/desktop/setup/install/windows-install/) dengan backend WSL 2, lalu jalankan Docker Desktop.
+
+    ```powershell
+    docker compose version
+    ```
+
+=== "macOS"
+
+    Pasang [Docker Desktop untuk Mac](https://docs.docker.com/desktop/setup/install/mac-install/), lalu jalankan Docker Desktop.
+
+    ```sh
+    docker compose version
+    ```
+
+=== "Linux"
+
+    Pasang Docker Engine dan Compose mengikuti panduan untuk [distribusi Linux](https://docs.docker.com/engine/install/).
+
+    ```sh
+    docker compose version
+    ```
+
+Jika perintah menampilkan versi Compose, Docker siap menjalankan paket latihan.
 
 ## Siapkan paket
 
-1. Siapkan [Docker Engine](https://docs.docker.com/engine/install/) di mesin Linux.
-2. Periksa apakah `docker compose version` menampilkan versi Compose.
-3. Unduh [paket deployment AIoT](../assets/demos/aiot-deployment.zip).
-4. Salin ZIP ke server sesuai [langkah SSH](ssh-basics.md#menyalin-file-ke-server).
-5. Ekstrak ZIP dari folder yang menyimpan paket.
+1. Unduh [paket deployment AIoT](../assets/demos/aiot-deployment.zip).
+2. Jika server berada di komputer lain, salin ZIP melalui [SSH](ssh-basics.md#menyalin-file-ke-server) dan jalankan langkah berikut pada server.
+3. Ekstrak ZIP dan masuk ke folder `sensor-deployment`.
 
-    ```bash
-    unzip aiot-deployment.zip -d ~/aiot-lab
-    ```
+    === "Windows"
 
-6. Masuk ke folder Compose.
+        ```powershell
+        Expand-Archive -LiteralPath "$HOME\Downloads\aiot-deployment.zip" -DestinationPath "$HOME\aiot-lab" -Force
+        Set-Location "$HOME\aiot-lab\sensor-deployment"
+        ```
 
-    ```bash
-    cd ~/aiot-lab/sensor-deployment
-    ```
+    === "macOS"
 
-Jika bekerja langsung di mesin Linux, simpan ZIP pada mesin itu dan lanjutkan ke ekstraksi. Siapkan `unzip` untuk mengekstrak berkas Compose dan sumber aplikasi. Siapkan `openssl` untuk membuat kata sandi database latihan.
+        ```sh
+        unzip "$HOME/Downloads/aiot-deployment.zip" -d "$HOME/aiot-lab"
+        cd "$HOME/aiot-lab/sensor-deployment"
+        ```
+
+    === "Linux"
+
+        ```sh
+        unzip "$HOME/Downloads/aiot-deployment.zip" -d "$HOME/aiot-lab"
+        cd "$HOME/aiot-lab/sensor-deployment"
+        ```
 
 ## Bangun image dan jalankan layanan
 
-1. Gunakan `umask 077` di terminal server sebelum membuat berkas konfigurasi lokal.
-2. Jika `.env` belum ada, buat berkas itu dengan kata sandi database baru.
+1. Jika `.env` belum ada, buat berkas itu dengan kata sandi database baru.
 
-    ```bash
-    printf 'POSTGRES_PASSWORD=%s\n' "$(openssl rand -hex 24)" > .env
-    ```
+    === "Windows"
 
-3. Periksa berkas Compose dengan `docker compose config --quiet`.
-4. Bangun image dan jalankan layanan.
+        ```powershell
+        "POSTGRES_PASSWORD=$(openssl rand -hex 24)" | Set-Content -Path .env -Encoding ascii
+        ```
 
-    ```bash
+    === "macOS"
+
+        ```sh
+        umask 077
+        printf 'POSTGRES_PASSWORD=%s\n' "$(openssl rand -hex 24)" > .env
+        ```
+
+    === "Linux"
+
+        ```sh
+        umask 077
+        printf 'POSTGRES_PASSWORD=%s\n' "$(openssl rand -hex 24)" > .env
+        ```
+
+2. Periksa berkas Compose dengan `docker compose config --quiet`. Perintah Docker Compose di langkah berikut sama di ketiga sistem operasi.
+3. Bangun image dan jalankan layanan.
+
+    ```console
     docker compose up -d --build
     ```
 
-5. Periksa status dengan `docker compose ps`.
-6. Periksa log API dengan `docker compose logs api`.
+4. Periksa status dengan `docker compose ps`.
+5. Periksa log API dengan `docker compose logs api`.
 
 Saat build pertama, Docker mengambil base image dan memasang dependensi. Compose menunggu PostgreSQL sehat sebelum membuka API. PostgreSQL menjalankan `schema.sql` ketika volume masih kosong, sehingga tabel `sensor_readings` tersedia pada awal latihan. [Urutan startup Compose](https://docs.docker.com/compose/how-tos/startup-order/) · [Inisialisasi image PostgreSQL](https://hub.docker.com/_/postgres)
 
@@ -57,7 +113,27 @@ API menghubungi PostgreSQL lewat nama layanan `db`. NGINX memakai nama `api` unt
 
 Jalankan `docker compose ps` dan periksa apakah `db` serta `api` berstatus sehat. Jika layanan berhenti, gunakan `docker compose ps -a` untuk menemukannya, lalu baca `docker compose logs db api web` untuk melihat bagian yang gagal.
 
-Dari server, jalankan `curl -i http://127.0.0.1:8080/api/health`. Status 200 dengan body `{"status":"ok"}` menunjukkan request sampai ke Express melalui NGINX. Lanjutkan ke [uji dashboard](nginx-basics.md#uji-dashboard-dari-browser) untuk memeriksa satu pembacaan.
+Jalankan pemeriksaan API dari terminal yang sama.
+
+=== "Windows"
+
+    ```powershell
+    curl.exe -i http://127.0.0.1:8080/api/health
+    ```
+
+=== "macOS"
+
+    ```sh
+    curl -i http://127.0.0.1:8080/api/health
+    ```
+
+=== "Linux"
+
+    ```sh
+    curl -i http://127.0.0.1:8080/api/health
+    ```
+
+Status 200 dengan body `{"status":"ok"}` menunjukkan request sampai ke Express melalui NGINX. Lanjutkan ke [uji dashboard](nginx-basics.md#uji-dashboard-dari-browser) untuk memeriksa satu pembacaan.
 
 Jika port 8080 sudah dipakai, tambahkan `DASHBOARD_PORT=8081` ke `.env` sebelum menjalankan ulang Compose. Gunakan port baru pada alamat server dan pada tujuan SSH tunnel.
 

@@ -8,18 +8,18 @@ Browser menjalankan JavaScript untuk membuat halaman interaktif. **Node.js** men
 
 ## Siapkan proyek
 
-Pasang Node.js versi LTS dari [situs resmi Node.js](https://nodejs.org/). Periksa instalasi di PowerShell:
+Pasang Node.js versi LTS dari [situs resmi Node.js](https://nodejs.org/). Periksa instalasi di terminal:
 
-```powershell
+```console
 node --version
 npm --version
 ```
 
 Buat folder dan package proyek:
 
-```powershell
+```console
 mkdir mini_backend
-Set-Location mini_backend
+cd mini_backend
 npm init -y
 ```
 

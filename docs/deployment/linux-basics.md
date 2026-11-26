@@ -4,11 +4,15 @@
 
     Pembuka, pemeriksaan port, dan jalur ke SSH diperbarui dengan bantuan AI.
 
-Linux adalah sistem operasi yang mengatur proses, file, dan jaringan di komputer. Terminal memungkinkan kita menjalankan program dan memeriksa apa yang sedang dikerjakan sistem.
+Linux adalah sistem operasi yang menjalankan program dan mengatur berkas serta jaringan komputer. Di server, kita memakai terminal untuk meminta informasi dari sistem, misalnya proses apa yang aktif atau port mana yang menerima koneksi.
 
-Server aplikasi dapat dikelola melalui terminal. Pengelola dapat mencari folder konfigurasi, melihat proses, dan memeriksa port yang menerima koneksi dari sesi yang sama.
+Perintah Linux berguna ketika aplikasi berjalan di komputer yang tidak berada di depan kita. Hasil perintah membantu mempersempit pemeriksaan: apakah layanan aktif, apakah port terbuka, atau apakah server memberi respons.
 
-Dalam latihan AIoT, perintah itu dipakai ketika menjalankan stack sensor. Gunakan `pwd` untuk memastikan folder Compose, lalu cek port web dari server.
+Di latihan AIoT, dashboard yang gagal memuat data memberi kita pertanyaan awal: apakah server membuka port web dan menjawab request? Kita akan memakai terminal untuk memeriksa port dan respons API sebelum membaca log layanan.
+
+Perintah pada halaman ini dijalankan di server Linux. Jika laptop memakai Windows atau macOS, masuk ke server lewat [SSH](ssh-basics.md) terlebih dahulu.
+
+![Terminal Linux memeriksa port dan respons aplikasi sensor](../assets/images/linux-server-check.svg)
 
 ## Kenapa perlu belajar Linux?
 

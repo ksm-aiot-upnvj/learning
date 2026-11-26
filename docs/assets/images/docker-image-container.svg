@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+  <title id="title">Dari Dockerfile ke container</title>
+  <desc id="desc">Dockerfile berisi resep untuk membangun image. Image menjadi paket aplikasi dan dependensinya. Docker menjalankan paket itu sebagai container.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2855a6"/></marker>
+  </defs>
+  <rect width="1000" height="390" rx="20" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="32" y="44" font-size="25" font-weight="700">Resep → paket siap olah → aplikasi berjalan</text>
+    <rect x="40" y="88" width="250" height="205" rx="16" fill="#dceaff"/>
+    <text x="165" y="124" text-anchor="middle" font-size="21" font-weight="700">Dockerfile</text>
+    <text x="165" y="157" text-anchor="middle" font-size="16">Resep untuk membangun</text>
+    <text x="165" y="184" text-anchor="middle" font-size="16">aplikasi dan kebutuhannya</text>
+    <rect x="72" y="211" width="186" height="45" rx="10" fill="#fff"/>
+    <text x="165" y="239" text-anchor="middle" font-size="15" font-family="ui-monospace, monospace">docker build</text>
+    <path d="M300 190H375" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="390" y="88" width="250" height="205" rx="16" fill="#def5e9"/>
+    <text x="515" y="124" text-anchor="middle" font-size="21" font-weight="700">Image</text>
+    <text x="515" y="157" text-anchor="middle" font-size="16">Paket aplikasi yang dapat</text>
+    <text x="515" y="184" text-anchor="middle" font-size="16">dipakai berulang kali</text>
+    <rect x="422" y="211" width="186" height="45" rx="10" fill="#fff"/>
+    <text x="515" y="239" text-anchor="middle" font-size="15">aplikasi + dependensi</text>
+    <path d="M650 190H725" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="740" y="88" width="220" height="205" rx="16" fill="#ffedce"/>
+    <text x="850" y="124" text-anchor="middle" font-size="21" font-weight="700">Container</text>
+    <text x="850" y="157" text-anchor="middle" font-size="16">Satu aplikasi yang</text>
+    <text x="850" y="184" text-anchor="middle" font-size="16">sedang berjalan</text>
+    <rect x="770" y="211" width="160" height="45" rx="10" fill="#fff"/>
+    <text x="850" y="239" text-anchor="middle" font-size="15" font-family="ui-monospace, monospace">docker run</text>
+    <text x="32" y="342" font-size="15" fill="#344969">Satu image dapat dijalankan menjadi beberapa container.</text>
+  </g>
+</svg>

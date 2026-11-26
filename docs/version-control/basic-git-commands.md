@@ -10,7 +10,7 @@ Saat beberapa berkas berubah, kita perlu memilih perubahan mana yang dicatat ber
 
 Git menyimpan nama dan email penulis sebagai bagian dari setiap commit. Untuk latihan, jalankan perintah berikut dari dalam repositori. Opsi `--local` berlaku pada repositori itu, sedangkan `--global` menentukan setelan bawaan akun komputer untuk berbagai repositori.
 
-```bash
+```console
 git config --local user.name "Nama Lengkap"
 git config --local user.email "nama@example.com"
 ```
@@ -43,7 +43,7 @@ Gunakan `git show <hash-commit>` untuk membaca satu commit tanpa berganti cabang
 
 Tampilkan commit secara ringkas dengan `git log --oneline`. Jika sudah ada beberapa cabang, tambahkan `--all --graph --decorate` agar label cabang dan hubungan antarcommit terlihat.
 
-```bash
+```console
 git log --oneline --all --graph --decorate
 ```
 

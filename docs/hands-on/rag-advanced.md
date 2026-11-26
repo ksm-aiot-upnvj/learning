@@ -16,7 +16,7 @@ Kalian bisa menggunakan code yang ada di modul RAG sederhana dengan melakukan pe
 
 ## Instalasi Library Tambahan
 
-```bash
+```console
 !uv pip install --upgrade docling sentence-transformers groq chromadb rank-bm25 ddgs accelerate transformers -q
 ```
 

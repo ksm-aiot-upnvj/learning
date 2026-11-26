@@ -20,17 +20,17 @@ Pada latihan AIoT ini, API menerima satu pembacaan sensor dan mengembalikan data
 1. Siapkan Node.js dan VS Code.
 2. Buat folder `mini_backend`.
 3. Buka folder tersebut di VS Code.
-4. Buka terminal PowerShell di folder itu.
+4. Buka terminal di folder itu.
 5. Inisialisasi proyek npm.
 
-    ```powershell
-    npm.cmd init -y
+    ```console
+    npm init -y
     ```
 
 6. Pasang Express 5 dan middleware CORS.
 
-    ```powershell
-    npm.cmd install express@5 cors
+    ```console
+    npm install express@5 cors
     ```
 
 7. Simpan [validate-sensor.cjs](../assets/demos/sensor-dashboard/validate-sensor.cjs) di folder proyek.
@@ -67,7 +67,7 @@ Pada latihan AIoT ini, API menerima satu pembacaan sensor dan mengembalikan data
 
 Jalankan perintah berikut dari folder `mini_backend`. Biarkan server aktif saat melakukan pengujian dari Postman atau terminal lain.
 
-```powershell
+```console
 node main.js
 ```
 
@@ -116,12 +116,25 @@ Pastikan tanda koma JSON tetap benar saat menghapus field. Respons `400 Bad Requ
 
 ### Uji lewat terminal
 
-Jalankan perintah berikut dari terminal kedua jika ingin menggunakan PowerShell. Hasilnya dapat dibandingkan dengan kiriman valid di Postman.
+Jalankan request dari terminal kedua jika ingin menguji API tanpa Postman. Pilih contoh sesuai sistem operasi.
 
-```powershell
-$body = @{ device_id = "esp32-01"; sensor_type = "temperature"; value = 28.5; unit = "celsius" } | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/sensors -ContentType application/json -Body $body
-```
+=== "Windows"
+
+    ```powershell
+    Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/sensors -ContentType "application/json" -Body '{"device_id":"esp32-01","sensor_type":"temperature","value":28.5,"unit":"celsius"}'
+    ```
+
+=== "macOS"
+
+    ```sh
+    curl -i -X POST http://127.0.0.1:8000/sensors -H 'Content-Type: application/json' -d '{"device_id":"esp32-01","sensor_type":"temperature","value":28.5,"unit":"celsius"}'
+    ```
+
+=== "Linux"
+
+    ```sh
+    curl -i -X POST http://127.0.0.1:8000/sensors -H 'Content-Type: application/json' -d '{"device_id":"esp32-01","sensor_type":"temperature","value":28.5,"unit":"celsius"}'
+    ```
 
 Kirim data otomatis lewat [IoT Simulator Mini](iot-simulator-mini.md) setelah request manual berhasil. Di [Dashboard Hands-on](dashboard-hands-on.md), hasil POST juga memuat ID baris yang disimpan.
 

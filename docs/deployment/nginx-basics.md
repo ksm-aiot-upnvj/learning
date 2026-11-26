@@ -4,22 +4,13 @@
 
     Penjelasan jalur request dan uji deployment dari browser disusun dengan bantuan AI.
 
-NGINX dapat menyajikan berkas web dan bertindak sebagai *reverse proxy*. Saat menerima permintaan, NGINX mencocokkan path dengan konfigurasi. Permintaan dapat dijawab dengan berkas atau diteruskan ke layanan lain.
+NGINX menerima request dari browser lalu memilih cara menjawabnya. NGINX dapat mengirim berkas web secara langsung atau meneruskan request ke aplikasi lain; peran kedua ini disebut *reverse proxy*.
 
-Pada situs katalog, alamat yang sama bisa menyajikan halaman web dan meneruskan `/api/products` ke backend. Browser cukup mengenal alamat situs, sementara NGINX menentukan layanan yang menangani setiap path.
+Situs web sering memakai satu alamat untuk halaman dan data. Browser meminta halaman dari alamat itu, lalu memakai alamat yang sama untuk mengambil data; NGINX melihat path request untuk memilih layanan yang tepat.
 
-Paket AIoT memakai pola itu untuk Vue dan Express. NGINX menyajikan hasil build Vue pada `/` dan meneruskan `/api/sensors` menjadi `/sensors` di Express. Dashboard membaca data lewat alamat web yang sama.
+Pada latihan AIoT, NGINX menyajikan halaman Vue saat browser meminta `/`. Saat browser meminta `/api/sensors`, NGINX meneruskannya ke Express sebagai `/sensors`, lalu Express mengambil data dari PostgreSQL.
 
-## Alur sederhana reverse proxy
-
-```mermaid
-flowchart LR
-    Browser["Browser laptop"] --> Tunnel["SSH tunnel :8080"]
-    Tunnel --> Web["NGINX pada layanan web"]
-    Web --> Vue["Berkas hasil build Vue"]
-    Web -->|" /api/sensors → /sensors "| API["Express pada api:8000"]
-    API --> DB[("PostgreSQL pada db:5432")]
-```
+![NGINX mengirim halaman ke Vue dan meneruskan request data ke Express](../assets/images/nginx-request-routing.svg)
 
 ## Uji path yang diterima backend
 

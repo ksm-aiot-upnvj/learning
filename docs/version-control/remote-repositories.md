@@ -56,7 +56,7 @@ Jika riwayat cabang bersama sudah ditulis ulang dan dikirim ke remote, koordinas
 
 Untuk mengikuti riwayat baru, periksa `git status` dan simpan perubahan yang masih dikerjakan sebelum berganti cabang. Jalankan perintah berikut dari repositori lokal. Cabang `fitur-sinkron` dimulai dari versi terbaru `origin/fitur`, sementara `fitur` lokal tetap menjadi rujukan untuk riwayat lama. [Dokumentasi git switch](https://git-scm.com/docs/git-switch)
 
-```bash
+```console
 git fetch origin
 git switch -c fitur-sinkron --track origin/fitur
 ```

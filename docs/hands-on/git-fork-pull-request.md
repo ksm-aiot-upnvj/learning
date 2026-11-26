@@ -6,7 +6,7 @@
 
 Saat ingin mengusulkan perubahan ke repo yang dikelola tim lain, kita bisa membuat *fork*, yaitu salinan repositori di akun sendiri yang masih terhubung dengan repo asli di GitHub. Simpan commit pada cabang fork, lalu buat *pull request* (PR) untuk meminta pengelola meninjau perubahan sebelum menggabungkannya. [Pull request dari fork](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork)
 
-Siapkan akun GitHub, Git, PowerShell, dan VS Code. Jika ini push pertama, ikuti [Git Lokal dan Repositori Sendiri](git-local-remote.md) dahulu agar cara autentikasi dan pemeriksaan `origin` sudah dikenal. Latihan ini memakai folder baru untuk menyimpan salinan fork.
+Siapkan akun GitHub, Git, terminal, dan VS Code. Jika ini push pertama, ikuti [Git Lokal dan Repositori Sendiri](git-local-remote.md) dahulu agar cara autentikasi dan pemeriksaan `origin` sudah dikenal. Latihan ini memakai folder baru untuk menyimpan salinan fork.
 
 ## Buat fork dan periksa kedua remote
 
@@ -14,39 +14,35 @@ Siapkan akun GitHub, Git, PowerShell, dan VS Code. Jika ini push pertama, ikuti 
 
 2. Buat fork di akun pribadi.
 
-3. Masukkan nama pengguna pemilik fork pada prompt.
-
-    ```powershell
-    $namaAkun = Read-Host "Nama pengguna GitHub"
-    ```
+3. Ganti `NAMA-AKUN` pada perintah berikut dengan nama pengguna GitHub pemilik fork.
 
 4. Clone fork ke folder baru.
 
-    ```powershell
-    git clone "https://github.com/$namaAkun/latihan-git-aiot.git" kontribusi-git-aiot
+    ```console
+    git clone https://github.com/NAMA-AKUN/latihan-git-aiot.git kontribusi-git-aiot
     ```
 
 5. Masuk ke folder hasil clone.
 
-    ```powershell
-    Set-Location kontribusi-git-aiot
+    ```console
+    cd kontribusi-git-aiot
     ```
 
 6. Tambahkan repositori organisasi sebagai `upstream`.
 
-    ```powershell
+    ```console
     git remote add upstream https://github.com/ksm-aiot-upnvj/latihan-git-aiot.git
     ```
 
 7. Periksa kedua URL remote.
 
-    ```powershell
+    ```console
     git remote -v
     ```
 
 8. Ambil riwayat terbaru dari repo organisasi.
 
-    ```powershell
+    ```console
     git fetch upstream
     ```
 
@@ -60,46 +56,46 @@ Nama berkas mengikuti nama pengguna agar setiap peserta bisa membuat satu peruba
 
 1. Buat cabang latihan dari `upstream/main`.
 
-    ```powershell
-    git switch --no-track -c "latihan/$namaAkun" upstream/main
+    ```console
+    git switch -c latihan/NAMA-AKUN upstream/main
     ```
 
 2. Buka `kontribusi-git-aiot` lewat **File > Open Folder** di VS Code.
 3. Jika belum ada, buat folder `peserta` melalui **New Folder** di panel **Explorer**.
-4. Buat berkas `<nama-akun>.md` di folder `peserta` lewat **New File**.
-5. Ketik `# Latihan Git @<nama-akun>` dengan mengganti `<nama-akun>` memakai nama pengguna GitHub.
+4. Buat berkas `NAMA-AKUN.md` di folder `peserta` lewat **New File**. Ganti `NAMA-AKUN` dengan nama pengguna GitHub.
+5. Ketik `# Latihan Git @NAMA-AKUN` dengan nama akun yang sama.
 6. Simpan berkas dengan `Ctrl+S`.
 
-Kembali ke PowerShell yang dipakai untuk clone. Sesi itu sudah berada di folder repositori dan masih menyimpan nilai `$namaAkun`.
+Kembali ke terminal yang dipakai untuk clone. Pastikan terminal masih berada di folder `kontribusi-git-aiot`.
 
 1. Periksa berkas yang berubah.
 
-    ```powershell
+    ```console
     git status --short
     ```
 
 2. Siapkan berkas latihan.
 
-    ```powershell
-    git add "peserta/$namaAkun.md"
+    ```console
+    git add peserta/NAMA-AKUN.md
     ```
 
 3. Periksa usulan sebelum commit.
 
-    ```powershell
+    ```console
     git diff --staged
     ```
 
 4. Simpan commit usulan.
 
-    ```powershell
+    ```console
     git commit -m "docs: tambah catatan latihan Git"
     ```
 
 5. Kirim cabang latihan ke fork.
 
-    ```powershell
-    git push -u origin "latihan/$namaAkun"
+    ```console
+    git push -u origin latihan/NAMA-AKUN
     ```
 
 ## Kenapa push ke repo organisasi dapat ditolak?

@@ -4,11 +4,11 @@
 
     Pembuka, pemindahan paket latihan, dan akses melalui SSH tunnel disusun dengan bantuan AI.
 
-SSH atau **Secure Shell** membuat koneksi terenkripsi ke komputer lain. Setelah identitas diperiksa, kita dapat menjalankan perintah di komputer itu melalui terminal.
+SSH atau **Secure Shell** membuka koneksi terenkripsi dari laptop ke komputer lain. Setelah login berhasil, perintah yang kita ketik di terminal laptop dijalankan pada server.
 
-Tim pengelola aplikasi sering memakai SSH untuk membaca log atau menyalin berkas ke server. Perintah berjalan di server selama sesi aktif, sehingga lokasi folder dan hasilnya mengikuti lingkungan server.
+Pengelola sistem memakai SSH untuk memeriksa server dan memindahkan berkas. Koneksi yang sama juga dapat meneruskan satu port ke laptop, sehingga browser lokal dapat membuka layanan yang berjalan di server.
 
-Di latihan AIoT, SSH dipakai untuk menyalin ZIP deployment dan menjalankan Compose di server. Kita juga membuka tunnel agar browser laptop bisa mengakses port latihan yang hanya diterbitkan di loopback server.
+Di latihan AIoT, kita menyalin paket deployment ke server, menjalankan Docker Compose di sana, lalu membuka tunnel ke dashboard. Browser tetap berada di laptop, sementara aplikasi berjalan di server Linux.
 
 ## Kenapa Perlu SSH?
 
@@ -16,16 +16,11 @@ Saat aplikasi sudah diletakkan di VPS atau server cloud, kita tidak lagi membuka
 
 Biasanya kita masuk ke server dengan pola seperti ini:
 
-```mermaid
-flowchart LR
-    A["Laptop developer"] --> B["SSH connection"]
-    B --> C["VPS atau server Linux"]
-    C --> D["Backend, database, dashboard, NGINX"]
-```
-
-SSH adalah pintu masuknya.
+![SSH menghubungkan laptop dengan server untuk menyalin paket dan membuka tunnel browser](../assets/images/ssh-laptop-server.svg)
 
 ## Bentuk Command SSH
+
+OpenSSH tersedia di Windows, macOS, dan Linux, sehingga perintah koneksi di halaman ini sama pada ketiga sistem. Setelah login, perintah yang dijalankan di sesi server mengikuti lingkungan server Linux.
 
 Format paling umum:
 
@@ -108,15 +103,23 @@ Kadang key tidak memakai nama default.
 
 Gunakan opsi `-i`:
 
-```bash
-ssh -i path/to/private-key username@server_ip
-```
+=== "Windows"
 
-Contoh:
+    ```powershell
+    ssh -i "$HOME\.ssh\aiot-server" ubuntu@203.0.113.10
+    ```
 
-```bash
-ssh -i ~/.ssh/aiot-server ubuntu@203.0.113.10
-```
+=== "macOS"
+
+    ```sh
+    ssh -i ~/.ssh/aiot-server ubuntu@203.0.113.10
+    ```
+
+=== "Linux"
+
+    ```sh
+    ssh -i ~/.ssh/aiot-server ubuntu@203.0.113.10
+    ```
 
 ## Port SSH
 
@@ -156,14 +159,19 @@ scp -r folder-app ubuntu@203.0.113.10:/home/ubuntu/
 ### Salin paket latihan AIoT
 
 1. Unduh [paket deployment AIoT](../assets/demos/aiot-deployment.zip) ke laptop.
-2. Buka terminal laptop di folder unduhan.
-3. Salin paket ke folder rumah akun server.
+2. Buat folder `Downloads` pada server.
 
     ```bash
-    scp aiot-deployment.zip ubuntu@203.0.113.10:~/
+    ssh ubuntu@203.0.113.10 "mkdir -p ~/Downloads"
     ```
 
-Ganti `ubuntu` dan `203.0.113.10` dengan akun serta alamat server latihan. Setelah login, jalankan `ls ~/aiot-deployment.zip` untuk memastikan berkas sampai.
+3. Buka terminal laptop di folder unduhan dan salin paket ke server.
+
+    ```bash
+    scp aiot-deployment.zip ubuntu@203.0.113.10:~/Downloads/
+    ```
+
+Ganti `ubuntu` dan `203.0.113.10` dengan akun serta alamat server latihan. Setelah login, jalankan `ls ~/Downloads/aiot-deployment.zip` untuk memastikan berkas sampai.
 
 ## Buka akses browser lewat SSH tunnel
 

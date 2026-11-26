@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+  <title id="title">Memeriksa aplikasi sensor dari terminal Linux</title>
+  <desc id="desc">Saat dashboard tidak memuat data, terminal Linux membantu memeriksa port server dan respons API.</desc>
+  <rect width="1000" height="390" rx="20" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="32" y="44" font-size="25" font-weight="700">Dashboard tidak memuat data?</text>
+    <rect x="42" y="91" width="250" height="185" rx="16" fill="#dceaff"/>
+    <text x="167" y="127" text-anchor="middle" font-size="20" font-weight="700">Browser</text>
+    <rect x="82" y="151" width="170" height="78" rx="10" fill="#fff"/>
+    <text x="167" y="182" text-anchor="middle" font-size="16">Tabel sensor</text>
+    <text x="167" y="207" text-anchor="middle" font-size="15" fill="#a33">Belum ada data</text>
+    <path d="M300 183H385" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="400" y="91" width="250" height="185" rx="16" fill="#def5e9"/>
+    <text x="525" y="127" text-anchor="middle" font-size="20" font-weight="700">Server Linux</text>
+    <rect x="432" y="151" width="186" height="78" rx="10" fill="#fff"/>
+    <text x="525" y="181" text-anchor="middle" font-size="16">Port 8080</text>
+    <text x="525" y="207" text-anchor="middle" font-size="15">API merespons?</text>
+    <path d="M658 183H743" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="758" y="91" width="200" height="185" rx="16" fill="#ffedce"/>
+    <text x="858" y="127" text-anchor="middle" font-size="20" font-weight="700">Terminal</text>
+    <text x="858" y="171" text-anchor="middle" font-size="15" font-family="ui-monospace, monospace">ss -tuln</text>
+    <text x="858" y="202" text-anchor="middle" font-size="15" font-family="ui-monospace, monospace">curl .../health</text>
+    <text x="32" y="329" font-size="15" fill="#344969">Periksa port dan respons dulu. Jika API menjawab, lanjutkan dengan membaca log layanan.</text>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2855a6"/></marker></defs>
+</svg>

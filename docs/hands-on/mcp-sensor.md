@@ -17,54 +17,85 @@ Script memakai tabel perangkat dan pembacaan dari materi [Desain Data IoT](../da
 3. Simpan [sensor_data.py](../assets/ai-labs/sensor_data.py) ke folder latihan.
 4. Simpan [seed_sensors.py](../assets/ai-labs/seed_sensors.py) ke folder latihan.
 5. Simpan [sensor_mcp.py](../assets/ai-labs/sensor_mcp.py) ke folder latihan.
-6. Buka PowerShell tanpa profil di folder latihan.
+6. Buka terminal di folder latihan.
 7. Inisialisasi proyek Python.
 
-    ```powershell
+    ```console
     uv init --bare
     ```
 
 8. Pasang SDK MCP dan driver PostgreSQL.
 
-    ```powershell
+    ```console
     uv add "mcp>=1,<2" "psycopg[binary]>=3,<4"
     ```
 
 9. Jalankan PostgreSQL khusus latihan.
 
-    ```powershell
-    $labPassword = [guid]::NewGuid().ToString('N')
-    docker run --rm -d --name aiot-mcp-lab -p 127.0.0.1:55432:5432 -e "POSTGRES_PASSWORD=$labPassword" -e POSTGRES_DB=sensor_lab postgres:18
-    ```
+    === "Windows"
+
+        ```powershell
+        $labPassword = (New-Guid).Guid.Replace('-', '')
+        docker run --rm -d --name aiot-mcp-lab -p 127.0.0.1:55432:5432 -e "POSTGRES_PASSWORD=$labPassword" -e POSTGRES_DB=sensor_lab postgres:18
+        ```
+
+    === "macOS"
+
+        ```sh
+        labPassword="$(openssl rand -hex 16)"
+        docker run --rm -d --name aiot-mcp-lab -p 127.0.0.1:55432:5432 -e "POSTGRES_PASSWORD=$labPassword" -e POSTGRES_DB=sensor_lab postgres:18
+        ```
+
+    === "Linux"
+
+        ```sh
+        labPassword="$(openssl rand -hex 16)"
+        docker run --rm -d --name aiot-mcp-lab -p 127.0.0.1:55432:5432 -e "POSTGRES_PASSWORD=$labPassword" -e POSTGRES_DB=sensor_lab postgres:18
+        ```
 
 10. Jika database masih memulai, ulangi pemeriksaan hingga muncul `accepting connections`.
 
-    ```powershell
+    ```console
     docker exec aiot-mcp-lab pg_isready -h 127.0.0.1 -U postgres -d sensor_lab
     ```
 
 11. Simpan koneksi database ke `sensor-lab.env` di folder latihan.
 
-    ```powershell
-    "SENSOR_LAB_DSN=postgresql://postgres:${labPassword}@127.0.0.1:55432/sensor_lab" |
-        Set-Content -LiteralPath sensor-lab.env -Encoding utf8NoBOM
-    ```
+    === "Windows"
+
+        ```powershell
+        "SENSOR_LAB_DSN=postgresql://postgres:${labPassword}@127.0.0.1:55432/sensor_lab" | Set-Content -LiteralPath sensor-lab.env -Encoding ascii
+        ```
+
+    === "macOS"
+
+        ```sh
+        umask 077
+        printf 'SENSOR_LAB_DSN=postgresql://postgres:%s@127.0.0.1:55432/sensor_lab\n' "$labPassword" > sensor-lab.env
+        ```
+
+    === "Linux"
+
+        ```sh
+        umask 077
+        printf 'SENSOR_LAB_DSN=postgresql://postgres:%s@127.0.0.1:55432/sensor_lab\n' "$labPassword" > sensor-lab.env
+        ```
 
 12. Buat CSV data sensor.
 
-    ```powershell
+    ```console
     uv run python sensor_data.py
     ```
 
 13. Jalankan seeding.
 
-    ```powershell
+    ```console
     uv run --env-file sensor-lab.env python seed_sensors.py
     ```
 
 14. Ulangi seeding untuk memeriksa bahwa jumlahnya tetap 58.
 
-    ```powershell
+    ```console
     uv run --env-file sensor-lab.env python seed_sensors.py
     ```
 
@@ -76,8 +107,8 @@ Berkas `sensor-lab.env` memuat kata sandi sesi latihan. Simpan di folder lokal a
 
 1. Jalankan [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) dari folder latihan.
 
-    ```powershell
-    npx.cmd @modelcontextprotocol/inspector@2.16.0 uv run --env-file sensor-lab.env python sensor_mcp.py
+    ```console
+    npx @modelcontextprotocol/inspector@2.16.0 uv run --env-file sensor-lab.env python sensor_mcp.py
     ```
 
 2. Buka alamat yang ditampilkan Inspector.
@@ -95,10 +126,9 @@ Waktu acuan latihan adalah `01:25 UTC`. Tool memberi status `stale` jika pembaca
 
 ## Cocokkan hasil dengan SQL
 
-Jalankan query berikut dari PowerShell lain ketika Inspector masih terbuka. Filter periode memakai batas awal inklusif dan batas akhir eksklusif, sehingga sampel pada batas akhir dapat masuk ke periode berikutnya tepat satu kali.
+Simpan query berikut sebagai `check-sensors.sql` di folder latihan. Jalankan dua perintah Docker dari terminal yang sama; keduanya berlaku pada Windows, macOS, dan Linux.
 
-```powershell
-@'
+```sql
 SET TIME ZONE 'UTC';
 SELECT DISTINCT ON (d.name) d.name, r.value, r.unit, r.measured_at
 FROM mcp_lab.sensor_readings AS r JOIN mcp_lab.devices AS d ON d.id = r.device_id
@@ -110,7 +140,11 @@ FROM mcp_lab.sensor_readings AS r JOIN mcp_lab.devices AS d ON d.id = r.device_i
 WHERE d.name = 'esp32-01' AND r.sensor_type = 'ph'
   AND r.measured_at >= '2026-11-20 00:00:00+00'
   AND r.measured_at < '2026-11-20 01:25:00+00';
-'@ | docker exec -i aiot-mcp-lab psql -v ON_ERROR_STOP=1 -U postgres -d sensor_lab
+```
+
+```console
+docker cp check-sensors.sql aiot-mcp-lab:/tmp/check-sensors.sql
+docker exec aiot-mcp-lab psql -v ON_ERROR_STOP=1 -U postgres -d sensor_lab -f /tmp/check-sensors.sql
 ```
 
 Jika nanti memakai aplikasi AI sebagai host, ajukan tiga pertanyaan yang sama dan bandingkan jawaban dengan hasil tool. Database menghitung angka, sedangkan model menjelaskan hasilnya. [SDK MCP Python 1.x](https://github.com/modelcontextprotocol/python-sdk/tree/v1.x) · [Parameter query Psycopg](https://www.psycopg.org/psycopg3/docs/basic/params.html)
@@ -120,12 +154,26 @@ Jika nanti memakai aplikasi AI sebagai host, ajukan tiga pertanyaan yang sama da
 1. Hentikan Inspector dengan `Ctrl+C`.
 2. Hentikan container latihan.
 
-    ```powershell
+    ```console
     docker stop aiot-mcp-lab
     ```
 
 3. Hapus berkas koneksi latihan.
 
-    ```powershell
-    Remove-Item -LiteralPath sensor-lab.env
-    ```
+    === "Windows"
+
+        ```powershell
+        Remove-Item sensor-lab.env
+        ```
+
+    === "macOS"
+
+        ```sh
+        rm sensor-lab.env
+        ```
+
+    === "Linux"
+
+        ```sh
+        rm sensor-lab.env
+        ```

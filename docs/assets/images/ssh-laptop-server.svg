@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop terhubung ke server melalui SSH</title>
+  <desc id="desc">SSH menghubungkan laptop dengan server Linux. Paket deployment dapat disalin ke server, lalu tunnel meneruskan port dashboard agar bisa dibuka dari browser laptop.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2855a6"/></marker>
+    <marker id="return" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="1000" height="430" rx="20" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="32" y="44" font-size="25" font-weight="700">Laptop ↔ server Linux</text>
+    <rect x="55" y="91" width="330" height="266" rx="17" fill="#dceaff"/>
+    <text x="220" y="129" text-anchor="middle" font-size="21" font-weight="700">Laptop</text>
+    <rect x="91" y="154" width="258" height="65" rx="11" fill="#fff"/>
+    <text x="220" y="181" text-anchor="middle" font-size="16">scp: salin paket ZIP →</text>
+    <text x="220" y="204" text-anchor="middle" font-size="14" fill="#344969">berkas berpindah ke server</text>
+    <rect x="91" y="250" width="258" height="65" rx="11" fill="#fff"/>
+    <text x="220" y="277" text-anchor="middle" font-size="16">Browser: buka dashboard</text>
+    <text x="220" y="300" text-anchor="middle" font-size="14" fill="#344969">melalui tunnel SSH</text>
+    <rect x="615" y="91" width="330" height="266" rx="17" fill="#def5e9"/>
+    <text x="780" y="129" text-anchor="middle" font-size="21" font-weight="700">Server Linux</text>
+    <rect x="658" y="154" width="244" height="65" rx="11" fill="#fff"/>
+    <text x="780" y="181" text-anchor="middle" font-size="16">Paket deployment</text>
+    <text x="780" y="204" text-anchor="middle" font-size="14" fill="#344969">Compose menjalankan layanan</text>
+    <rect x="658" y="250" width="244" height="65" rx="11" fill="#fff"/>
+    <text x="780" y="277" text-anchor="middle" font-size="16">NGINX · port 8080</text>
+    <text x="780" y="300" text-anchor="middle" font-size="14" fill="#344969">dashboard siap dibuka</text>
+    <path d="M390 175H608" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="500" y="160" text-anchor="middle" font-size="14">salin berkas</text>
+    <path d="M615 286H392" stroke="#167665" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#return)"/>
+    <text x="500" y="329" text-anchor="middle" font-size="14">tunnel: server :8080 → laptop :8080</text>
+    <text x="32" y="397" font-size="15" fill="#344969">Perintah jarak jauh berjalan di server; browser tetap berada di laptop.</text>
+  </g>
+</svg>

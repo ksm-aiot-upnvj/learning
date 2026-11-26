@@ -54,7 +54,7 @@ with urllib.request.urlopen(request) as response:
 
 Pastikan Backend Mini hidup, lalu jalankan:
 
-```bash
+```console
 uv run python mini_iot/send_sensor.py
 ```
 

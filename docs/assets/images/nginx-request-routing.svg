@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">NGINX merutekan request dashboard</title>
+  <desc id="desc">Browser meminta halaman root yang disajikan Vue, atau data sensor melalui path API yang diteruskan NGINX ke Express dan PostgreSQL.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2855a6"/></marker>
+  </defs>
+  <rect width="1000" height="430" rx="20" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="32" y="44" font-size="25" font-weight="700">Satu alamat, dua jalur request</text>
+    <rect x="45" y="155" width="180" height="100" rx="15" fill="#dceaff"/>
+    <text x="135" y="195" text-anchor="middle" font-size="20" font-weight="700">Browser</text>
+    <text x="135" y="225" text-anchor="middle" font-size="15">minta halaman/data</text>
+    <rect x="330" y="155" width="190" height="100" rx="15" fill="#ffedce"/>
+    <text x="425" y="195" text-anchor="middle" font-size="20" font-weight="700">NGINX</text>
+    <text x="425" y="225" text-anchor="middle" font-size="15">membaca path</text>
+    <path d="M230 190H322" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="276" y="174" text-anchor="middle" font-size="14">/</text>
+    <path d="M230 230H322" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="276" y="254" text-anchor="middle" font-size="14">/api/sensors</text>
+    <path d="M525 184C585 184 584 115 645 115" fill="none" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M525 226C585 226 584 310 645 310" fill="none" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="660" y="73" width="270" height="88" rx="15" fill="#def5e9"/>
+    <text x="795" y="109" text-anchor="middle" font-size="20" font-weight="700">Vue</text>
+    <text x="795" y="137" text-anchor="middle" font-size="15">mengirim berkas halaman</text>
+    <rect x="660" y="265" width="270" height="88" rx="15" fill="#e8e2ff"/>
+    <text x="795" y="301" text-anchor="middle" font-size="20" font-weight="700">Express → PostgreSQL</text>
+    <text x="795" y="329" text-anchor="middle" font-size="15">/api/sensors → /sensors</text>
+    <text x="32" y="397" font-size="15" fill="#344969">NGINX menjadi pintu depan: path menentukan layanan yang menerima request.</text>
+  </g>
+</svg>

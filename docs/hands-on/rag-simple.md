@@ -27,7 +27,7 @@ Cekidot!
 
 ## Instalasi Library
 
-```bash
+```console
 !uv pip install --upgrade docling sentence-transformers groq pymupdf chromadb accelerate transformers -q
 ```
 

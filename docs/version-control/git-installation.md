@@ -4,23 +4,37 @@
 
     Langkah instalasi dan pemeriksaan Git pada halaman ini disusun dengan bantuan AI.
 
-Git dijalankan dari terminal, jadi pemasangan perlu menghasilkan perintah `git` yang dikenali di terminal baru. Panduan ini memakai PowerShell di Windows. Untuk macOS dan Linux, pilih petunjuk pemasangan sesuai sistem pada [halaman unduhan resmi Git](https://git-scm.com/downloads).
+Git tersedia melalui pemasang atau pengelola paket yang berbeda pada tiap sistem operasi. Pilih tab sesuai komputer yang dipakai.
 
-## Memasang Git di Windows
+=== "Windows"
 
-1. Buka [halaman unduhan Git untuk Windows](https://git-scm.com/download/win).
-2. Unduh pemasang yang sesuai dengan arsitektur Windows.
-3. Buka berkas pemasang.
-4. Pilih pengaturan yang mengizinkan Git dipakai dari command line saat pemasang menanyakan PATH.
-5. Selesaikan pemasangan.
-6. Buka jendela PowerShell baru.
-7. Periksa versi Git.
+    Unduh dan pasang [Git for Windows](https://git-scm.com/install/windows). Saat pemasang menanyakan PATH, pilih opsi yang membuat perintah Git dapat dijalankan dari terminal.
 
-    ```powershell
-    git --version
+=== "macOS"
+
+    Jalankan perintah berikut untuk memasang command line tools Apple. Jika Git sudah tersedia, macOS akan memberi tahu; jika belum, ikuti dialog pemasang.
+
+    ```sh
+    xcode-select --install
     ```
 
-Jika terminal menampilkan versi seperti `git version 2.x`, perintah sudah dikenali. Jika `git` tidak ditemukan, buka terminal baru untuk mengambil pengaturan PATH terbaru. Jika pesan tetap muncul, periksa opsi PATH pada pemasang.
+=== "Linux"
+
+    Pada Debian atau Ubuntu, jalankan:
+
+    ```sh
+    sudo apt install git
+    ```
+
+    Untuk distribusi lain, pilih pengelola paket pada [panduan resmi Git untuk Linux](https://git-scm.com/install/linux.html).
+
+Buka terminal baru dan periksa instalasi dengan perintah yang sama pada ketiga sistem:
+
+```console
+git --version
+```
+
+Jika terminal menampilkan versi seperti `git version 2.x`, perintah sudah dikenali. Jika `git` tidak ditemukan, buka terminal baru agar pengaturan PATH terbaru terbaca.
 
 ## What's next
 

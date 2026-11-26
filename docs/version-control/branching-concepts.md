@@ -12,7 +12,7 @@ Saat tim ingin memperbarui petunjuk instalasi, perubahan dapat dikerjakan pada s
 
 Pada panel pertama, `main` menunjuk B. Buat cabang `petunjuk` dari titik itu dan langsung pindah ke sana dengan `git switch -c`. Sampai ada commit baru, kedua nama cabang masih menunjuk B.
 
-```bash
+```console
 git switch -c petunjuk
 ```
 
@@ -20,7 +20,7 @@ git switch -c petunjuk
 
 Setelah commit pada `petunjuk` dibuat, pindah ke `main` untuk mengerjakan perubahan lain. Git memperbarui berkas di folder kerja sesuai cabang yang dipilih. Jika perpindahan akan menimpa perubahan lokal, Git dapat menolak, sehingga sebaiknya periksa `git status` dulu.
 
-```bash
+```console
 git switch main
 ```
 
@@ -28,7 +28,7 @@ git switch main
 
 Pada panel kedua, `main` sudah memiliki C dan `petunjuk` memiliki D. Jalankan merge dari `main` untuk menggabungkan jalur tersebut. Jika kedua perubahan cocok, Git membuat commit merge M yang menghubungkan C dan D sebagai dua induk. [Dokumentasi git merge](https://git-scm.com/docs/git-merge)
 
-```bash
+```console
 git merge petunjuk
 ```
 
