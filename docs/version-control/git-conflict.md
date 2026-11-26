@@ -1,24 +1,36 @@
 # Konflik pada Git
 
-Git menghentikan merge atau rebase ketika dua perubahan tidak bisa digabungkan otomatis. Misalnya, di cabang `dashboard` label grafik berubah menjadi “Suhu air”, sedangkan di `main` baris yang sama berubah menjadi “Temperatur air”.
+!!! note "AI Generated"
+
+    Contoh konflik README dan alur penyelesaiannya disusun dengan bantuan AI.
+
+Dua cabang dapat memperbarui baris README yang sama dengan isi yang berbeda. Saat Git tidak dapat memilih cara menggabungkannya, operasi merge berhenti supaya kita bisa menentukan isi akhir. Di sini `main` memakai judul “Panduan perangkat AIoT” dan cabang `petunjuk` memakai “Panduan sensor AIoT”.
 
 ## Menyelesaikan Konflik
 
-1. Jalankan `git status` untuk melihat operasi yang sedang berjalan dan berkas yang perlu diperbaiki.
-2. Buka berkas yang disebut Git. Pada konflik teks, bagian di antara penanda diberi dua versi.
+Saat merge dihentikan, `git status` menunjukkan berkas yang perlu diselesaikan. Di bawah penanda `HEAD` terdapat isi dari cabang aktif pada contoh merge ini. Bagian di bawah pemisah menampilkan isi cabang yang sedang digabungkan.
 
-   ```text
-   <<<<<<< HEAD
-   label = "Suhu air"
-   =======
-   label = "Temperatur air"
-   >>>>>>> main
-   ```
+    <<<<<<< HEAD
+    # Panduan perangkat AIoT
+    =======
+    # Panduan sensor AIoT
+    >>>>>>> petunjuk
 
-3. Tulis hasil yang ingin dipertahankan, misalnya `label = "Suhu air (°C)"`. Hapus penanda dan pastikan aplikasinya masih menampilkan label yang benar.
-4. Jalankan `git add <nama-file>`. Ulangi untuk berkas lain, lalu baca `git status` lagi.
-5. Lanjutkan operasi yang ditampilkan Git. Gunakan `git merge --continue` untuk merge atau `git rebase --continue` untuk rebase.
+1. Jalankan `git status`.
+2. Buka README yang ditandai konflik.
+3. Ganti seluruh blok konflik dengan judul `# Panduan perangkat dan sensor AIoT`.
+4. Siapkan hasil dengan `git add README.md`.
+5. Periksa isi yang disiapkan dengan `git diff --staged`.
+6. Selesaikan merge dengan `git commit -m "merge: satukan judul README"`.
 
-Jika perlu kembali ke keadaan sebelum operasi, pilih perintah yang sesuai, `git merge --abort` atau `git rebase --abort`. Periksa perubahan lokal dengan `git status` sebelum memulai operasi berikutnya.
+Jika perlu membatalkan merge yang sedang berjalan, gunakan `git merge --abort`. Sebelum mencoba merge berikutnya, periksa `git status` agar perubahan lokal yang masih perlu disimpan terlihat.
 
-Lanjutkan ke [Remote Repositories](remote-repositories.md#perbedaan-antara-git-fetch-dan-git-pull) untuk melihat kapan cabang lokal dan remote perlu diselaraskan.
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Git Lokal dan Repositori Sendiri** <span class="ai-practice-description">Buat perubahan yang memicu konflik dan periksa commit hasilnya.</span>](../hands-on/git-local-remote.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-git-fork:</span> **Remote Repositories** <span class="ai-practice-description">Lihat cara membandingkan cabang lokal dengan perubahan di server.</span>](remote-repositories.md)
+
+</div>

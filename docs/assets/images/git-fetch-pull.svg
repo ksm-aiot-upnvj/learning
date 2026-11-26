@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 660" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">Git fetch dan git pull dengan merge</title>
+  <desc id="desc">Sebelum fetch, main lokal di C, origin/main di B, dan main pada server di D. Fetch memperbarui origin/main ke D. Pull dengan merge membuat M dan memindahkan main lokal ke M.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4 0 8Z" fill="#2855a6"/>
+    </marker>
+  </defs>
+  <rect width="780" height="660" rx="18" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="28" y="43" text-anchor="start" font-size="26" font-weight="700" fill="#1a2b48">Membandingkan git fetch dan git pull</text>
+    <rect x="24" y="63" width="732" height="190" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text x="49" y="98" text-anchor="start" font-size="23" font-weight="700" fill="#1a2b48">1. Sebelum fetch</text>
+    <path d="M94 149H330" fill="none" stroke="#2855a6" stroke-width="3"/>
+    <path d="M213 149C250 149 280 194 330 194" fill="none" stroke="#16695a" stroke-width="3" stroke-dasharray="6 5"/>
+    <circle cx="94" cy="149" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="94" y="154" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">A</text>
+    <circle cx="213" cy="149" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="213" y="154" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">B</text>
+    <circle cx="330" cy="149" r="15" stroke="#2855a6" stroke-width="2" fill="#fff"/>
+    <text x="330" y="154" text-anchor="middle" font-size="14" font-weight="700" fill="#2855a6">C</text>
+    <circle cx="330" cy="194" r="15" stroke="#16695a" stroke-width="2" fill="#fff" stroke-dasharray="4 3"/>
+    <text x="330" y="199" text-anchor="middle" font-size="14" font-weight="700" fill="#16695a">D</text>
+    <text x="358" y="154" text-anchor="start" font-size="16" font-weight="700" fill="#2855a6">main lokal</text>
+    <text x="358" y="199" text-anchor="start" font-size="16" font-weight="700" fill="#16695a">main di server</text>
+    <text x="49" y="232" text-anchor="start" font-size="16" font-weight="450" fill="#586c87">Di laptop, catatan origin/main masih menunjuk B. Commit D ada di server.</text>
+    <path d="M213 166V176" stroke="#6c459b" stroke-width="2"/>
+    <text x="213" y="194" text-anchor="middle" font-size="16" font-weight="700" fill="#6c459b">origin/main</text>
+    <rect x="24" y="261" width="732" height="190" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text x="49" y="296" text-anchor="start" font-size="23" font-weight="700" fill="#1a2b48">2. Setelah git fetch origin</text>
+    <path d="M94 347H330" fill="none" stroke="#2855a6" stroke-width="3"/>
+    <path d="M213 347C250 347 280 392 330 392" fill="none" stroke="#16695a" stroke-width="3"/>
+    <circle cx="94" cy="347" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="94" y="352" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">A</text>
+    <circle cx="213" cy="347" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="213" y="352" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">B</text>
+    <circle cx="330" cy="347" r="15" stroke="#2855a6" stroke-width="2" fill="#fff"/>
+    <text x="330" y="352" text-anchor="middle" font-size="14" font-weight="700" fill="#2855a6">C</text>
+    <circle cx="330" cy="392" r="15" stroke="#16695a" stroke-width="2" fill="#fff"/>
+    <text x="330" y="397" text-anchor="middle" font-size="14" font-weight="700" fill="#16695a">D</text>
+    <text x="358" y="352" text-anchor="start" font-size="16" font-weight="700" fill="#2855a6">main lokal</text>
+    <text x="358" y="397" text-anchor="start" font-size="16" font-weight="700" fill="#16695a">origin/main</text>
+    <text x="49" y="430" text-anchor="start" font-size="16" font-weight="450" fill="#586c87">Commit D sudah di laptop. Main lokal tetap di C.</text>
+    <rect x="24" y="459" width="732" height="190" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text x="49" y="494" text-anchor="start" font-size="23" font-weight="700" fill="#1a2b48">3. Setelah git pull --no-rebase origin main</text>
+    <path d="M94 545H330" fill="none" stroke="#2855a6" stroke-width="3"/>
+    <path d="M213 545C250 545 280 590 330 590" fill="none" stroke="#16695a" stroke-width="3"/>
+    <path d="M330 545H467" fill="none" stroke="#2855a6" stroke-width="3"/>
+    <path d="M330 590C390 590 420 545 467 545" fill="none" stroke="#16695a" stroke-width="3"/>
+    <circle cx="94" cy="545" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="94" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">A</text>
+    <circle cx="213" cy="545" r="15" stroke="#586c87" stroke-width="2" fill="#fff"/>
+    <text x="213" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#586c87">B</text>
+    <circle cx="330" cy="545" r="15" stroke="#2855a6" stroke-width="2" fill="#fff"/>
+    <text x="330" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#2855a6">C</text>
+    <circle cx="330" cy="590" r="15" stroke="#16695a" stroke-width="2" fill="#fff"/>
+    <text x="330" y="595" text-anchor="middle" font-size="14" font-weight="700" fill="#16695a">D</text>
+    <circle cx="467" cy="545" r="15" stroke="#2855a6" stroke-width="2" fill="#fff"/>
+    <text x="467" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#2855a6">M</text>
+    <text x="497" y="550" text-anchor="start" font-size="16" font-weight="700" fill="#2855a6">main lokal</text>
+    <text x="358" y="595" text-anchor="start" font-size="16" font-weight="700" fill="#16695a">origin/main</text>
+    <text x="49" y="628" text-anchor="start" font-size="16" font-weight="450" fill="#586c87">Main lokal menunjuk M. Main di server masih di D sampai berikutnya dipush.</text>
+  </g>
+</svg>

@@ -1,9 +1,15 @@
 # Hands-on
 
+!!! note "AI Generated"
+
+    Entri latihan Git pada halaman ini disusun dengan bantuan AI.
+
 Mulai dengan satu latihan dan periksa hasilnya sebelum menyambungkan bagian yang lain.
 
 | Latihan | Hasil yang perlu diperiksa |
 | --- | --- |
+| [Git Lokal dan Repositori Sendiri](git-local-remote.md) | Periksa hasil merge di laptop, lalu cocokkan commit setelah push ke repo GitHub sendiri. |
+| [Fork dan Pull Request di GitHub](git-fork-pull-request.md) | Periksa asal cabang, tujuan, dan berkas usulan pada pull request ke repo latihan KSM. |
 | [Backend Mini](backend-mini.md) | `GET /health` mengembalikan status `ok`. `POST /sensors` memeriksa dan mengembalikan kiriman. |
 | [Backend dengan PostgreSQL dan MongoDB](backend-database-demo.md) | Mencoba API PostgreSQL dan CRUD device dengan MongoDB, lalu membandingkan susunan kodenya. |
 | [IoT Simulator Mini](iot-simulator-mini.md) | Terminal menampilkan respons dari contoh kiriman sensor. |

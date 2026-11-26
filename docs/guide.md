@@ -1,5 +1,11 @@
 # How to contribute
 
+!!! note "AI Generated"
+
+    Tautan ke latihan fork dan pull request ditambahkan dengan bantuan AI.
+
+Jika baru pertama kali berkontribusi, ikuti [Fork dan Pull Request di GitHub](hands-on/git-fork-pull-request.md) di repositori latihan KSM. Setelah mengenali cabang asal dan tujuan pull request, gunakan panduan ini untuk mengirim kontribusi ke dokumentasi AIoT Learning Hub.
+
 Untuk berkontribusi pada dokumentasi ini, diharapkan kamu memiliki pemahaman dasar tentang sistem kontrol versi (Git) dan platform GitHub. Berikut adalah langkah-langkah untuk memulai:
 
 1. Fork repository ini ke akun GitHub kamu.

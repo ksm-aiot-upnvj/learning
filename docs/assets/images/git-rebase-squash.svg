@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 716" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">Rebase dan squash dari riwayat yang sama</title>
+  <desc id="desc">Di awal, A dan B adalah commit bersama. Main menunjuk D, sedangkan fitur memiliki C dan E dari B. Rebase memindahkan fitur ke E-prima lewat C-prima setelah D, dengan dua commit baru. Squash menambah satu commit S setelah D pada main; fitur tetap menunjuk E.</desc>
+  <style>
+    text { font: 18px system-ui, Arial, sans-serif; fill: #1a2b48; }
+    .title { font-size: 27px; font-weight: 700; }
+    .heading { font-size: 22px; font-weight: 700; }
+    .history { fill: none; stroke-width: 3; }
+    .main { color: #2855a6; }
+    .feature { color: #16695a; }
+    .shared { color: #586c87; }
+    .squash { color: #6c459b; }
+    .node circle { fill: white; stroke: currentColor; stroke-width: 2; }
+    .node text { fill: currentColor; font-size: 16px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+    .branch { fill: currentColor; font-weight: 700; }
+    .caption { fill: #344969; font-size: 18px; }
+  </style>
+  <rect width="740" height="716" rx="18" fill="#f5f8ff"/>
+  <text class="title" x="28" y="43">Hasil rebase dan squash</text>
+
+  <g transform="translate(24 65)">
+    <rect width="692" height="198" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text class="heading" x="24" y="37">Sebelum perubahan</text>
+    <path class="history" stroke="#2855a6" d="M60 81H260"/>
+    <path class="history" stroke="#16695a" d="M160 81C206 81 212 134 260 134H360"/>
+    <g class="node shared" transform="translate(60 81)"><circle r="17"/><text>A</text></g>
+    <g class="node shared" transform="translate(160 81)"><circle r="17"/><text>B</text></g>
+    <g class="node main" transform="translate(260 81)"><circle r="17"/><text>D</text></g>
+    <g class="node feature" transform="translate(260 134)"><circle r="17"/><text>C</text></g>
+    <g class="node feature" transform="translate(360 134)"><circle r="17"/><text>E</text></g>
+    <text class="branch main" x="287" y="87">main</text>
+    <text class="branch feature" x="387" y="140">fitur</text>
+    <text class="caption" x="24" y="178">Kedua cabang berawal dari B.</text>
+  </g>
+
+  <g transform="translate(24 275)">
+    <rect width="692" height="206" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text class="heading" x="24" y="37">Rebase · jalankan dari cabang fitur</text>
+    <path class="history" stroke="#2855a6" d="M60 111H260"/>
+    <path class="history" stroke="#16695a" d="M260 111H460"/>
+    <path stroke="#2855a6" stroke-width="1.5" d="M260 82V93"/>
+    <g class="node shared" transform="translate(60 111)"><circle r="17"/><text>A</text></g>
+    <g class="node shared" transform="translate(160 111)"><circle r="17"/><text>B</text></g>
+    <g class="node main" transform="translate(260 111)"><circle r="17"/><text>D</text></g>
+    <g class="node feature" transform="translate(360 111)"><circle r="17"/><text>C′</text></g>
+    <g class="node feature" transform="translate(460 111)"><circle r="17"/><text>E′</text></g>
+    <text class="branch main" x="260" y="76" text-anchor="middle">main</text>
+    <text class="branch feature" x="487" y="117">fitur</text>
+    <text class="caption" x="24" y="166">C dan E diterapkan ulang satu per satu setelah D.</text>
+    <text class="caption" x="24" y="190">Cabang fitur mendapat C′ dan E′.</text>
+  </g>
+
+  <g transform="translate(24 493)">
+    <rect width="692" height="206" rx="13" fill="#fff" stroke="#d4dff0"/>
+    <text class="heading" x="24" y="37">Squash lalu commit · jalankan dari main</text>
+    <path class="history" stroke="#2855a6" d="M60 81H260"/>
+    <path class="history" stroke="#6c459b" d="M260 81H360"/>
+    <path class="history" stroke="#16695a" d="M160 81C206 81 212 134 260 134H360"/>
+    <g class="node shared" transform="translate(60 81)"><circle r="17"/><text>A</text></g>
+    <g class="node shared" transform="translate(160 81)"><circle r="17"/><text>B</text></g>
+    <g class="node main" transform="translate(260 81)"><circle r="17"/><text>D</text></g>
+    <g class="node squash" transform="translate(360 81)"><circle r="17"/><text>S</text></g>
+    <g class="node feature" transform="translate(260 134)"><circle r="17"/><text>C</text></g>
+    <g class="node feature" transform="translate(360 134)"><circle r="17"/><text>E</text></g>
+    <text class="branch main" x="387" y="87">main</text>
+    <text class="branch feature" x="387" y="140">fitur</text>
+    <text class="caption" x="24" y="178">Gabungan perubahan C dan E dicatat sebagai satu commit S.</text>
+  </g>
+</svg>

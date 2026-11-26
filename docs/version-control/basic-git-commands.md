@@ -1,231 +1,62 @@
-# Basic Git Commands
+# Perintah Dasar Git
 
-Pada modul ini, kita akan mempelajari beberapa perintah dasar Git yang sering digunakan dalam pengelolaan versi kode sumber. Tapi sebelum masuk ke perintah-perintah tersebut, pastikan Git sudah terinstal di sistem Anda. Jika belum, silakan merujuk ke modul "Git Installation" [git installation](./git-installation.md).
+!!! note "AI Generated"
 
-!!! tip "Git di Powershell (Optional)"
-    Agar kamu bisa menggunakan Git di Powershell tanpa harus membuka Git Bash, kamu bisa menambahkan path Git ke dalam variabel lingkungan (environment variables) di Windows. [Lihat panduan ini](https://www.w3schools.com/git/git_install.asp?remote=github#:~:text=How%20to%20Add%20Git%20to%20PATH%20after%20Installation).
+    Contoh perintah, penjelasan, dan jalur praktik pada halaman ini disusun dengan bantuan AI.
+
+Saat beberapa berkas berubah, kita perlu memilih perubahan mana yang dicatat bersama. `git status` menunjukkan berkas yang berubah, lalu `git diff` membantu membaca perbedaannya. Siapkan Git melalui [panduan instalasi](git-installation.md) sebelum mencoba perintah.
 
 ## Konfigurasi Awal Git
 
-Pada awal penggunaan Git, kita perlu mengatur nama pengguna dan email yang akan digunakan dalam setiap commit. Gunakan perintah berikut:
+Git menyimpan nama dan email penulis sebagai bagian dari setiap commit. Untuk latihan, jalankan perintah berikut dari dalam repositori. Opsi `--local` berlaku pada repositori itu, sedangkan `--global` menentukan setelan bawaan akun komputer untuk berbagai repositori.
 
-1. Mengatur nama pengguna:
+```bash
+git config --local user.name "Nama Lengkap"
+git config --local user.email "nama@example.com"
+```
 
-    ```bash
-    git config --global user.name "Nama kamu"
-    ```
-
-2. Mengatur email pengguna:
-
-    ```bash
-    git config --global user.email "Email kamu"
-    ```
-
-!!! info "Tambahan"
-    Terdapat 2 level konfigurasi Git, yaitu `--global` dan `--local`. Opsi `--global` akan mengatur konfigurasi untuk seluruh repository di sistem kamu, sedangkan `--local` hanya akan mengatur konfigurasi untuk repository saat ini saja.
-
-Setelah konfigurasi awal selesai, kita bisa mulai menggunakan beberapa perintah dasar Git berikut:
+Untuk commit yang akan dikirim ke GitHub, gunakan alamat yang terhubung dengan akun. Alamat `noreply` dari pengaturan GitHub bisa dipakai agar alamat pribadi tidak tercantum pada commit baru. [Mengatur alamat email commit](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address)
 
 ## Perintah Dasar Git
 
-1. **Inisialisasi Repository Git Baru**
+Jalankan `git init -b main` dalam folder latihan baru untuk memulai repositori. Setelah commit awal README dibuat, ubah satu baris di README agar perintah pembanding memiliki versi sebelumnya. Gunakan [latihan Git Lokal](../hands-on/git-local-remote.md) untuk mengikuti langkah sejak folder masih kosong.
 
-    Untuk membuat repository Git baru di direktori saat ini, gunakan perintah:
+| Perintah | Yang dilihat atau dilakukan |
+| --- | --- |
+| `git status` | Menunjukkan cabang aktif dan berkas baru, berubah, atau siap masuk commit. |
+| `git diff` | Membandingkan berkas yang sudah dilacak di folder kerja dengan staging area. |
+| `git add README.md` | Menyiapkan isi README untuk commit berikutnya. |
+| `git diff --staged` | Membandingkan isi staging area dengan commit terakhir. |
+| `git commit -m "docs: perbarui petunjuk latihan"` | Membuat commit dari isi yang sudah disiapkan. |
 
-    ```bash
-    git init
-    ```
-
-2. **Menambahkan File ke Staging Area**
-
-    Untuk menambahkan file ke staging area sebelum melakukan commit, gunakan perintah:
-
-    ```bash
-    git add <nama_file>
-    ```
-
-    Atau untuk menambahkan semua file yang telah diubah:
-
-    ```bash
-    git add .
-    ```
-
-3. **Melakukan Commit**
-
-    Setelah menambahkan file ke staging area, kamu bisa melakukan commit untuk menyimpan perubahan tersebut ke dalam repository. Gunakan perintah:
-
-    ```bash
-    git commit -m "Pesan commit kamu"
-    ```
-
-    !!! tips "Kombinasi Perintah"
-        Kamu juga bisa menggabungkan perintah `git add` dan `git commit` menjadi satu langkah dengan menggunakan opsi `-a` pada perintah commit jika status file berada pada mode `modified`:
-
-    ```bash
-    git commit -a -m "Pesan commit kamu"
-    ```
-
-    atau
-
-    ```bash
-    git commit -am "Pesan commit kamu"
-    ```
-
-4. **Melihat Status Repository**
-
-    Untuk melihat status repository, termasuk file yang telah diubah dan belum di-commit, gunakan perintah:
-
-    ```bash
-    git status
-    ```
-
-5. **Melihat Riwayat Commit**
-
-    Untuk melihat riwayat commit pada repository, gunakan perintah:
-
-    ```bash
-    git log
-    ```
+Jika README baru pertama kali dibuat, Git menampilkannya sebagai *untracked* sampai berkas ditambahkan. `git status` sudah memperlihatkan berkas baru itu. Gunakan `git diff --staged` setelah `git add README.md` untuk membaca isinya sebelum commit.
 
 ## Berpindah riwayat commit
 
-Untuk berpindah ke commit tertentu dalam riwayat, kamu bisa menggunakan perintah:
-
-```bash
-git checkout <hash_commit>
-```
-
-Dan untuk kembali ke cabang utama (main/master), gunakan perintah:
-
-```bash
-git checkout <main / master>
-```
+Gunakan `git show <hash-commit>` untuk membaca satu commit tanpa berganti cabang. Jika ingin melihat pohon berkas pada commit lama, `git switch --detach <hash-commit>` memindahkan posisi kerja langsung ke commit itu. Jalankan `git switch main` untuk kembali ke cabang latihan. [Dokumentasi git switch](https://git-scm.com/docs/git-switch)
 
 ## Bekerja dengan Repository remote
 
-1. **Clone Repository**
-
-    Untuk menyalin (clone) repository dari remote server ke lokal, gunakan perintah:
-
-    ```bash
-    git clone <url_repository>
-    ```
-
-2. **Menambahkan Remote Repository**
-
-    Untuk menambahkan remote repository ke repository lokal, gunakan perintah:
-
-    ```bash
-    git remote add origin <url_repository>
-    ```
-
-    Biasanya `origin` adalah nama default untuk remote repository utama. Pada saat melakukan `clone`, Git secara otomatis menambahkan remote dengan nama `origin`.
-
-3. **Melakukan Push ke Remote Repository**
-
-    Setelah melakukan commit di repository lokal, kamu bisa mengirimkan perubahan tersebut ke remote repository dengan perintah:
-
-    ```bash
-    git push origin <nama_cabang>
-    ```
-
-    Contoh untuk mengirimkan perubahan ke cabang utama (main/master):
-
-    ```bash
-    git push origin main
-    ```
-
-    !!! tips "Push Pertama Kali"
-        Jika ini adalah kali pertama kamu melakukan push ke remote repository, kamu mungkin perlu mengatur upstream branch dengan perintah:
-
-    ```bash
-    git push -u origin main
-    ```
-
-4. **Melakukan Pull dari Remote Repository**
-
-    Periksa cabang aktif dan perubahan lokal dengan `git status`. Untuk menyelaraskan cabang tanpa membuat merge commit, gunakan fast-forward saja:
-
-    ```bash
-    git pull --ff-only origin <nama_cabang>
-    ```
-
-    Contoh untuk mengambil perubahan dari cabang utama (main/master):
-
-    ```bash
-    git pull --ff-only origin main
-    ```
-
-    Jika cabang lokal dan remote punya commit masing-masing, perintah berhenti. Baca [perbedaan fetch dan pull](remote-repositories.md#perbedaan-antara-git-fetch-dan-git-pull) sebelum memilih cara menggabungkannya.
+`git clone` mengambil salinan repositori yang sudah ada, sedangkan `git remote add origin <url>` menghubungkan repositori lokal dengan suatu tujuan. Setelah ada commit lokal, `git push -u origin main` mengirim cabang `main` dan mengatur pelacakannya. Baca [Remote Repositories](remote-repositories.md) untuk memeriksa tujuan sebelum push.
 
 ## Mengatur `git log`
 
-Kamu bisa mengatur tampilan `git log` agar lebih informatif dan mudah dibaca dengan menggunakan beberapa opsi berikut:
-
-- Menampilkan log dalam format satu baris per commit:
-
-    ```bash
-    git log --oneline
-    ```
-
-- Menampilkan grafik cabang dan merge:
-
-    ```bash
-    git log --all --graph --decorate --oneline
-    ```
-
-Membuat alias untuk perintah `git log` yang sering digunakan:
+Tampilkan commit secara ringkas dengan `git log --oneline`. Jika sudah ada beberapa cabang, tambahkan `--all --graph --decorate` agar label cabang dan hubungan antarcommit terlihat.
 
 ```bash
-git config --global alias.graph "log --all --graph --decorate --oneline"
-```
-
-atau
-
-```bash
-git config --global alias.graph "!git log --all --graph --decorate --oneline"
+git log --oneline --all --graph --decorate
 ```
 
 ## Alur Penggunaan Git
 
-Secara umum, alur penggunaan Git dapat digambarkan sebagai berikut:
+Sebelum commit, periksa daftar perubahan dengan `git status`, lalu baca isi yang sudah disiapkan melalui `git diff --staged`. Setelah commit tercatat, gunakan `git log --oneline` untuk menemukan pesan dan identitas commit.
 
-```mermaid
-graph TD
-    Start((Mulai)) --> Init[git init]
-    Init --> Coding[Modifikasi File / Coding]
-    
-    Coding --> Status[git status]
-    Status --> Add[git add .]
-    
-    Add --> Commit[git commit -m 'pesan']
-    
-    Commit --> More{Mofifikasi lagi?}
-    More -- Ya --> Coding
-    More -- Tidak --> Log[git log / git graph]
-    
-    Log --> Selesai((Selesai))
-```
+## What's next
 
-Jika ditambahkan dengan lingkup area kerja Git, alurnya menjadi seperti berikut:
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant Dev as Pengguna
-    participant WD as Working Directory
-    participant SA as Staging Area
-    participant LR as Local Repository (.git)
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-git-branch:</span> **Konsep Branching** <span class="ai-practice-description">Mulai pekerjaan baru dari satu commit dan lihat cabang berkembang.</span>](branching-concepts.md){ .ai-practice-start }
 
-    Dev->>WD: Mulai proyek
-    Dev->>LR: git init
-    note over LR: Inisialisasi repository
-    Dev->>WD: Modifikasi file
-    Dev->>SA: git add <file> / .
-    SA->>LR: Stage perubahan
-    Dev->>LR: git commit -m "Pesan commit"
-    Dev->>LR: git status
-    LR-->>Dev: Status file (untracked/staged/committed)
-    Dev->>LR: git log / git graph
-    LR-->>Dev: Riwayat commit
-```
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Git Lokal dan Repositori Sendiri** <span class="ai-practice-description">Coba alur dari folder kosong sampai push pertama.</span>](../hands-on/git-local-remote.md)
+
+</div>

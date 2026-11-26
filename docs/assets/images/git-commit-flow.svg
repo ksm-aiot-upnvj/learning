@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 290" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">Alur perubahan README menjadi commit</title>
+  <desc id="desc">Baca perbedaan folder kerja dengan git diff. Git add menyiapkan isi di staging area. Git diff --staged memeriksa isi dan git commit menyimpannya ke repositori lokal.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4 0 8Z" fill="#2855a6"/>
+    </marker>
+  </defs>
+  <rect width="780" height="290" rx="18" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="28" y="45" text-anchor="start" font-size="26" font-weight="700" fill="#1a2b48">Perjalanan satu perubahan README</text>
+    <rect x="28" y="130" width="190" height="81" rx="13" fill="#dceaff" stroke="#d4dff0"/>
+    <text x="123" y="163" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2b48">Folder kerja</text>
+    <text x="123" y="189" text-anchor="middle" font-size="16" font-weight="450" fill="#586c87">README diedit</text>
+    <rect x="295" y="130" width="190" height="81" rx="13" fill="#def5e9" stroke="#d4dff0"/>
+    <text x="390" y="163" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2b48">Staging area</text>
+    <text x="390" y="189" text-anchor="middle" font-size="16" font-weight="450" fill="#586c87">Isi siap dicatat</text>
+    <rect x="562" y="130" width="190" height="81" rx="13" fill="#ede5fb" stroke="#d4dff0"/>
+    <text x="657" y="163" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2b48">Riwayat lokal</text>
+    <text x="657" y="189" text-anchor="middle" font-size="16" font-weight="450" fill="#586c87">Commit tersimpan</text>
+    <text x="256" y="105" text-anchor="middle" font-size="18" font-weight="700" fill="#2855a6">git add</text>
+    <text x="523" y="105" text-anchor="middle" font-size="18" font-weight="700" fill="#2855a6">git commit</text>
+    <path d="M221 169H292" fill="none" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M488 169H559" fill="none" stroke="#2855a6" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="123" y="248" text-anchor="middle" font-size="17" font-weight="700" fill="#2855a6">git diff</text>
+    <text x="390" y="248" text-anchor="middle" font-size="17" font-weight="700" fill="#16695a">git diff --staged</text>
+    <text x="657" y="248" text-anchor="middle" font-size="17" font-weight="700" fill="#6c459b">git log</text>
+  </g>
+</svg>

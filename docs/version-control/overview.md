@@ -1,16 +1,27 @@
 # Version Control Systems
 
-Version Control System (VCS) merupakan sebuah tools yang digunakan untuk mengelola perubahan pada kode atau dokumen. VCS memungkinkan developer untuk melacak setiap perubahan yang dilakukan, memudahkan kolaborasi antar tim, serta memungkinkan rollback ke versi sebelumnya jika diperlukan.
+!!! note "AI Generated"
 
-Pada modul ini, kita akan mempelajari tools VCS yaitu Git dan platform hosting repository seperti GitHub. Kita akan membahas konsep dasar Git, perintah-perintah penting, serta cara menggunakan GitHub untuk kolaborasi proyek.
+    Pembuka dan jalur belajar pada halaman ini disusun dengan bantuan AI.
 
-Hal-hal yang akan dipelajari dalam modul ini meliputi:
+Bayangkan dua anggota tim mengubah petunjuk pemasangan pada README yang sama. Saat ada kalimat yang keliru, tim perlu mengetahui versi sebelumnya dan alasan perubahan itu. Sistem kontrol versi atau *version control system* (VCS) menyimpan riwayat sehingga tim bisa membandingkan hasil kerja dari waktu ke waktu.
 
-- Pengenalan Version Control System
-- Instalasi dan konfigurasi Git
-- Perintah dasar Git (init, clone, add, commit, push, pull)
-- Branching dan merging
-- Konflik dalam Git dan cara mengatasinya
-- Git Squash dan Rebase
-- Menggunakan GitHub untuk kolaborasi
-- Best practices dalam penggunaan VCS
+Git menyimpan riwayat proyek di komputer, sehingga kita bisa mencatat perubahan saat bekerja tanpa internet. Untuk berbagi riwayat, kita dapat menghubungkan repositori Git ke layanan seperti GitHub. Repositori adalah tempat Git menyimpan riwayat proyek.
+
+## Urutan belajar
+
+1. Baca [Pengantar Version Control](git-introduction.md) untuk memahami cara Git menyimpan perubahan.
+2. Ikuti [Instalasi Git](git-installation.md) untuk menyiapkan terminal.
+3. Coba [Perintah Dasar Git](basic-git-commands.md) untuk memeriksa dan mencatat perubahan README.
+4. Baca [Konsep Branching](branching-concepts.md) dan [Konflik pada Git](git-conflict.md) sebelum menggabungkan perubahan.
+5. Pelajari [Remote Repositories](remote-repositories.md) sebelum mengirim commit atau membuka pull request.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-git-commit-horizontal:</span> **Pengantar Version Control** <span class="ai-practice-description">Ikuti perjalanan satu perubahan README sampai tersimpan sebagai commit.</span>](git-introduction.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Git Lokal dan Repositori Sendiri** <span class="ai-practice-description">Buat repositori dari terminal dan periksa hasil push di GitHub.</span>](../hands-on/git-local-remote.md)
+
+</div>

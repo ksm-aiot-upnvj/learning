@@ -30,13 +30,14 @@ nav = [
     { "BLE (Bluetooth Low Energy)" = "protocol/ble.md" },
     { "LoRaWAN" = "protocol/lorawan.md" },
   ] },
+  # AI Generated: penyesuaian judul materi Version Control.
   { "Version Control" = [
     { "Overview" = "version-control/overview.md" },
-    { "Git Introduction" = "version-control/git-introduction.md" },
-    { "Git Installation" = "version-control/git-installation.md" },
-    { "Basic Git Commands" = "version-control/basic-git-commands.md" },
+    { "Pengantar Version Control" = "version-control/git-introduction.md" },
+    { "Instalasi Git" = "version-control/git-installation.md" },
+    { "Perintah Dasar Git" = "version-control/basic-git-commands.md" },
     { "Konsep Branching" = "version-control/branching-concepts.md" },
-    { "Git Conflicts" = "version-control/git-conflict.md" },
+    { "Konflik pada Git" = "version-control/git-conflict.md" },
     { "Remote Repositories" = "version-control/remote-repositories.md" },
   ] },
   { "Backend" = [
@@ -122,6 +123,9 @@ nav = [
   ] },
   { "Hands-on" = [
     { "Overview" = "hands-on/overview.md" },
+    # AI Generated: tautan dua latihan Git.
+    { "Git Lokal dan Repositori Sendiri" = "hands-on/git-local-remote.md" },
+    { "Fork dan Pull Request di GitHub" = "hands-on/git-fork-pull-request.md" },
     { "Backend Mini" = "hands-on/backend-mini.md" },
     { "Backend dengan PostgreSQL dan MongoDB" = "hands-on/backend-database-demo.md" },
     { "Frontend Mini" = "hands-on/frontend-mini.md" },

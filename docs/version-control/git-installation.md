@@ -1,25 +1,31 @@
 # Instalasi Git
 
-Pada bagian ini, kita akan membahas cara menginstal Git pada berbagai sistem operasi seperti Windows.
+!!! note "AI Generated"
 
-!!! info "Catatan"
-    Lingkungan sistem operasi yang digunakan pada panduan ini adalah Windows. Namun, langkah-langkah instalasi pada sistem operasi lain seperti macOS dan Linux umumnya serupa dengan beberapa penyesuaian.
+    Langkah instalasi dan pemeriksaan Git pada halaman ini disusun dengan bantuan AI.
 
-1. Kunjungi situs resmi Git di [https://git-scm.com/downloads](https://git-scm.com/downloads).
-2. Pilih versi Git yang sesuai dengan sistem operasi yang kamu gunakan (misalnya Windows) lalu klik tautan unduhan.
-3. Setelah file instalasi diunduh, buka file tersebut untuk memulai proses instalasi.
-4. Ikuti langkah-langkah pada wizard instalasi. Beberapa opsi yang perlu diperhatikan adalah:
-   - Pilih editor teks default yang akan digunakan Git (misalnya Vim, Notepad++, atau Visual Studio Code).
-   - Pilih opsi PATH environment yang sesuai (biasanya opsi "Git from the command line and also from 3rd-party software" direkomendasikan).
-   - Pilih protokol HTTPS untuk koneksi remote repository.
-5. Setelah menyelesaikan wizard instalasi, klik "Install" untuk memulai proses instalasi.
-6. Setelah instalasi selesai, klik "Finish" untuk menutup wizard.
-7. Untuk memverifikasi bahwa Git telah terinstal dengan benar, buka Command Prompt atau Git Bash dan ketik perintah berikut:
+Git dijalankan dari terminal, jadi pemasangan perlu menghasilkan perintah `git` yang dikenali di terminal baru. Panduan ini memakai PowerShell di Windows. Untuk macOS dan Linux, pilih petunjuk pemasangan sesuai sistem pada [halaman unduhan resmi Git](https://git-scm.com/downloads).
 
-   ```bash
-   git --version
-   ```
+## Memasang Git di Windows
 
-   Jika Git terinstal dengan benar, kamu akan melihat versi Git yang terpasang pada sistem kamu.
+1. Buka [halaman unduhan Git untuk Windows](https://git-scm.com/download/win).
+2. Unduh pemasang yang sesuai dengan arsitektur Windows.
+3. Buka berkas pemasang.
+4. Pilih pengaturan yang mengizinkan Git dipakai dari command line saat pemasang menanyakan PATH.
+5. Selesaikan pemasangan.
+6. Buka jendela PowerShell baru.
+7. Periksa versi Git.
 
-Selamat! Kamu telah berhasil menginstal Git pada sistem operasi Windows kamu. Pada bagian selanjutnya, kita akan membahas konfigurasi awal Git setelah instalasi.
+    ```powershell
+    git --version
+    ```
+
+Jika terminal menampilkan versi seperti `git version 2.x`, perintah sudah dikenali. Jika `git` tidak ditemukan, buka terminal baru untuk mengambil pengaturan PATH terbaru. Jika pesan tetap muncul, periksa opsi PATH pada pemasang.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Perintah Dasar Git** <span class="ai-practice-description">Atur identitas commit dan periksa perubahan sebelum mencatatnya.</span>](basic-git-commands.md){ .ai-practice-start }
+
+</div>
