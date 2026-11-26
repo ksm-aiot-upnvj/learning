@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 238" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">WebSocket · satu frame teks dari server</title>
+  <desc id="desc">Opcode 1 menandai teks. Panjang payload menentukan jumlah byte. Data sensor disimpan dalam payload. Contoh server ke client tidak memakai masking.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="238" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">WebSocket · satu frame teks dari server</text>
+    <text x="30" y="70" font-size="15">Contoh satu frame utuh dari server ke browser. FIN = 1 dan MASK = 0.</text>
+    <rect x="30" y="92" width="228" height="95" rx="10" fill="#dceaff"/>
+    <text x="144" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#234b91">Jenis frame</text>
+    <text x="144" y="148" text-anchor="middle" font-size="14">Opcode = 1</text>
+    <text x="144" y="168" text-anchor="middle" font-size="14">Teks UTF-8</text>
+    <rect x="266" y="92" width="258" height="95" rx="10" fill="#def5e9"/>
+    <text x="395" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#17644f">Panjang payload</text>
+    <text x="395" y="148" text-anchor="middle" font-size="14">14 byte</text>
+    <text x="395" y="168" text-anchor="middle" font-size="14">Dihitung dari JSON</text>
+    <rect x="532" y="92" width="338" height="95" rx="10" fill="#ede5fc"/>
+    <text x="701" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#624095">Payload</text>
+    <text x="701" y="148" text-anchor="middle" font-size="14">{&quot;value&quot;:26.7}</text>
+    <text x="701" y="168" text-anchor="middle" font-size="14">Pembacaan sensor</text>
+    <text x="30" y="215" font-size="14" fill="#344969">Field panjang tambahan muncul untuk payload lebih besar. Lebar kotak bersifat ilustratif.</text>
+  </g>
+</svg>

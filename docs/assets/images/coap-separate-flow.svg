@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">CoAP · ACK kosong, hasil menyusul</title>
+  <desc id="desc">Gateway mengakui penerimaan request dengan ACK kosong. Hasil dikirim sebagai CON tersendiri dengan Message ID berbeda dan token yang sama.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="430" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">CoAP · ACK kosong, hasil menyusul</text>
+    <rect x="55" y="66" width="210" height="45" rx="11" fill="#dceaff"/>
+    <text x="160" y="94" text-anchor="middle" font-size="17" font-weight="700">Sensor</text>
+    <path d="M160 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <rect x="635" y="66" width="210" height="45" rx="11" fill="#def5e9"/>
+    <text x="740" y="94" text-anchor="middle" font-size="17" font-weight="700">Gateway CoAP</text>
+    <path d="M740 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="450" y="141" text-anchor="middle" font-size="16" font-weight="650">CON POST /sensor/temperature</text>
+    <path d="M163 151H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="171" text-anchor="middle" font-size="14" fill="#344969">Message ID = 17 · Token = 0xA7</text>
+    <text x="450" y="201" text-anchor="middle" font-size="16" font-weight="650">ACK 0.00</text>
+    <path d="M737 211H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="231" text-anchor="middle" font-size="14" fill="#344969">Message ID = 17</text>
+    <text x="450" y="261" text-anchor="middle" font-size="16" font-weight="650">CON 2.01 Created</text>
+    <path d="M737 271H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="291" text-anchor="middle" font-size="14" fill="#344969">Message ID = 44 · Token = 0xA7</text>
+    <text x="450" y="321" text-anchor="middle" font-size="16" font-weight="650">ACK 0.00</text>
+    <path d="M163 331H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="351" text-anchor="middle" font-size="14" fill="#344969">Message ID = 44</text>
+    <text x="30" y="410" font-size="14" fill="#344969">Message ID mencocokkan ACK. Token menghubungkan respons dengan request.</text>
+  </g>
+</svg>

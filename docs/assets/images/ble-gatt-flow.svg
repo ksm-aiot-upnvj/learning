@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 434" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">BLE · dari advertising ke notifikasi</title>
+  <desc id="desc">ESP32 mengiklankan diri. Ponsel memulai koneksi, membaca suhu, dan mengaktifkan notifikasi sebelum menerima nilai berikutnya.</desc>
+  <defs>
+    <marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#2855a6"/></marker>
+    <marker id="green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="800" height="434" rx="18" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="28" y="41" font-size="25" font-weight="700">BLE · dari advertising ke notifikasi</text>
+    <rect x="56" y="68" width="178" height="46" rx="11" fill="#dceaff"/>
+    <rect x="566" y="68" width="178" height="46" rx="11" fill="#def5e9"/>
+    <text x="145" y="97" text-anchor="middle" font-size="20" font-weight="700">Ponsel</text>
+    <text x="655" y="97" text-anchor="middle" font-size="20" font-weight="700">ESP32</text>
+    <path d="M145 115V415" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <path d="M655 115V415" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="400" y="139" text-anchor="middle" font-size="19">Advertising · ponsel menemukan AIoT Suhu</text>
+    <path d="M651 149H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="182" text-anchor="middle" font-size="19">Mulai koneksi BLE</text>
+    <path d="M149 192H651" stroke="#2855a6" stroke-width="2" marker-end="url(#blue)"/>
+    <text x="400" y="225" text-anchor="middle" font-size="19">Baca characteristic suhu</text>
+    <path d="M149 235H651" stroke="#2855a6" stroke-width="2" marker-end="url(#blue)"/>
+    <text x="400" y="268" text-anchor="middle" font-size="19">Nilai saat dibaca · 26 °C</text>
+    <path d="M651 278H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="311" text-anchor="middle" font-size="19">Aktifkan notifikasi</text>
+    <path d="M149 321H651" stroke="#2855a6" stroke-width="2" marker-end="url(#blue)"/>
+    <text x="400" y="354" text-anchor="middle" font-size="19">Notifikasi suhu · 27 °C</text>
+    <path d="M651 364H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="397" text-anchor="middle" font-size="19">Notifikasi suhu · 28 °C</text>
+    <path d="M651 407H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+  </g>
+</svg>

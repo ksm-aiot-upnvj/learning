@@ -1,5 +1,9 @@
 # Sensor IoT
 
+!!! note "AI Generated"
+
+    Kartu navigasi di akhir halaman ini disusun dengan bantuan AI.
+
 Sebelum memilih pin, lihat sinyal yang keluar dari sensor. DHT11 mengirim pesan digital, sensor kelembapan tanah bisa mengeluarkan tegangan, dan sensor aliran mengirim pulsa. Ketiganya memerlukan cara baca yang berbeda.
 
 ## Sensor DHT11
@@ -65,3 +69,13 @@ Sensor aliran jenis turbin mengeluarkan pulsa saat rotor berputar. Hitung pulsa 
 Pada contoh [sensor G1/2 inci dari Seeed Studio](https://wiki.seeedstudio.com/G1_and_2_inch_Water_Flow_Sensor/), hubungan hasil uji horizontal adalah `f = 7,5 × Q` dengan frekuensi dalam Hz dan laju `Q` dalam L/menit. Jika terhitung 30 pulsa selama 2 detik, frekuensinya 15 Hz dan lajunya diperkirakan 2 L/menit.
 
 Untuk mengukur volume, hitung jumlah pulsa selama cairan mengalir dan gunakan faktor pulsa per liter. Bandingkan dengan volume yang ditampung untuk memeriksa kalibrasi. Periksa juga tegangan kabel sinyal sebelum memasangnya ke GPIO.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Praktik baca sensor** <span class="ai-practice-description">Cocokkan suhu dan kelembapan DHT11 dengan angka di Serial Monitor.</span>](../hands-on/iot-hands-on.md#rangkaian-pemantau-suhu-dan-kelembapan){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-zap:</span> **Kenali aktuator** <span class="ai-practice-description">Jika pembacaan perlu memicu tindakan, lihat cara mikrokontroler mengendalikan buzzer atau pompa DC.</span>](actuators.md)
+
+</div>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 238" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">Paket MQTT 5.0 · PUBLISH</title>
+  <desc id="desc">Fixed Header berisi tipe dan flag serta Remaining Length. Variable Header berisi nama topik dan Properties Length. Payload membawa JSON suhu.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="238" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">Paket MQTT 5.0 · PUBLISH</text>
+    <text x="30" y="70" font-size="15">Contoh QoS 0, RETAIN 0, dan tanpa properti tambahan.</text>
+    <rect x="30" y="92" width="247" height="95" rx="10" fill="#dceaff"/>
+    <text x="153.5" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#234b91">Fixed Header</text>
+    <text x="153.5" y="148" text-anchor="middle" font-size="14">Tipe PUBLISH dan flags</text>
+    <text x="153.5" y="168" text-anchor="middle" font-size="14">Remaining Length</text>
+    <rect x="285" y="92" width="302" height="95" rx="10" fill="#def5e9"/>
+    <text x="436" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#17644f">Variable Header</text>
+    <text x="436" y="148" text-anchor="middle" font-size="14">Nama topik</text>
+    <text x="436" y="168" text-anchor="middle" font-size="14">Properties Length = 0</text>
+    <rect x="595" y="92" width="275" height="95" rx="10" fill="#ede5fc"/>
+    <text x="732.5" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#624095">Payload</text>
+    <text x="732.5" y="148" text-anchor="middle" font-size="14">{&quot;value&quot;:26.7}</text>
+    <text x="732.5" y="168" text-anchor="middle" font-size="14">Data sensor</text>
+    <text x="30" y="215" font-size="14" fill="#344969">Remaining Length mencakup Variable Header dan payload. Lebar kotak bersifat ilustratif.</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 238" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">CoAP lewat UDP · isi satu pesan</title>
+  <desc id="desc">Header tetap empat byte diikuti Token, Options, dan payload opsional. Message ID membantu mencocokkan ACK. Token menghubungkan respons dengan request.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="238" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">CoAP lewat UDP · isi satu pesan</text>
+    <text x="30" y="70" font-size="15">Contoh satu request CoAP yang membawa pembacaan suhu.</text>
+    <rect x="30" y="92" width="202" height="95" rx="10" fill="#dceaff"/>
+    <text x="131" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#234b91">Header · 4 byte</text>
+    <text x="131" y="148" text-anchor="middle" font-size="14">Versi, tipe, TKL, Code</text>
+    <text x="131" y="168" text-anchor="middle" font-size="14">Message ID</text>
+    <rect x="240" y="92" width="162" height="95" rx="10" fill="#def5e9"/>
+    <text x="321" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#17644f">Token</text>
+    <text x="321" y="148" text-anchor="middle" font-size="14">Hubungkan request</text>
+    <text x="321" y="168" text-anchor="middle" font-size="14">dengan respons</text>
+    <rect x="410" y="92" width="187" height="95" rx="10" fill="#ffedce"/>
+    <text x="503.5" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#884d16">Options</text>
+    <text x="503.5" y="148" text-anchor="middle" font-size="14">Uri-Path</text>
+    <text x="503.5" y="168" text-anchor="middle" font-size="14">Content-Format</text>
+    <rect x="605" y="92" width="265" height="95" rx="10" fill="#ede5fc"/>
+    <text x="737.5" y="121" text-anchor="middle" font-size="17" font-weight="700" fill="#624095">Payload</text>
+    <text x="737.5" y="148" text-anchor="middle" font-size="14">0xFF lalu data</text>
+    <text x="737.5" y="168" text-anchor="middle" font-size="14">{&quot;value&quot;:26.7}</text>
+    <text x="30" y="215" font-size="14" fill="#344969">Token, Options, dan payload dapat absen. Penanda 0xFF hanya ada jika ada payload.</text>
+  </g>
+</svg>

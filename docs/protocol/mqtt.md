@@ -1,6 +1,30 @@
-# Belajar MQTT untuk IoT
+# MQTT (Message Queuing Telemetry Transport)
 
-ESP32 mengirim pesan ke broker, lalu broker meneruskannya ke perangkat atau aplikasi yang berlangganan topik itu. Pengirim disebut publisher dan penerima disebut subscriber. Kita akan melihat apa yang diterima dashboard saat baru terhubung.
+!!! note "AI Generated"
+
+    Revisi pembuka, sejarah, penjelasan struktur pesan, diagram, dan jalur belajar pada halaman ini disusun dengan bantuan AI.
+
+MQTT adalah protokol pengiriman pesan dengan pola *publish–subscribe*. Aplikasi pengirim (*publisher*) menerbitkan pesan ke sebuah topik melalui broker, yaitu layanan perantara. Broker membaca topiknya dan meneruskan pesan ke aplikasi yang berlangganan (*subscriber*), sehingga satu kiriman dapat sampai ke beberapa penerima.
+
+Pola ini berguna dalam sistem pemantauan karena aplikasi pengirim cukup mengetahui topik yang dipakai. Misalnya, layanan yang memproses antrean pekerjaan menerbitkan status pekerjaan ke broker, lalu panel operator dan layanan pencatatan menerima pembaruan dari langganan masing-masing.
+
+Pada contoh AIoT di bab ini, ESP32 menerbitkan pembacaan suhu ke topik sensor. Panel pemantauan berlangganan topik itu, sehingga pembacaan baru dapat langsung ditampilkan saat pesan tiba.
+
+## Sejarah singkat
+
+OASIS menetapkan MQTT 3.1.1 sebagai standar pada 2014 dan menerbitkan MQTT 5.0 pada 2019. Model publish–subscribe tetap dipakai, sementara versi 5.0 menambah properti pada paket untuk membawa informasi seperti masa berlaku pesan. Diagram paket di bawah memakai MQTT 5.0. [OASIS MQTT 3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html) · [OASIS MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html)
+
+## Siklus publish-subscribe dalam proyek AIoT
+
+1. Device terkoneksi ke broker MQTT.
+2. Device publish data sensor ke topik tertentu.
+3. Broker meneruskan pesan ke semua subscriber yang cocok.
+4. Dashboard menampilkan data terbaru secara real-time.
+5. Sistem kontrol dapat publish command ke topik aktuator.
+
+### Diagram alur publish-subscribe MQTT
+
+[![Dashboard berlangganan topik di broker, lalu menerima pembacaan yang diterbitkan ESP32.](../assets/images/mqtt-sensor-flow.svg)](../assets/images/mqtt-sensor-flow.svg)
 
 ## Struktur dasar pesan MQTT
 
@@ -27,6 +51,12 @@ Contoh topik:
 ```text
 hydroponic/sensor/esp32-01
 ```
+
+Pada paket `PUBLISH`, *fixed header* menyebut tipe paket dan flag, termasuk QoS dan RETAIN. *Variable header* memuat nama topik pada contoh ini. Payload membawa pembacaan suhu, sehingga broker dapat merutekan pesan berdasarkan topik tanpa perlu membaca nilai suhu.
+
+[![Paket MQTT PUBLISH berisi fixed header, variable header dengan nama topik dan panjang properti, lalu payload JSON.](../assets/images/mqtt-publish-structure.svg)](../assets/images/mqtt-publish-structure.svg)
+
+Contoh memakai QoS 0 sehingga paket `PUBLISH` tidak memuat Packet Identifier. `Remaining Length` menyatakan panjang bagian setelah field itu, termasuk *variable header* dan payload. [Struktur paket MQTT 5.0 §2](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html)
 
 ## Tipe data pada MQTT
 
@@ -105,35 +135,6 @@ Contoh topik status:
 hydroponic/device/esp32-01/status
 ```
 
-## Siklus publish-subscribe dalam proyek AIoT
-
-1. Device terkoneksi ke broker MQTT.
-2. Device publish data sensor ke topik tertentu.
-3. Broker meneruskan pesan ke semua subscriber yang cocok.
-4. Dashboard menampilkan data terbaru secara real-time.
-5. Sistem kontrol dapat publish command ke topik aktuator.
-
-### Diagram alur publish-subscribe MQTT
-
-```mermaid
-sequenceDiagram
-  participant D as Device (ESP32)
-  participant B as MQTT Broker
-  participant W as Web Dashboard
-  participant C as Control Service
-
-  D->>B: CONNECT + auth
-  W->>B: SUBSCRIBE hydroponic/sensor/#
-  C->>B: SUBSCRIBE hydroponic/sensor/#
-
-  D->>B: PUBLISH hydroponic/sensor/esp32-01\n{ suhu, kelembapan }
-  B-->>W: Forward message
-  B-->>C: Forward message
-
-  C->>B: PUBLISH hydroponic/actuator/pump-01\n{ command: ON }
-  B-->>D: Forward command (jika device subscribe topik command)
-```
-
 ## Tips praktik
 
 - Gunakan struktur topik yang konsisten sejak awal proyek.
@@ -147,3 +148,11 @@ sequenceDiagram
 Bayangkan perangkat menerbitkan status terbaru ke `sensor/status` ketika dashboard belum terhubung. Jika status dikirim dengan QoS 1 dan penanda retained, broker menyimpannya dan mengirimkannya saat dashboard membuat langganan yang cocok. Tanpa status yang tersimpan, dashboard menunggu terbitan berikutnya.
 
 Periksa perbedaannya dengan satu topik baru dalam latihan, supaya pesan retained dari percobaan lain tidak ikut terbaca. Rujukan [spesifikasi MQTT 3.1.1 §3.3.1.3](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html).
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Praktik MQTT dengan ESP32** <span class="ai-practice-description">Berlangganan topik sensor dan status. Cocokkan data jarak yang diterima klien MQTT dengan Serial Monitor.</span>](../hands-on/mqtt-hands-on.md){ .ai-practice-start }
+
+</div>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">HTTP · kirim satu pembacaan</title>
+  <desc id="desc">ESP32 meminta server menerima JSON suhu. Server memvalidasi data lalu membalas 201 untuk kiriman valid atau 400 untuk data salah.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="430" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">HTTP · kirim satu pembacaan</text>
+    <rect x="55" y="66" width="210" height="45" rx="11" fill="#dceaff"/>
+    <text x="160" y="94" text-anchor="middle" font-size="17" font-weight="700">ESP32 / simulator</text>
+    <path d="M160 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <rect x="635" y="66" width="210" height="45" rx="11" fill="#def5e9"/>
+    <text x="740" y="94" text-anchor="middle" font-size="17" font-weight="700">API sensor</text>
+    <path d="M740 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="450" y="141" text-anchor="middle" font-size="16" font-weight="650">POST /sensors</text>
+    <path d="M163 151H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="171" text-anchor="middle" font-size="14" fill="#344969">JSON berisi nilai 26,7 °C</text>
+    <text x="450" y="201" text-anchor="middle" font-size="16" font-weight="650">201 Created</text>
+    <path d="M737 211H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="231" text-anchor="middle" font-size="14" fill="#344969">Kiriman valid diterima API</text>
+    <text x="450" y="261" text-anchor="middle" font-size="16" font-weight="650">POST /sensors</text>
+    <path d="M163 271H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="291" text-anchor="middle" font-size="14" fill="#344969">Kiriman berikutnya kehilangan field value</text>
+    <text x="450" y="321" text-anchor="middle" font-size="16" font-weight="650">400 Bad Request</text>
+    <path d="M737 331H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="351" text-anchor="middle" font-size="14" fill="#344969">API mengembalikan pesan validasi</text>
+    <text x="30" y="410" font-size="14" fill="#344969">Setiap respons di sini berpasangan dengan satu request.</text>
+  </g>
+</svg>

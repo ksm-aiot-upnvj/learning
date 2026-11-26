@@ -20,12 +20,15 @@ nav = [
     { "Microcontrollers" = "iot/microcontrollers.md" },
     { "Actuators" = "iot/actuators.md" },
   ] },
+  # AI Generated: judul dan navigasi modul Protocol.
   { "Protocol" = [
     { "Overview" = "protocol/overview.md" },
-    { "HTTP Basics" = "protocol/http.md" },
-    { "MQTT Basics" = "protocol/mqtt.md" },
-    { "WebSocket Basics" = "protocol/websocket.md" },
-    { "CoAP Basics" = "protocol/coap.md" },
+    { "HTTP (Hypertext Transfer Protocol)" = "protocol/http.md" },
+    { "MQTT (Message Queuing Telemetry Transport)" = "protocol/mqtt.md" },
+    { "WebSocket" = "protocol/websocket.md" },
+    { "CoAP (Constrained Application Protocol)" = "protocol/coap.md" },
+    { "BLE (Bluetooth Low Energy)" = "protocol/ble.md" },
+    { "LoRaWAN" = "protocol/lorawan.md" },
   ] },
   { "Version Control" = [
     { "Overview" = "version-control/overview.md" },

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">CoAP Observe · ikuti perubahan suhu</title>
+  <desc id="desc">Client mendaftar dengan Observe 0. Server mengirim nilai awal dan notifikasi dengan token yang sama. Client membatalkan pengamatan dengan Observe 1.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="550" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">CoAP Observe · ikuti perubahan suhu</text>
+    <rect x="55" y="66" width="210" height="45" rx="11" fill="#dceaff"/>
+    <text x="160" y="94" text-anchor="middle" font-size="17" font-weight="700">Client</text>
+    <path d="M160 111V498" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <rect x="635" y="66" width="210" height="45" rx="11" fill="#def5e9"/>
+    <text x="740" y="94" text-anchor="middle" font-size="17" font-weight="700">Gateway CoAP</text>
+    <path d="M740 111V498" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="450" y="141" text-anchor="middle" font-size="16" font-weight="650">GET /sensor/temperature</text>
+    <path d="M163 151H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="171" text-anchor="middle" font-size="14" fill="#344969">Observe = 0 · Token = 0xA7</text>
+    <text x="450" y="201" text-anchor="middle" font-size="16" font-weight="650">2.05 Content · nilai awal 26,7 °C</text>
+    <path d="M737 211H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="231" text-anchor="middle" font-size="14" fill="#344969">Observe = 41 · Token = 0xA7</text>
+    <text x="450" y="261" text-anchor="middle" font-size="16" font-weight="650">2.05 Content · perubahan ke 27,1 °C</text>
+    <path d="M737 271H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="291" text-anchor="middle" font-size="14" fill="#344969">Observe = 42 · Token = 0xA7</text>
+    <text x="450" y="321" text-anchor="middle" font-size="16" font-weight="650">2.05 Content · perubahan ke 27,4 °C</text>
+    <path d="M737 331H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="351" text-anchor="middle" font-size="14" fill="#344969">Observe = 43 · Token = 0xA7</text>
+    <text x="450" y="381" text-anchor="middle" font-size="16" font-weight="650">GET /sensor/temperature</text>
+    <path d="M163 391H736" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="450" y="411" text-anchor="middle" font-size="14" fill="#344969">Observe = 1 · Token = 0xA7</text>
+    <text x="450" y="441" text-anchor="middle" font-size="16" font-weight="650">2.05 Content · nilai saat ini</text>
+    <path d="M737 451H164" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="450" y="471" text-anchor="middle" font-size="14" fill="#344969">Token = 0xA7 · tanpa opsi Observe</text>
+    <text x="30" y="530" font-size="14" fill="#344969">Contoh nilai Observe pada balasan membantu client mengenali urutan notifikasi.</text>
+  </g>
+</svg>

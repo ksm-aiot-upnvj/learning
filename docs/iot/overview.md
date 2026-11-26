@@ -1,9 +1,27 @@
 # Internet of Things (IoT)
 
-Internet of Things (IoT) merupakan sebuah konsep yang merujuk pada sekelompok perangkat fisik yang terhubung ke internet, memungkinkan mereka untuk mengumpulkan, bertukar data, dan berinteraksi satu sama lain. Perangkat IoT dapat menyerupai benda sehari-hari seperti sensor, peralatan rumah tangga (smart home devices), kendaraan, dan banyak lagi. Dengan kemampuan untuk terhubung ke internet, perangkat IoT dapat memberikan berbagai manfaat, termasuk:
+!!! note "AI Generated"
 
-- **Otomatisasi**: Perangkat IoT dapat diatur untuk melakukan tugas-tugas tertentu secara otomatis, seperti menyalakan lampu saat seseorang memasuki ruangan atau mengatur suhu ruangan berdasarkan preferensi pengguna.
-- **Pemantauan Jarak Jauh**: Perangkat IoT memungkinkan pemantauan kondisi dan status perangkat dari jarak jauh, seperti memantau kondisi tanaman saat bepergian atau mengawasi sistem keamanan rumah.
-- **Pengumpulan Data**: Perangkat IoT dapat mengumpulkan data secara real-time, yang dapat digunakan untuk analisis lebih lanjut guna meningkatkan efisiensi operasional atau membuat keputusan yang lebih baik.
+    Pengantar dan jalur belajar pada halaman ini disusun dengan bantuan AI.
+
+Anggap sensor membaca suhu 26,7 °C di sekitar tanaman. Mikrokontroler membaca nilai itu dan bisa mengirimkannya ke backend. Backend dapat menyimpan riwayat, lalu dashboard menampilkan kapan suhu diukur dan berapa nilainya.
+
+Perangkat juga bisa bereaksi terhadap pembacaan. Misalnya, ESP32 menyalakan buzzer ketika suhu melewati batas. Jika riwayatnya perlu diperiksa dari perangkat lain, kirim pembacaan ke jaringan agar backend dapat mengolahnya.
 
 ![Arsitektur IoT: device mengirim data ke backend, backend berhubungan dengan database dan dashboard](../assets/images/iot-architecture.svg)
+
+## Pilih titik mulai
+
+Jika tersedia ESP32 dan sensor, kenali pin board lalu periksa hasil pertama di Serial Monitor. Setelah angka dan satuannya jelas, [pilih protokol](../protocol/overview.md) untuk mengirim pembacaan.
+
+Jika latihan dilakukan tanpa perangkat fisik, jalankan [Backend Mini](../hands-on/backend-mini.md#jalankan-server) terlebih dahulu. Setelah endpoint merespons, gunakan simulator untuk mengirim pembacaan sintetis melalui HTTP.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **Mulai dengan ESP32** <span class="ai-practice-description">Kenali pin pada board sebelum memasang sensor. Buka lab pin untuk melihat fungsi tiap pin.</span>](microcontrollers.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-flask-conical:</span> **Mulai tanpa perangkat fisik** <span class="ai-practice-description">Siapkan Backend Mini, lalu kirim pembacaan suhu sintetis dan periksa respons API.</span>](../hands-on/iot-simulator-mini.md)
+
+</div>

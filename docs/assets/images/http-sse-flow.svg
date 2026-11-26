@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">SSE · satu respons, beberapa event</title>
+  <desc id="desc">Browser membuka GET /events. Server mengirim status dan tipe konten, lalu beberapa event dikirim di dalam respons yang sama.</desc>
+  <defs>
+    <marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#2855a6"/></marker>
+    <marker id="green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="800" height="360" rx="18" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="28" y="41" font-size="25" font-weight="700">SSE · satu respons, beberapa event</text>
+    <rect x="56" y="68" width="178" height="46" rx="11" fill="#dceaff"/>
+    <rect x="566" y="68" width="178" height="46" rx="11" fill="#def5e9"/>
+    <text x="145" y="97" text-anchor="middle" font-size="20" font-weight="700">Browser</text>
+    <text x="655" y="97" text-anchor="middle" font-size="20" font-weight="700">Server HTTP</text>
+    <path d="M145 115V341" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <path d="M655 115V341" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="400" y="140" text-anchor="middle" font-size="19">GET /events</text>
+    <path d="M149 150H651" stroke="#2855a6" stroke-width="2" marker-end="url(#blue)"/>
+    <text x="400" y="184" text-anchor="middle" font-size="19">200 OK · text/event-stream</text>
+    <path d="M651 194H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="228" text-anchor="middle" font-size="19">Event temperature · 26,7 °C</text>
+    <path d="M651 238H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="272" text-anchor="middle" font-size="19">Event temperature · 27,1 °C</text>
+    <path d="M651 282H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+    <text x="400" y="316" text-anchor="middle" font-size="19">Event temperature · 26,9 °C</text>
+    <path d="M651 326H149" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#green)"/>
+  </g>
+</svg>

@@ -1,5 +1,9 @@
 # Microcontrollers
 
+!!! note "AI Generated"
+
+    Kartu navigasi di akhir halaman ini disusun dengan bantuan AI.
+
 Microcontroller menggabungkan CPU, memori, dan periferal dalam satu chip. Dalam sistem IoT, microcontroller membaca sensor, mengolah data, lalu mengirim hasil atau mengendalikan aktuator.
 
 [Buka Lab Pin →](../labs/iot-pin.md){ .md-button .md-button--primary }
@@ -29,3 +33,11 @@ Arduino Uno R3 memakai ATmega328P 8-bit pada 16 MHz dengan logika 5 V. Board men
 - **Pin bersama.** D0/D1 dipakai UART USB, A4/A5 dipakai I²C, dan D10–D13 umum dipakai untuk SPI. Header SDA/SCL tersambung ke A4/A5, sehingga kedua label berbagi jalur fisik.
 - **Level logika.** Saat menghubungkan perangkat 3,3 V, periksa toleransi kedua sisi dan gunakan penyesuai level bila perlu.
 - **Rujukan resmi.** [Datasheet Uno R3](https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf) · [Pinout resmi Uno R3](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf) · [Datasheet ATmega328P](https://www.microchip.com/content/dam/mchp/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-activity:</span> **Baca suhu dari sensor** <span class="ai-practice-description">Kenali pin data dan satuan pembacaan DHT11 sebelum mencoba rangkaian.</span>](sensors.md#sensor-dht11){ .ai-practice-start }
+
+</div>

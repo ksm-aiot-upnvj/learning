@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 273" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">LoRaWAN · rute satu uplink</title>
+  <desc id="desc">Node mengirim lewat radio ke gateway. Gateway meneruskan paket lewat IP. Network server mengelola paket dan application server membaca data sensor.</desc>
+  <defs>
+    <marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#2855a6"/></marker>
+    <marker id="green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5 0 7Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="800" height="273" rx="18" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="28" y="41" font-size="25" font-weight="700">LoRaWAN · rute satu uplink</text>
+    <rect x="25.5" y="111" width="149" height="78" rx="11" fill="#dceaff"/>
+    <rect x="225.5" y="111" width="149" height="78" rx="11" fill="#e1f1fc"/>
+    <rect x="425.5" y="111" width="149" height="78" rx="11" fill="#def5e9"/>
+    <rect x="625.5" y="111" width="149" height="78" rx="11" fill="#ede5fb"/>
+    <text x="100" y="143" text-anchor="middle" font-size="18" font-weight="700">Node sensor</text>
+    <text x="100" y="166" text-anchor="middle" font-size="14">Kelembapan 42%</text>
+    <text x="300" y="143" text-anchor="middle" font-size="18" font-weight="700">Gateway</text>
+    <text x="300" y="166" text-anchor="middle" font-size="14">Teruskan paket</text>
+    <text x="500" y="143" text-anchor="middle" font-size="17" font-weight="700">Network server</text>
+    <text x="500" y="166" text-anchor="middle" font-size="14">Tangani duplikat</text>
+    <text x="700" y="143" text-anchor="middle" font-size="15" font-weight="700">Application server</text>
+    <text x="700" y="166" text-anchor="middle" font-size="14">Tafsirkan payload</text>
+    <text x="200" y="98" text-anchor="middle" font-size="17" font-weight="700">Radio LoRa</text>
+    <text x="400" y="98" text-anchor="middle" font-size="17" font-weight="700">IP</text>
+    <text x="600" y="98" text-anchor="middle" font-size="17" font-weight="700">Data aplikasi</text>
+    <path d="M177 150H224" stroke="#2855a6" stroke-width="2" marker-end="url(#blue)"/>
+    <path d="M377 150H424" stroke="#167665" stroke-width="2" marker-end="url(#green)"/>
+    <path d="M577 150H624" stroke="#167665" stroke-width="2" marker-end="url(#green)"/>
+    <text x="400" y="233" text-anchor="middle" font-size="19">Beberapa gateway dapat menerima uplink yang sama.</text>
+  </g>
+</svg>

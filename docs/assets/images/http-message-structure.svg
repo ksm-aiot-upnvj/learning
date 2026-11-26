@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 333" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">Bagian request HTTP/1.1</title>
+  <desc id="desc">Baris request berisi metode, path, dan versi. Header berisi Host, Content-Type, dan Content-Length. Satu baris kosong menutup header sebelum body JSON.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="333" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">Bagian request HTTP/1.1</text>
+    <rect x="30" y="65" width="840" height="46" rx="8" fill="#dceaff"/>
+    <text x="47" y="93" font-size="15" font-weight="700" fill="#234b91">Baris request</text>
+    <text x="192" y="93" font-size="13" font-family="Consolas, monospace">POST /sensors HTTP/1.1</text>
+    <rect x="30" y="119" width="840" height="99" rx="8" fill="#def5e9"/>
+    <text x="47" y="147" font-size="15" font-weight="700" fill="#17644f">Header</text>
+    <text x="192" y="147" font-size="13" font-family="Consolas, monospace">Host: 127.0.0.1:8000</text>
+    <text x="192" y="168" font-size="13" font-family="Consolas, monospace">Content-Type: application/json</text>
+    <text x="192" y="189" font-size="13" font-family="Consolas, monospace">Content-Length: 82</text>
+    <rect x="30" y="226" width="840" height="29" rx="8" fill="#ffedce"/>
+    <text x="47" y="245" font-size="15" font-weight="700" fill="#884d16">Baris kosong</text>
+    <text x="192" y="245" font-size="13" font-family="Consolas, monospace">Akhir header</text>
+    <rect x="30" y="263" width="840" height="50" rx="8" fill="#ede5fc"/>
+    <text x="47" y="291" font-size="15" font-weight="700" fill="#624095">Body</text>
+    <text x="192" y="291" font-size="13" font-family="Consolas, monospace">{&quot;device_id&quot;:&quot;esp32-01&quot;,&quot;sensor_type&quot;:&quot;temperature&quot;,&quot;value&quot;:26.7,&quot;unit&quot;:&quot;celsius&quot;}</text>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">MQTT · kirim pembacaan lewat broker</title>
+  <desc id="desc">Dashboard berlangganan topik di broker. Setelah ESP32 mengirim PUBLISH, broker meneruskan data kepada dashboard yang langganannya cocok.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="430" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">MQTT · kirim pembacaan lewat broker</text>
+    <rect x="39" y="66" width="210" height="45" rx="11" fill="#dceaff"/>
+    <text x="144" y="94" text-anchor="middle" font-size="17" font-weight="700">ESP32 · publisher</text>
+    <path d="M144 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <rect x="345" y="66" width="210" height="45" rx="11" fill="#def5e9"/>
+    <text x="450" y="94" text-anchor="middle" font-size="17" font-weight="700">Broker MQTT</text>
+    <path d="M450 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <rect x="651" y="66" width="210" height="45" rx="11" fill="#ffedce"/>
+    <text x="756" y="94" text-anchor="middle" font-size="17" font-weight="700">Dashboard · subscriber</text>
+    <path d="M756 111V378" stroke="#94a6c3" stroke-dasharray="5 6"/>
+    <text x="603" y="141" text-anchor="middle" font-size="16" font-weight="650">SUBSCRIBE</text>
+    <path d="M753 151H454" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="603" y="171" text-anchor="middle" font-size="14" fill="#344969">hydroponic/sensor/esp32-01</text>
+    <text x="603" y="201" text-anchor="middle" font-size="16" font-weight="650">SUBACK</text>
+    <path d="M453 211H752" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="603" y="231" text-anchor="middle" font-size="14" fill="#344969">Langganan diterima</text>
+    <text x="297" y="261" text-anchor="middle" font-size="16" font-weight="650">PUBLISH</text>
+    <path d="M147 271H446" stroke="#2855a6" stroke-width="2" marker-end="url(#request)"/>
+    <text x="297" y="291" text-anchor="middle" font-size="14" fill="#344969">Topik sensor + 26,7 °C</text>
+    <text x="603" y="321" text-anchor="middle" font-size="16" font-weight="650">PUBLISH</text>
+    <path d="M453 331H752" stroke="#167665" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#response)"/>
+    <text x="603" y="351" text-anchor="middle" font-size="14" fill="#344969">Topik cocok, data diteruskan</text>
+    <text x="30" y="410" font-size="14" fill="#344969">Kedua client sudah terhubung. Contoh pengiriman PUBLISH memakai QoS 0.</text>
+  </g>
+</svg>

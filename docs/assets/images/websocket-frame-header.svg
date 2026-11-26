@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" role="img" aria-labelledby="title desc">
+  <!-- AI Generated -->
+  <title id="title">WebSocket · dua byte awal frame</title>
+  <desc id="desc">Byte pertama memuat FIN, RSV dan opcode. Byte kedua memuat MASK dan panjang payload 7 bit. Field panjang tambahan dan masking key bersifat kondisional.</desc>
+  <defs>
+    <marker id="request" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2855a6"/></marker>
+    <marker id="response" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#167665"/></marker>
+  </defs>
+  <rect width="900" height="290" rx="19" fill="#f5f8ff"/>
+  <g font-family="system-ui, Arial, sans-serif" fill="#1a2b48">
+    <text x="30" y="43" font-size="25" font-weight="700">WebSocket · dua byte awal frame</text>
+    <text x="30" y="72" font-size="15">Untuk membaca tangkapan paket, lihat urutan bit dari kiri ke kanan.</text>
+    <rect x="30" y="100" width="49" height="64" rx="4" fill="#dceaff"/>
+    <text x="54.5" y="126" text-anchor="middle" font-size="14" font-weight="700">FIN</text>
+    <text x="54.5" y="149" text-anchor="middle" font-size="12">1 bit</text>
+    <rect x="81" y="100" width="49" height="64" rx="4" fill="#dceaff"/>
+    <text x="105.5" y="126" text-anchor="middle" font-size="14" font-weight="700">RSV1</text>
+    <text x="105.5" y="149" text-anchor="middle" font-size="12">1 bit</text>
+    <rect x="132" y="100" width="49" height="64" rx="4" fill="#dceaff"/>
+    <text x="156.5" y="126" text-anchor="middle" font-size="14" font-weight="700">RSV2</text>
+    <text x="156.5" y="149" text-anchor="middle" font-size="12">1 bit</text>
+    <rect x="183" y="100" width="49" height="64" rx="4" fill="#dceaff"/>
+    <text x="207.5" y="126" text-anchor="middle" font-size="14" font-weight="700">RSV3</text>
+    <text x="207.5" y="149" text-anchor="middle" font-size="12">1 bit</text>
+    <rect x="234" y="100" width="202" height="64" rx="4" fill="#dceaff"/>
+    <text x="335" y="126" text-anchor="middle" font-size="14" font-weight="700">Opcode</text>
+    <text x="335" y="149" text-anchor="middle" font-size="12">4 bit</text>
+    <rect x="450" y="100" width="49" height="64" rx="4" fill="#def5e9"/>
+    <text x="474.5" y="126" text-anchor="middle" font-size="14" font-weight="700">MASK</text>
+    <text x="474.5" y="149" text-anchor="middle" font-size="12">1 bit</text>
+    <rect x="501" y="100" width="355" height="64" rx="4" fill="#def5e9"/>
+    <text x="678.5" y="126" text-anchor="middle" font-size="14" font-weight="700">Panjang payload</text>
+    <text x="678.5" y="149" text-anchor="middle" font-size="12">7 bit</text>
+    <text x="30" y="188" font-size="14" font-weight="700">Byte 1</text>
+    <text x="450" y="188" font-size="14" font-weight="700">Byte 2</text>
+    <text x="30" y="220" font-size="15">Jika panjang bernilai 126 atau 127, baca panjang tambahan 16 atau 64 bit.</text>
+    <text x="30" y="248" font-size="15">Jika MASK = 1, baca masking key 4 byte sebelum payload.</text>
+    <text x="30" y="273" font-size="14" fill="#344969">Pada RFC 6455, client memakai masking untuk frame yang dikirim ke server.</text>
+  </g>
+</svg>
