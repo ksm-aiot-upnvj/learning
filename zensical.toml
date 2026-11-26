@@ -67,7 +67,6 @@ nav = [
     { "Desain Data IoT" = "database/data-modeling.md" },
     { "UUIDv4 dan UUIDv7" = "database/uuid-identifiers.md" },
     { "Time-Series dan TimescaleDB" = "database/timeseries.md" },
-    { "Database Mini" = "hands-on/database-mini.md" },
   ] },
   { "AI" = [
     { "Overview" = "ai/overview.md" },
@@ -127,22 +126,31 @@ nav = [
       { "Prometheus + Grafana" = "deployment/prometheus-grafana.md" },
     ] },
   ] },
+  # AI Generated: pengelompokan latihan berdasarkan cakupan.
   { "Hands-on" = [
     { "Overview" = "hands-on/overview.md" },
-    # AI Generated: tautan dua latihan Git.
-    { "Git Lokal dan Repositori Sendiri" = "hands-on/git-local-remote.md" },
-    { "Fork dan Pull Request di GitHub" = "hands-on/git-fork-pull-request.md" },
-    { "Backend Mini" = "hands-on/backend-mini.md" },
-    { "Backend dengan PostgreSQL dan MongoDB" = "hands-on/backend-database-demo.md" },
-    { "Frontend Mini" = "hands-on/frontend-mini.md" },
-    { "IoT Simulator Mini" = "hands-on/iot-simulator-mini.md" },
-    { "IoT Hands-on" = "hands-on/iot-hands-on.md" },
-    { "Dashboard Hands-on" = "hands-on/dashboard-hands-on.md" },
-    { "MQTT Hands-on" = "hands-on/mqtt-hands-on.md" },
-    { "RAG sederhana" = "hands-on/rag-simple.md" },
-    { "RAG lanjutan dengan HyDE + Browse Tool" = "hands-on/rag-advanced.md" },
-    { "MCP dengan Data Sensor PostgreSQL" = "hands-on/mcp-sensor.md" },
-    { "Deteksi Anomali Sensor pH" = "hands-on/sensor-anomaly.md" },
+    { "Git" = [
+      { "Git Lokal dan Repositori Sendiri" = "hands-on/git-local-remote.md" },
+      { "Fork dan Pull Request di GitHub" = "hands-on/git-fork-pull-request.md" },
+    ] },
+    { "Software Engineer" = [
+      { "Backend Mini" = "hands-on/backend-mini.md" },
+      { "Database Mini" = "hands-on/database-mini.md" },
+      { "Frontend Mini" = "hands-on/frontend-mini.md" },
+      { "Dashboard Hands-on" = "hands-on/dashboard-hands-on.md" },
+      { "Backend dengan PostgreSQL dan MongoDB" = "hands-on/backend-database-demo.md" },
+    ] },
+    { "IoT" = [
+      { "IoT Simulator Mini" = "hands-on/iot-simulator-mini.md" },
+      { "IoT Hands-on" = "hands-on/iot-hands-on.md" },
+      { "MQTT Hands-on" = "hands-on/mqtt-hands-on.md" },
+    ] },
+    { "AI" = [
+      { "RAG sederhana" = "hands-on/rag-simple.md" },
+      { "RAG lanjutan dengan HyDE + Browse Tool" = "hands-on/rag-advanced.md" },
+      { "MCP dengan Data Sensor PostgreSQL" = "hands-on/mcp-sensor.md" },
+      { "Deteksi Anomali Sensor pH" = "hands-on/sensor-anomaly.md" },
+    ] },
   ] },
   { "Lab Interaktif" = [
     { "Semua Lab" = "labs/overview.md" },
