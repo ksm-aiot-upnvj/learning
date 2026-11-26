@@ -30,6 +30,7 @@ flowchart LR
 6. [Jalur Praktik Frontend](fundamental.md)
 7. [Frontend Mini](../hands-on/frontend-mini.md) untuk memeriksa koneksi browser ke API.
 8. [Dashboard Hands-on](../hands-on/dashboard-hands-on.md#jalankan-dashboard-vue) untuk mencocokkan data Vue dengan respons Express dan baris PostgreSQL.
+9. [Demo CRUD MongoDB](../hands-on/backend-database-demo.md#demo-mongodb) untuk menghubungkan form HTML dan JavaScript Vanilla ke API Express.
 
 ## Capaian Belajar
 

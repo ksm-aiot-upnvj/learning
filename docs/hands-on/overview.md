@@ -25,7 +25,7 @@ Ikuti satu pembacaan dari API, ke PostgreSQL, lalu ke dashboard. Mulai dari Back
 | [Database Mini](database-mini.md) | Cari baris sensor lewat SQL dan cocokkan ID-nya dengan respons API. |
 | [Frontend Mini](frontend-mini.md) | Periksa status backend atau pesan gagal setelah menekan tombol. |
 | [Dashboard Hands-on](dashboard-hands-on.md) | Cocokkan ID yang sama di respons POST, baris PostgreSQL, dan tabel Vue. |
-| [Backend dengan PostgreSQL dan MongoDB](backend-database-demo.md) | Bandingkan query item di PostgreSQL dengan CRUD perangkat di MongoDB. |
+| [Backend dengan PostgreSQL dan MongoDB](backend-database-demo.md) | Bandingkan query item di PostgreSQL dengan CRUD perangkat MongoDB lewat API dan UI Vanilla. |
 
 ## IoT
 

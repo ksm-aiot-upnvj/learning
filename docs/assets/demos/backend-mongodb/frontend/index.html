@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <p class="eyebrow">KSM AIoT · Software Engineer</p>
+        <h1>Pantau perangkat</h1>
+        <p>Kelola data perangkat yang tersimpan di MongoDB melalui API Express.</p>
+      </header>
+
+      <section class="card" aria-labelledby="form-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="form-title">Tambah perangkat</h2>
+            <p class="muted">Isi data perangkat dan pembacaan terakhirnya.</p>
+          </div>
+        </div>
+        <form id="device-form">
+          <input type="hidden" id="device-id">
+          <div class="form-grid">
+            <label>Nama perangkat
+              <input id="name" name="name" required maxlength="80" autocomplete="off">
+            </label>
+            <label>Lokasi
+              <input id="location" name="location" required maxlength="120" autocomplete="off">
+            </label>
+            <label>Status
+              <select id="status" name="status" required>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+            </label>
+            <label>Suhu (°C)
+              <input id="temperature" name="temperature" type="number" step="0.1" required>
+            </label>
+            <label>Kelembapan (%)
+              <input id="humidity" name="humidity" type="number" step="1" min="0" max="100" required>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="button primary" type="submit" id="submit-button">Tambah perangkat</button>
+            <button class="button secondary hidden" type="button" id="cancel-button">Batal mengedit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="list-title">
+        <div class="list-heading">
+          <div>
+            <h2 id="list-title">Daftar perangkat <span class="count" id="device-count">0</span></h2>
+            <p class="muted">Perubahan yang dibuat di sini langsung dikirim ke API.</p>
+          </div>
+          <div class="list-controls">
+            <label for="filter-status">Filter status</label>
+            <select id="filter-status">
+              <option value="">Semua</option>
+              <option value="online">Online</option>
+              <option value="offline">Offline</option>
+              <option value="maintenance">Maintenance</option>
+            </select>
+            <button class="button secondary" type="button" id="refresh-button">Muat ulang</button>
+          </div>
+        </div>
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Perangkat</th><th>Lokasi</th><th>Status</th><th>Suhu</th>
+                <th>Kelembapan</th><th>Diperbarui</th><th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="device-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

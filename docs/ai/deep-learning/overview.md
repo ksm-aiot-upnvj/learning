@@ -4,7 +4,7 @@ Mulai dengan jaringan kecil yang memprediksi satu nilai dari data sensor. Siapka
 
 ## Prasyarat
 
-Ikuti [Masalah dan Data](../machine-learning/masalah-dan-data.md), [Preprocessing](../machine-learning/preprocessing.md), dan [Evaluasi Model](../machine-learning/evaluasi-model.md). Siapkan Python dan pahami fungsi, list, serta operasi aritmetika dasar.
+Ikuti [Python Fundamental](../python-fundamental.md), [Masalah dan Data](../machine-learning/masalah-dan-data.md), [Preprocessing](../machine-learning/preprocessing.md), dan [Evaluasi Model](../machine-learning/evaluasi-model.md). Fungsi, list, dan operasi aritmetika dari Python akan dipakai dalam contoh jaringan saraf.
 
 ## Urutan Materi
 

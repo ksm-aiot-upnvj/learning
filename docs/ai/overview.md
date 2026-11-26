@@ -32,6 +32,7 @@ Saat model dipasang dalam aplikasi, pembacaan terbaru perlu diambil dan hasil pr
 Mulai dari kartu pertama di bagian **What's next** jika masih mencari titik awal. Jika sudah punya model dan ingin memakainya dalam aplikasi, pilih AI Systems untuk mempelajari cara menghubungkannya dengan data dan tool.
 
 - Mulai dari [AI Fundamental](fundamental.md) untuk merumuskan masalah sensor, mencoba aturan pembanding, dan memahami kapan model mungkin membantu.
+- Pelajari [Python Fundamental](python-fundamental.md) sebelum menjalankan contoh AI yang memakai script dan paket Python.
 - Buka [Machine Learning](machine-learning/overview.md) untuk menyiapkan data, mempelajari algoritma, dan mengevaluasi prediksi.
 - Lanjutkan ke [Deep Learning](deep-learning/overview.md) setelah mengenal data dan evaluasi model. Materi ini membahas jaringan saraf serta penerapannya pada data sensor, gambar, dan urutan.
 - Pilih [AI Systems](ai-systems/overview.md) untuk mempelajari inference, LLM, embeddings, OCR, RAG, tools, MCP, dan agents.
@@ -48,6 +49,8 @@ Untuk contoh tangki air, [AI Fundamental](fundamental.md) memulai dari aturan al
 <div class="ai-resource-grid ai-practice-grid" markdown="1">
 
 [<span class="ai-practice-icon" aria-hidden="true">:lucide-compass:</span> **Mulai dari AI Fundamental** <span class="ai-practice-description">Coba aturan alarm tangki air. Tentukan kapan contoh data bisa membantu membuat prediksi.</span>](fundamental.md){ .ai-practice-start }
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Python Fundamental** <span class="ai-practice-description">Siapkan proyek dengan uv, olah data sensor, lalu kenali fungsi, modul, dan object Python.</span>](python-fundamental.md)
 
 [<span class="ai-practice-icon" aria-hidden="true">:lucide-workflow:</span> **Mulai dari AI Systems** <span class="ai-practice-description">Jika sudah punya model, pelajari cara menghubungkannya ke dokumen, data sensor, atau aplikasi.</span>](ai-systems/overview.md)
 

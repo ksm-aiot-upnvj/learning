@@ -13,7 +13,7 @@ Pastikan Node.js LTS dan database yang dipilih sudah tersedia. Jalankan satu dem
 ## Pilih demo
 
 - [Unduh demo PostgreSQL](../assets/demos/backend-postgresql.zip){ .md-button } menyimpan dan membaca data `items` melalui query SQL.
-- [Unduh demo MongoDB](../assets/demos/backend-mongodb.zip){ .md-button } menyediakan API CRUD perangkat dan script untuk mengirim data dummy.
+- [Unduh demo MongoDB](../assets/demos/backend-mongodb.zip){ .md-button } menyediakan API CRUD, UI HTML/CSS/JavaScript, dan script untuk mengirim data contoh.
 
 Paket unduhan menyertakan `.env.example` sebagai templat. Simpan salinannya sebagai `.env` di folder demo agar proses lokal dapat membaca setelan database.
 
@@ -177,11 +177,15 @@ MONGO_HOST=mongodb://127.0.0.1:27017
 DB_NAME=aiot_backend_demo
 ```
 
-Jalankan server dari folder demo. Paket unduhan sudah menunggu hasil `connectDB()` sebelum menjalankan `app.listen()`, sehingga API mulai menerima permintaan setelah koneksi MongoDB siap.
+Jalankan server dari folder demo. Paket unduhan menunggu hasil `connectDB()` sebelum menjalankan `app.listen()`, sehingga API dan UI mulai tersedia setelah koneksi MongoDB siap.
 
 ```console
 npm run dev
 ```
+
+Buka `http://localhost:3000` di browser. HTML menyusun halaman, CSS mengatur tampilannya, dan JavaScript Vanilla (JavaScript browser tanpa framework) mengirim request `fetch()` ke API.
+
+Dari sana, formulir membuat perangkat dan tabel membaca daftar. Tombol **Edit** memperbarui perangkat, sedangkan **Hapus** mengirim request DELETE. Semua aksi memakai data MongoDB yang sama dengan endpoint di bawah.
 
 ### Baca dan buat device
 

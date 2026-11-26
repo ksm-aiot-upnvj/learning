@@ -71,6 +71,7 @@ nav = [
   { "AI" = [
     { "Overview" = "ai/overview.md" },
     { "Fundamental" = "ai/fundamental.md" },
+    { "Python Fundamental" = "ai/python-fundamental.md" },
     { "Sumber Eksplorasi" = "ai/sumber-eksplorasi.md" },
     { "Machine Learning" = [
       { "Overview" = "ai/machine-learning/overview.md" },

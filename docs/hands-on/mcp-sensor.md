@@ -35,7 +35,7 @@ Script memakai tabel perangkat dan pembacaan dari materi [Desain Data IoT](../da
     === "Windows"
 
         ```powershell
-        $labPassword = (New-Guid).Guid.Replace('-', '')
+        $labPassword = openssl rand -hex 16
         docker run --rm -d --name aiot-mcp-lab -p 127.0.0.1:55432:5432 -e "POSTGRES_PASSWORD=$labPassword" -e POSTGRES_DB=sensor_lab postgres:18
         ```
 
