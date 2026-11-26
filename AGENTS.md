@@ -54,6 +54,14 @@ Follow ISO 24495-1 and the Google Developer Style Guide.
 
 Purpose: recent GPT models drift toward flat, uniform prose. Learners stay engaged when the text sounds like a person explaining something specific.
 
+#### Concept Scaffolding (General-to-Specific)
+
+Never jump straight into hardware-specific edge cases or troubleshooting in the opening paragraph. Introduce foundational concepts in three steps:
+
+1. What the technology is and its core mental model (e.g., request-response, pub-sub).
+2. Where it is commonly used in general software engineering.
+3. How it connects to the specific AIoT/project context in this module.
+
 ### 4. Explanatory Flow (Conceptual Sections)
 
 Counteract token-compression habits. Dry, telegraphic text is a known failure of recent GPT models, so write full explanations.
