@@ -1,0 +1,17 @@
+# AI Generated
+*
+!sensor-dashboard/
+!sensor-dashboard/App.vue
+!sensor-dashboard/dashboard-backend.cjs
+!sensor-dashboard/validate-sensor.cjs
+!sensor-deployment/
+!sensor-deployment/nginx.conf
+!sensor-deployment/backend/
+!sensor-deployment/backend/package.json
+!sensor-deployment/backend/package-lock.json
+!sensor-deployment/frontend/
+!sensor-deployment/frontend/package.json
+!sensor-deployment/frontend/package-lock.json
+!sensor-deployment/frontend/index.html
+!sensor-deployment/frontend/main.js
+!sensor-deployment/frontend/vite.config.mjs

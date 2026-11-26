@@ -2,6 +2,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+const endpoint = import.meta.env.VITE_SENSOR_API_URL ?? "http://127.0.0.1:8000/sensors";
 const readings = ref([]);
 const state = ref("loading");
 
@@ -9,7 +10,7 @@ async function loadReadings() {
   state.value = "loading";
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/sensors");
+    const response = await fetch(endpoint);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const data = await response.json();

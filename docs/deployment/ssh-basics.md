@@ -1,8 +1,14 @@
 # SSH Basics untuk Deployment
 
-SSH adalah singkatan dari **Secure Shell**.
+!!! note "AI Generated"
 
-Dalam deployment, SSH dipakai untuk masuk ke server dari laptop kita lewat terminal. Setelah masuk, kita bisa menjalankan command Linux, mengatur service, menarik kode dari GitHub, menjalankan Docker, atau mengecek log aplikasi.
+    Pembuka, pemindahan paket latihan, dan akses melalui SSH tunnel disusun dengan bantuan AI.
+
+SSH atau **Secure Shell** membuat koneksi terenkripsi ke komputer lain. Setelah identitas diperiksa, kita dapat menjalankan perintah di komputer itu melalui terminal.
+
+Tim pengelola aplikasi sering memakai SSH untuk membaca log atau menyalin berkas ke server. Perintah berjalan di server selama sesi aktif, sehingga lokasi folder dan hasilnya mengikuti lingkungan server.
+
+Di latihan AIoT, SSH dipakai untuk menyalin ZIP deployment dan menjalankan Compose di server. Kita juga membuka tunnel agar browser laptop bisa mengakses port latihan yang hanya diterbitkan di loopback server.
 
 ## Kenapa Perlu SSH?
 
@@ -147,6 +153,34 @@ Untuk folder, tambahkan `-r`:
 scp -r folder-app ubuntu@203.0.113.10:/home/ubuntu/
 ```
 
+### Salin paket latihan AIoT
+
+1. Unduh [paket deployment AIoT](../assets/demos/aiot-deployment.zip) ke laptop.
+2. Buka terminal laptop di folder unduhan.
+3. Salin paket ke folder rumah akun server.
+
+    ```bash
+    scp aiot-deployment.zip ubuntu@203.0.113.10:~/
+    ```
+
+Ganti `ubuntu` dan `203.0.113.10` dengan akun serta alamat server latihan. Setelah login, jalankan `ls ~/aiot-deployment.zip` untuk memastikan berkas sampai.
+
+## Buka akses browser lewat SSH tunnel
+
+Stack latihan menyediakan NGINX pada port 8080 di loopback server. Penerusan port SSH menghubungkan port laptop dengan port server itu, sehingga browser di laptop bisa mengaksesnya melalui koneksi SSH. [Penerusan port lokal OpenSSH](https://man.openbsd.org/ssh#L)
+
+1. Buka terminal baru di laptop.
+2. Jalankan perintah berikut dengan akun SSH server latihan.
+
+    ```bash
+    ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8080:127.0.0.1:8080 ubuntu@203.0.113.10
+    ```
+
+3. Buka `http://127.0.0.1:8080/` setelah stack berjalan.
+4. Tutup tunnel dengan `Ctrl+C` setelah selesai.
+
+Alamat loopback pertama mengacu ke laptop. Alamat loopback kedua mengacu ke server. Jika hanya port laptop yang bentrok, ubah angka pertama menjadi 8081 dan buka `http://127.0.0.1:8081/`.
+
 ## Command yang Sering Dipakai Setelah Login
 
 Setelah masuk ke server lewat SSH, biasanya kamu akan menjalankan command Linux seperti:
@@ -213,3 +247,11 @@ $ sudo systemctl status nginx
 `Active: active (running)` menunjukkan service NGINX sedang berjalan. Jika tertulis `inactive` atau `failed`, NGINX tidak sedang berjalan dengan normal. Service yang aktif juga belum membuktikan dashboard dapat mencapai backend; untuk itu periksa konfigurasi dan log aplikasi secara terpisah.
 
 [Kembali ke Deployment Overview](overview.md)
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-container:</span> **Docker dan Compose** <span class="ai-practice-description">Ekstrak paket di server dan jalankan tiga layanan latihan.</span>](docker-container.md){ .ai-practice-start }
+
+</div>

@@ -1,0 +1,47 @@
+# AI Generated
+services:
+  db:
+    image: postgres:18-bookworm
+    environment:
+      POSTGRES_USER: aiot
+      POSTGRES_DB: aiot_dashboard
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - sensor-data:/var/lib/postgresql
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-sensors.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "aiot", "-d", "aiot_dashboard"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build:
+      context: ..
+      dockerfile: sensor-deployment/Dockerfile
+      target: api
+    environment:
+      DATABASE_URL: postgresql://aiot:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@db:5432/aiot_dashboard
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8000/health').then(r => { if (!r.ok) process.exit(1) }).catch(() => process.exit(1))"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  web:
+    build:
+      context: ..
+      dockerfile: sensor-deployment/Dockerfile
+      target: web
+    depends_on:
+      api:
+        condition: service_healthy
+        restart: true
+    ports:
+      - "127.0.0.1:${DASHBOARD_PORT:-8080}:80"
+
+volumes:
+  sensor-data:

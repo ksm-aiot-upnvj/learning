@@ -50,6 +50,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: "Terjadi kesalahan pada server" });
 });
 
-app.listen(8000, "127.0.0.1", () => {
-  console.log("API berjalan di http://127.0.0.1:8000");
+const host = process.env.HOST || "127.0.0.1";
+app.listen(8000, host, () => {
+  console.log(`API mendengarkan di ${host}:8000`);
 });

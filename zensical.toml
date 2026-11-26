@@ -114,12 +114,18 @@ nav = [
       { "Gradio" = "ai/ai-dashboard/gradio.md" },
     ]},
   ] },
+  # AI Generated: jalur deployment dan tiga halaman pendalaman opsional.
   { "Cloud & Deployment" = [
     { "Overview" = "deployment/overview.md" },
     { "Linux Basics for Deployment" = "deployment/linux-basics.md" },
     { "SSH Basics untuk Deployment" = "deployment/ssh-basics.md" },
-    { "Docker and Container Basics" = "deployment/docker-container.md" },
-    { "NGINX Basics for Reverse Proxy" = "deployment/nginx-basics.md" },
+    { "Docker dan Docker Compose" = "deployment/docker-container.md" },
+    { "NGINX untuk Reverse Proxy" = "deployment/nginx-basics.md" },
+    { "Manajemen & Monitoring" = [
+      { "Portainer" = "deployment/portainer.md" },
+      { "Beszel" = "deployment/beszel.md" },
+      { "Prometheus + Grafana" = "deployment/prometheus-grafana.md" },
+    ] },
   ] },
   { "Hands-on" = [
     { "Overview" = "hands-on/overview.md" },

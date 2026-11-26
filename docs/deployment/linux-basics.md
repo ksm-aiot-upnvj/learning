@@ -1,8 +1,18 @@
 # Linux Basics for Deployment
 
+!!! note "AI Generated"
+
+    Pembuka, pemeriksaan port, dan jalur ke SSH diperbarui dengan bantuan AI.
+
+Linux adalah sistem operasi yang mengatur proses, file, dan jaringan di komputer. Terminal memungkinkan kita menjalankan program dan memeriksa apa yang sedang dikerjakan sistem.
+
+Server aplikasi dapat dikelola melalui terminal. Pengelola dapat mencari folder konfigurasi, melihat proses, dan memeriksa port yang menerima koneksi dari sesi yang sama.
+
+Dalam latihan AIoT, perintah itu dipakai ketika menjalankan stack sensor. Gunakan `pwd` untuk memastikan folder Compose, lalu cek port web dari server.
+
 ## Kenapa perlu belajar Linux?
 
-Sebagian besar server deployment berjalan di Linux. Jadi, memahami dasar Linux akan sangat membantu saat menjalankan backend, database, dan service pendukung AIoT.
+Pemeriksaan server sering dimulai dari satu pertanyaan, misalnya apakah aplikasi sudah membuka port. Linux menyediakan alat untuk memeriksa proses dan port, sehingga kita bisa menentukan apakah perlu membaca log aplikasi atau mengecek jaringan.
 
 ## Konsep dasar yang perlu dipahami
 
@@ -56,6 +66,14 @@ Sebagian besar server deployment berjalan di Linux. Jadi, memahami dasar Linux a
 
 ## Periksa API dari server
 
-Jika dashboard gagal mengambil data, masuk ke server lewat [SSH](ssh-basics.md). Jalankan `ss -tuln` dan cari port 8000. Jika port terlihat, jalankan `curl -i http://127.0.0.1:8000/health`. Port yang terbuka menunjukkan ada proses yang menerima koneksi. Respons HTTP 200 dengan isi yang diharapkan menunjukkan endpoint latihan bisa merespons dari server.
+Jika dashboard gagal mengambil data, masuk ke server lewat [SSH](ssh-basics.md). Jalankan `ss -tuln` dan cari port web latihan 8080. Jika port sudah dibuka oleh stack, kirim `curl -i http://127.0.0.1:8080/api/health` dari server untuk melihat respons Express melalui NGINX.
 
-Jika API dijalankan di Docker, lanjutkan ke [pemeriksaan container](docker-container.md#periksa-container-yang-menjalankan-api).
+Jika hasilnya 200 dengan body `{"status":"ok"}`, jalur dari server ke API sudah merespons. Jika port belum terlihat, periksa [status layanan Compose](docker-container.md#periksa-container-yang-menjalankan-api) dari folder latihan.
+
+## What's next
+
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
+
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **SSH Basics** <span class="ai-practice-description">Masuk ke server dan salin berkas latihan dari laptop.</span>](ssh-basics.md){ .ai-practice-start }
+
+</div>

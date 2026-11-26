@@ -1,56 +1,38 @@
-# Deployment Overview
+# Cloud & Deployment
 
-Deployment adalah proses menjalankan aplikasi ke environment target (server lokal, VPS, cloud, atau edge device) agar bisa dipakai user atau perangkat lain.
+!!! note "AI Generated"
 
-## Kenapa deployment penting?
+    Jalur deployment dan pilihan pendalaman pada halaman ini disusun dengan bantuan AI.
 
-Dalam proyek AIoT, deployment membantu sistem bisa dipakai secara nyata, tidak hanya berjalan di laptop pengembang.
+Deployment adalah proses menyiapkan dan menjalankan aplikasi di lingkungan tempat aplikasi akan digunakan. Kita memindahkan kode atau hasil build, menyiapkan konfigurasi, lalu memeriksa apakah layanan dapat menerima permintaan.
 
-Contoh hal yang biasanya dideploy:
+Situs katalog, misalnya, bisa berjalan di laptop saat dibuat. Setelah dipasang di server, situs perlu menyajikan halaman dan meneruskan permintaan data secara konsisten. Pemeriksaan setelah deployment membantu menemukan bagian yang belum siap.
 
-- Backend API.
-- Database.
-- Dashboard web.
-- Service pendukung (misalnya broker MQTT atau model AI).
+Di modul AIoT, kita memakai lagi aplikasi Express, PostgreSQL, dan Vue dari [Dashboard Hands-on](../hands-on/dashboard-hands-on.md). Setelah aplikasi berjalan di server Linux, kirim satu pembacaan melalui NGINX dan cocokkan ID respons dengan baris di dashboard.
 
-## Cakupan modul Deployment
+## Jalur utama
 
-- Linux basics: fondasi command line dan operasi server.
-- SSH basics: cara masuk ke server/VPS dari laptop dengan aman.
-- Docker and Container: konsep dan praktik menjalankan service dalam container.
-- NGINX basics: reverse proxy untuk mempublikasikan aplikasi.
+1. [Linux Basics](linux-basics.md) untuk memeriksa folder, proses, dan port di server.
+2. [SSH Basics](ssh-basics.md) untuk masuk ke server dan memindahkan paket latihan dari laptop.
+3. [Docker dan Compose](docker-container.md) untuk membangun dan menjalankan layanan aplikasi.
+4. [NGINX](nginx-basics.md) untuk membuka dashboard dan memeriksa jalur request API.
 
-## Gambaran alur deployment sederhana
+Latihan bisa memakai mesin Linux atau VM yang sudah memiliki Docker Engine dan plugin Compose. Pada server jarak jauh, browser mengakses port latihan lewat SSH tunnel. Dengan begitu, peserta bisa memeriksa aplikasi sebelum membuat pengaturan akses publik.
 
-1. Build image backend dari Dockerfile.
-2. Jalankan container database.
-3. Jalankan container backend dan hubungkan ke database.
-4. Jalankan container frontend/dashboard.
-5. Expose port yang diperlukan untuk akses browser dan device IoT.
+## Pilihan setelah deployment
 
-```mermaid
-flowchart LR
-    D[IoT Device] --> API[Backend API Container]
-    WEB[Dashboard Container] --> API
-    API --> DB[(Database Container)]
-```
+| Minat | Halaman |
+| --- | --- |
+| Mengelola container dan membaca log lewat web | [Portainer](portainer.md) |
+| Melihat riwayat CPU dan memori server atau container | [Beszel](beszel.md) |
+| Mengambil, menyimpan, dan membuat grafik metrik resource | [Prometheus + Grafana](prometheus-grafana.md) |
 
-Singkatnya, deployment adalah jembatan dari "aplikasi jalan lokal" ke "aplikasi siap dipakai". Untuk memahami deployment, sebaiknya mulai dari dasar-dasarnya dulu dengan urutan sebagai berikut:
+## What's next
 
-- Linux Basics for Deployment
-- SSH Basics untuk Deployment
-- Docker and Container Basics
-- NGINX Basics for Reverse Proxy
+<div class="ai-resource-grid ai-practice-grid" markdown="1">
 
-Mengapa demikian? Karena server deployment biasanya diakses lewat SSH, container berjalan di atas Linux, dan NGINX biasanya dipakai untuk mempublikasikan aplikasi yang sudah dideploy. Jadi memahami urutannya akan memberikan gambaran yang lebih utuh tentang proses deployment AIoT.
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-terminal:</span> **Linux Basics** <span class="ai-practice-description">Kenali folder, proses, dan port yang akan dipakai selama deployment.</span>](linux-basics.md){ .ai-practice-start }
 
-Lanjut ke materi Docker and Container di halaman berikut:
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-container:</span> **Docker dan Compose** <span class="ai-practice-description">Jika akses server sudah siap, jalankan paket aplikasi sensor.</span>](docker-container.md)
 
-- [Linux Basics for Deployment](linux-basics.md)
-- [SSH Basics untuk Deployment](ssh-basics.md)
-- [Docker and Container Basics](docker-container.md)
-- [NGINX Basics for Reverse Proxy](nginx-basics.md)
-
-Semangat belajar deployment, karena ini adalah langkah penting untuk mewujudkan proyek AIoT yang bisa dipakai secara nyata!
-
-[Kembali ke Home](../index.md)
+</div>
