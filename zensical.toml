@@ -107,6 +107,7 @@ nav = [
       { "AI Agents" = "ai/ai-systems/ai-agent.md" },
       { "AI Application Architecture" = "ai/ai-systems/architecture.md" },
       { "Pendalaman Fine-Tuning" = "ai/ai-systems/fine-tuning.md" },
+      { "Proyek Akhir: Sistem AI (RAG & MCP)" = "ai/ai-systems/capstone-project-2026.md" },
     ]},
     { "AI Dashboard" = [
       { "Overview" = "ai/ai-dashboard/overview.md" },

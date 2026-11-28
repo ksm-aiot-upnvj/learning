@@ -81,4 +81,6 @@ Ketika rujukan sering berubah, RAG memungkinkan dokumen diperbarui sebelum perta
 
 [<span class="ai-practice-icon" aria-hidden="true">:lucide-cpu:</span> **AI Inference** <span class="ai-practice-description">Mulai dari cara aplikasi mengirim masukan ke model dan memakai keluarannya. Bandingkan pilihan lokal dan cloud.</span>](ai-inference.md){ .ai-practice-start }
 
+[<span class="ai-practice-icon" aria-hidden="true">:lucide-rocket:</span> **Proyek Akhir: Sistem AI (RAG & MCP)** <span class="ai-practice-description">Gabungkan RAG dan MCP untuk menjawab pertanyaan tentang tempat atau kegiatan.</span>](capstone-project-2026.md)
+
 </div>

@@ -1,9 +1,5 @@
 # Praktik MCP dengan Chat Sensor PostgreSQL
 
-!!! note "AI Generated, perlu ditinjau"
-
-    Materi praktik ini mengikuti proyek pertemuan-6 dan tetap perlu ditinjau pengajar.
-
 Demo ini menjawab pertanyaan tentang pembacaan hidroponik yang tersimpan di PostgreSQL. Saat pertanyaan memerlukan data, model Groq memilih tool MCP, server menjalankan query, lalu hasilnya kembali ke chat.
 
 Streamlit menjadi antarmuka utama dan Gradio menyediakan pilihan lain. Database PostgreSQL lokal dipakai khusus untuk latihan ini, sehingga tabel contoh berada di skema `hidroponik`.
