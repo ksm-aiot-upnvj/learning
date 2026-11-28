@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.16.0 (2026-11-28)
+
+### Features
+
+- **hands-on**: Generate MCP demo ZIP in browser
+  ([`c72db7c`](https://github.com/ksm-aiot-upnvj/learning/commit/c72db7c195792ac403c4b3ece90ed4452afba866))
+
+
 ## v1.15.0 (2026-11-26)
 
 ### Bug Fixes
