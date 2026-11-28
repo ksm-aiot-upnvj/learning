@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.17.0 (2026-11-28)
+
+### Features
+
+- **ai**: Add RAG and MCP capstone project
+  ([`72d63d4`](https://github.com/ksm-aiot-upnvj/learning/commit/72d63d49b08365ae84f27345ef658cdfc7e1508a))
+
+
 ## v1.16.0 (2026-11-28)
 
 ### Features
